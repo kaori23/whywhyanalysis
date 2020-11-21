@@ -3,17 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		125DFB5425596297004F09D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB5325596297004F09D6 /* AppDelegate.swift */; };
 		125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB5525596297004F09D6 /* SceneDelegate.swift */; };
-		125DFB5825596297004F09D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB5725596297004F09D6 /* ViewController.swift */; };
 		125DFB5B25596297004F09D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125DFB5925596297004F09D6 /* Main.storyboard */; };
 		125DFB5D25596298004F09D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125DFB5C25596298004F09D6 /* Assets.xcassets */; };
 		125DFB6025596298004F09D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125DFB5E25596298004F09D6 /* LaunchScreen.storyboard */; };
-		125DFB6B25596298004F09D6 /* whywhyanalysisAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB6A25596298004F09D6 /* whywhyanalysisAppTests.swift */; };
+		125DFB7825596858004F09D6 /* whywhyanalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB7725596858004F09D6 /* whywhyanalysis.swift */; };
+		126274ED255FAF720064A97D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EC255FAF720064A97D /* HomeViewController.swift */; };
+		126274EF255FB2F60064A97D /* CreateAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EE255FB2F60064A97D /* CreateAnalysisViewController.swift */; };
+		12B088A72568CEF300B24487 /* RegistAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */; };
+		12B088A82568D51F00B24487 /* CreateAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EE255FB2F60064A97D /* CreateAnalysisViewController.swift */; };
+		12B088A92568D53100B24487 /* RegistAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */; };
+		12B088AA2568D84E00B24487 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EC255FAF720064A97D /* HomeViewController.swift */; };
+		12B088B12568DC5F00B24487 /* analysisListCustumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */; };
+		12B088B22568DC5F00B24487 /* analysisListCustumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */; };
+		12B088B32568DCFE00B24487 /* analysisListCustumCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */; };
+		12B088B42568DD0600B24487 /* analysisListCustumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */; };
+		3F0B36C5C20C033DF389734D /* Pods_whywhyanalysisAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F1D6D58A20EF631F1D2637 /* Pods_whywhyanalysisAppTests.framework */; };
+		455A00787893FA822F7BE115 /* Pods_whywhyanalysisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FD417C530BD44E33B0038E /* Pods_whywhyanalysisApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09F1D6D58A20EF631F1D2637 /* Pods_whywhyanalysisAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		125DFB5025596297004F09D6 /* whywhyanalysisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whywhyanalysisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125DFB5325596297004F09D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		125DFB5525596297004F09D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		125DFB5725596297004F09D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		125DFB5A25596297004F09D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		125DFB5C25596298004F09D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		125DFB5F25596298004F09D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +49,17 @@
 		125DFB6625596298004F09D6 /* whywhyanalysisAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whywhyanalysisAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		125DFB6A25596298004F09D6 /* whywhyanalysisAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whywhyanalysisAppTests.swift; sourceTree = "<group>"; };
 		125DFB6C25596298004F09D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		125DFB7725596858004F09D6 /* whywhyanalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whywhyanalysis.swift; sourceTree = "<group>"; };
+		126274EC255FAF720064A97D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		126274EE255FB2F60064A97D /* CreateAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnalysisViewController.swift; sourceTree = "<group>"; };
+		12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistAnalysisViewController.swift; sourceTree = "<group>"; };
+		12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = analysisListCustumCell.swift; sourceTree = "<group>"; };
+		12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = analysisListCustumCell.xib; sourceTree = "<group>"; };
+		22FFE650F628E765E3BBE527 /* Pods-whywhyanalysisApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.release.xcconfig"; sourceTree = "<group>"; };
+		25FBBFE006BBB5AAE006F15D /* Pods-whywhyanalysisApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C6FD417C530BD44E33B0038E /* Pods_whywhyanalysisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28E4B71FA33793E9D672ADC /* Pods-whywhyanalysisAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		EBCB6F57C4FADDB9B508E1BD /* Pods-whywhyanalysisAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455A00787893FA822F7BE115 /* Pods_whywhyanalysisApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0B36C5C20C033DF389734D /* Pods_whywhyanalysisAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +88,8 @@
 				125DFB5225596297004F09D6 /* whywhyanalysisApp */,
 				125DFB6925596298004F09D6 /* whywhyanalysisAppTests */,
 				125DFB5125596297004F09D6 /* Products */,
+				C85CE23677EBAA00EC5192E9 /* Pods */,
+				97BFB84AF2DAE6BDBF37E1EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +107,16 @@
 			children = (
 				125DFB5325596297004F09D6 /* AppDelegate.swift */,
 				125DFB5525596297004F09D6 /* SceneDelegate.swift */,
-				125DFB5725596297004F09D6 /* ViewController.swift */,
+				125DFB7725596858004F09D6 /* whywhyanalysis.swift */,
 				125DFB5925596297004F09D6 /* Main.storyboard */,
 				125DFB5C25596298004F09D6 /* Assets.xcassets */,
 				125DFB5E25596298004F09D6 /* LaunchScreen.storyboard */,
 				125DFB6125596298004F09D6 /* Info.plist */,
+				126274EC255FAF720064A97D /* HomeViewController.swift */,
+				126274EE255FB2F60064A97D /* CreateAnalysisViewController.swift */,
+				12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */,
+				12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */,
+				12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */,
 			);
 			path = whywhyanalysisApp;
 			sourceTree = "<group>";
@@ -99,6 +130,26 @@
 			path = whywhyanalysisAppTests;
 			sourceTree = "<group>";
 		};
+		97BFB84AF2DAE6BDBF37E1EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6FD417C530BD44E33B0038E /* Pods_whywhyanalysisApp.framework */,
+				09F1D6D58A20EF631F1D2637 /* Pods_whywhyanalysisAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C85CE23677EBAA00EC5192E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25FBBFE006BBB5AAE006F15D /* Pods-whywhyanalysisApp.debug.xcconfig */,
+				22FFE650F628E765E3BBE527 /* Pods-whywhyanalysisApp.release.xcconfig */,
+				EBCB6F57C4FADDB9B508E1BD /* Pods-whywhyanalysisAppTests.debug.xcconfig */,
+				E28E4B71FA33793E9D672ADC /* Pods-whywhyanalysisAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 125DFB6F25596298004F09D6 /* Build configuration list for PBXNativeTarget "whywhyanalysisApp" */;
 			buildPhases = (
+				A3874EBD9EBF7703AD0A4EB9 /* [CP] Check Pods Manifest.lock */,
 				125DFB4C25596297004F09D6 /* Sources */,
 				125DFB4D25596297004F09D6 /* Frameworks */,
 				125DFB4E25596297004F09D6 /* Resources */,
+				1AD7D31E9ACE146FE9CF9F51 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 125DFB7225596298004F09D6 /* Build configuration list for PBXNativeTarget "whywhyanalysisAppTests" */;
 			buildPhases = (
+				83D1138B652EF9F22FA45CF7 /* [CP] Check Pods Manifest.lock */,
 				125DFB6225596298004F09D6 /* Sources */,
 				125DFB6325596298004F09D6 /* Frameworks */,
 				125DFB6425596298004F09D6 /* Resources */,
@@ -180,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B088B22568DC5F00B24487 /* analysisListCustumCell.xib in Resources */,
 				125DFB6025596298004F09D6 /* LaunchScreen.storyboard in Resources */,
 				125DFB5D25596298004F09D6 /* Assets.xcassets in Resources */,
 				125DFB5B25596297004F09D6 /* Main.storyboard in Resources */,
@@ -195,14 +250,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1AD7D31E9ACE146FE9CF9F51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83D1138B652EF9F22FA45CF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-whywhyanalysisAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3874EBD9EBF7703AD0A4EB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-whywhyanalysisApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		125DFB4C25596297004F09D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125DFB5825596297004F09D6 /* ViewController.swift in Sources */,
 				125DFB5425596297004F09D6 /* AppDelegate.swift in Sources */,
+				12B088B12568DC5F00B24487 /* analysisListCustumCell.swift in Sources */,
+				126274ED255FAF720064A97D /* HomeViewController.swift in Sources */,
 				125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */,
+				126274EF255FB2F60064A97D /* CreateAnalysisViewController.swift in Sources */,
+				125DFB7825596858004F09D6 /* whywhyanalysis.swift in Sources */,
+				12B088A72568CEF300B24487 /* RegistAnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +333,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125DFB6B25596298004F09D6 /* whywhyanalysisAppTests.swift in Sources */,
+				12B088B42568DD0600B24487 /* analysisListCustumCell.swift in Sources */,
+				12B088B32568DCFE00B24487 /* analysisListCustumCell.xib in Sources */,
+				12B088AA2568D84E00B24487 /* HomeViewController.swift in Sources */,
+				12B088A92568D53100B24487 /* RegistAnalysisViewController.swift in Sources */,
+				12B088A82568D51F00B24487 /* CreateAnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +487,7 @@
 		};
 		125DFB7025596298004F09D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FBBFE006BBB5AAE006F15D /* Pods-whywhyanalysisApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +506,7 @@
 		};
 		125DFB7125596298004F09D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22FFE650F628E765E3BBE527 /* Pods-whywhyanalysisApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +525,7 @@
 		};
 		125DFB7325596298004F09D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCB6F57C4FADDB9B508E1BD /* Pods-whywhyanalysisAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +548,7 @@
 		};
 		125DFB7425596298004F09D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28E4B71FA33793E9D672ADC /* Pods-whywhyanalysisAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
