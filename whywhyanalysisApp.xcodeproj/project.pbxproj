@@ -23,6 +23,7 @@
 		12B088B22568DC5F00B24487 /* analysisListCustumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */; };
 		12B088B32568DCFE00B24487 /* analysisListCustumCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */; };
 		12B088B42568DD0600B24487 /* analysisListCustumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */; };
+		12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B52568E26500B24487 /* ValidateUtility.swift */; };
 		3F0B36C5C20C033DF389734D /* Pods_whywhyanalysisAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F1D6D58A20EF631F1D2637 /* Pods_whywhyanalysisAppTests.framework */; };
 		455A00787893FA822F7BE115 /* Pods_whywhyanalysisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FD417C530BD44E33B0038E /* Pods_whywhyanalysisApp.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistAnalysisViewController.swift; sourceTree = "<group>"; };
 		12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = analysisListCustumCell.swift; sourceTree = "<group>"; };
 		12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = analysisListCustumCell.xib; sourceTree = "<group>"; };
+		12B088B52568E26500B24487 /* ValidateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtility.swift; sourceTree = "<group>"; };
 		22FFE650F628E765E3BBE527 /* Pods-whywhyanalysisApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.release.xcconfig"; sourceTree = "<group>"; };
 		25FBBFE006BBB5AAE006F15D /* Pods-whywhyanalysisApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6FD417C530BD44E33B0038E /* Pods_whywhyanalysisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 				12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */,
 				12B088AF2568DC5F00B24487 /* analysisListCustumCell.swift */,
 				12B088B02568DC5F00B24487 /* analysisListCustumCell.xib */,
+				12B088B52568E26500B24487 /* ValidateUtility.swift */,
 			);
 			path = whywhyanalysisApp;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */,
 				126274EF255FB2F60064A97D /* CreateAnalysisViewController.swift in Sources */,
 				125DFB7825596858004F09D6 /* whywhyanalysis.swift in Sources */,
+				12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */,
 				12B088A72568CEF300B24487 /* RegistAnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

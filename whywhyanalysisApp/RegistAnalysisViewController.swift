@@ -68,7 +68,6 @@ class RegistAnalysisViewController: UIViewController {
         // Realmデータベースを取得
         let realm = try! Realm()
         
-        // ⑤・・・Realmインスタンスからaddを叩くと、データベースにレコードが追加される
         // テキストフィールドの情報をデータベースに追加
         try! realm.write {
             realm.add(analysis)

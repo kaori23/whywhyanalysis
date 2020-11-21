@@ -35,9 +35,9 @@ class CreateAnalysisViewController: UIViewController {
     
     
     @IBAction func confirmPopOverClick(_ sender: Any) {
-        if(textEmplyCheck(optinalText: problemTextField.text) == true)
-            && (textEmplyCheck(optinalText: oneWayTextField.text) == true)
-            && (textEmplyCheck(optinalText: measuresTextField.text) == true) {
+        if(ValidateUtility.textEmplyCheck(optinalText: problemTextField.text) == true)
+            && (ValidateUtility.textEmplyCheck(optinalText: oneWayTextField.text) == true)
+            && (ValidateUtility.textEmplyCheck(optinalText: measuresTextField.text) == true) {
             let storyboard: UIStoryboard = self.storyboard!
             let nextViewController = storyboard.instantiateViewController(withIdentifier: "resistAnalysis") as! RegistAnalysisViewController
             
@@ -53,17 +53,5 @@ class CreateAnalysisViewController: UIViewController {
         } else {
             print("空の項目あり")
         }
-    }
-    
-    func textEmplyCheck(optinalText: String?) -> Bool {
-        var flag = false
-        if(optinalText != nil) {
-            //　テキストの空文字を削除
-            let text = optinalText!.trimmingCharacters(in: .whitespacesAndNewlines)
-            if(text != "") {
-                flag = true
-            }
-        }
-        return flag
     }
 }
