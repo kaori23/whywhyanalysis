@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class RegistAnalysisViewController: UIViewController {
     
@@ -65,14 +64,8 @@ class RegistAnalysisViewController: UIViewController {
         if(fiveWhy != "") {
             analysis.fiveWhy = fiveWhy
         }
-        // Realmデータベースを取得
-        let realm = try! Realm()
-        
-        // テキストフィールドの情報をデータベースに追加
-        try! realm.write {
-            realm.add(analysis)
-        }
+        let data = DataStorage()
+        data.createData(analysis)
         self.navigationController?.popToRootViewController(animated: true)
-        
     }
 }

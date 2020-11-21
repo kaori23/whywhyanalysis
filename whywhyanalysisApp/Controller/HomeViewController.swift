@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import RealmSwift
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var itemList: Results<Whywhyanalysis>!
+    var whywhyAnalysisList: Array<Whywhyanalysis> = []
+//    var test: Array<Whywhyanalysis> = []
     let cellHeigh:CGFloat = 125
     
     // 画面が表示される直前にtableViewを更新
@@ -33,36 +33,34 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Realmからデータを取得
-        var config = Realm.Configuration()
-        config.deleteRealmIfMigrationNeeded = true
-        let realm = try! Realm(configuration: config)
-        //            let realm = try Realm()
-        itemList = realm.objects(Whywhyanalysis.self)
+        // Realmからデータを全件取得
+        let data = DataStorage()
+        whywhyAnalysisList = data.loadAllData()
+        
         
         // tableViewにカスタムセルを登録
-        tableView.register(UINib(nibName: "analysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        tableView.register(UINib(nibName: "AnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         tableView.tableFooterView = UIView()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemList.count
+        return whywhyAnalysisList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! analysisListCustumCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! AnalysisListCustumCell
         // カスタムセル内のプロパティ設定
         
-        let row = itemList.count - indexPath.row - 1
+        let row = whywhyAnalysisList.count - indexPath.row - 1
         if(cell.measuresLabel.text != nil ) {
-            cell.measuresLabel.text = "問題：\(itemList[row].problem)"
+            cell.measuresLabel.text = "問題：\(whywhyAnalysisList[row].problem)"
             
         } else {
             cell.measuresLabel.text = "取得失敗したよ"
         }
         
         if(cell.problemLabel.text != nil) {
-            cell.problemLabel.text = "対策：\(itemList[indexPath.row].measures)"
+            cell.problemLabel.text = "対策：\(whywhyAnalysisList[indexPath.row].measures)"
         } else {
             cell.problemLabel.text = "取得失敗したよ"
         }
