@@ -12,7 +12,7 @@
 		125DFB5B25596297004F09D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125DFB5925596297004F09D6 /* Main.storyboard */; };
 		125DFB5D25596298004F09D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125DFB5C25596298004F09D6 /* Assets.xcassets */; };
 		125DFB6025596298004F09D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125DFB5E25596298004F09D6 /* LaunchScreen.storyboard */; };
-		125DFB7825596858004F09D6 /* Whywhyanalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB7725596858004F09D6 /* Whywhyanalysis.swift */; };
+		125DFB7825596858004F09D6 /* WhywhyAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB7725596858004F09D6 /* WhywhyAnalysis.swift */; };
 		126274ED255FAF720064A97D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EC255FAF720064A97D /* HomeViewController.swift */; };
 		126274EF255FB2F60064A97D /* CreateAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EE255FB2F60064A97D /* CreateAnalysisViewController.swift */; };
 		12B088A72568CEF300B24487 /* RegistAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */; };
@@ -51,10 +51,10 @@
 		125DFB6625596298004F09D6 /* whywhyanalysisAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whywhyanalysisAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		125DFB6A25596298004F09D6 /* whywhyanalysisAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whywhyanalysisAppTests.swift; sourceTree = "<group>"; };
 		125DFB6C25596298004F09D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		125DFB7725596858004F09D6 /* Whywhyanalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whywhyanalysis.swift; sourceTree = "<group>"; };
+		125DFB7725596858004F09D6 /* WhywhyAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhywhyAnalysis.swift; sourceTree = "<group>"; };
 		126274EC255FAF720064A97D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		126274EE255FB2F60064A97D /* CreateAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnalysisViewController.swift; sourceTree = "<group>"; };
-		12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistAnalysisViewController.swift; sourceTree = "<group>"; };
+		12B088A62568CEF300B24487 /* RegistAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistAnalysisViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		12B088AF2568DC5F00B24487 /* AnalysisListCustumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisListCustumCell.swift; sourceTree = "<group>"; };
 		12B088B02568DC5F00B24487 /* AnalysisListCustumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisListCustumCell.xib; sourceTree = "<group>"; };
 		12B088B52568E26500B24487 /* ValidateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtility.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				12B088B82569001000B24487 /* DataStorage.swift */,
-				125DFB7725596858004F09D6 /* Whywhyanalysis.swift */,
+				125DFB7725596858004F09D6 /* WhywhyAnalysis.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 				12B088B92569001000B24487 /* DataStorage.swift in Sources */,
 				125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */,
 				126274EF255FB2F60064A97D /* CreateAnalysisViewController.swift in Sources */,
-				125DFB7825596858004F09D6 /* Whywhyanalysis.swift in Sources */,
+				125DFB7825596858004F09D6 /* WhywhyAnalysis.swift in Sources */,
 				12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */,
 				12B088A72568CEF300B24487 /* RegistAnalysisViewController.swift in Sources */,
 			);

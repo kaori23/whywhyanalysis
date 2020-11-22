@@ -284,13 +284,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="新規分析追加" id="Rrk-NN-qfX"/>
                     <connections>
-                        <outlet property="fiveTextField" destination="TOs-Sw-Kw9" id="t2O-Ks-v58"/>
-                        <outlet property="fourTextFIeld" destination="eUy-Um-ZO7" id="erQ-iD-2zJ"/>
+                        <outlet property="fiveWhyTextField" destination="TOs-Sw-Kw9" id="H4W-Ph-pIm"/>
+                        <outlet property="fourWhyTextFIeld" destination="eUy-Um-ZO7" id="Vlf-Gp-4MC"/>
                         <outlet property="measuresTextField" destination="V19-Ef-w0q" id="rnn-6W-ZAt"/>
-                        <outlet property="oneWayTextField" destination="EXW-z5-ZL2" id="qfl-c3-90G"/>
+                        <outlet property="oneWhyTextField" destination="EXW-z5-ZL2" id="DZc-S9-Ufb"/>
                         <outlet property="problemTextField" destination="ZQ1-HG-RVi" id="aW0-aC-IXs"/>
-                        <outlet property="threeTextField" destination="HxO-OI-Zz0" id="o5H-WE-kEa"/>
-                        <outlet property="twoWayTextField" destination="EN8-o2-jQf" id="4md-u5-N6u"/>
+                        <outlet property="threeWhyTextField" destination="HxO-OI-Zz0" id="8aR-Mq-kkc"/>
+                        <outlet property="twoWhyTextField" destination="EN8-o2-jQf" id="gF0-jm-Ppg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HY8-nR-toz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
