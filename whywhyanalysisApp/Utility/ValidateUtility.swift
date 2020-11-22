@@ -14,13 +14,13 @@ class ValidateUtility {
 //Sting?型の空文字チェック
     static func textEmplyCheck(optinalText: String?) -> Bool {
         var flag = false
-        if(optinalText != nil) {
-            //　テキストの空文字を削除
-            let text = optinalText!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let optinalText = optinalText {
+            // 空白文字を削除
+            let text = optinalText.trimmingCharacters(in: .whitespacesAndNewlines)
             if(text != "") {
-                flag = true
+                return true
             }
         }
-        return flag
+        return false
     }
 }
