@@ -60,7 +60,15 @@ class CreateAnalysisViewController: UIViewController {
                 fiveWhy = fiveWhyTextField.text!
             }
             
-            let whywhyAnalysis = WhywhyAnalysis(problem: problemTextField.text!, measures: measuresTextField.text!, oneWhy: oneWhyTextField.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)
+            let whywhyAnalysis = WhywhyAnalysis(
+                problem: problemTextField.text!,
+                measures: measuresTextField.text!,
+                oneWhy: oneWhyTextField.text!,
+                twoWhy: twoWhy,
+                threeWhy: threeWhy,
+                fourWhy: fourWhy,
+                fiveWhy: fiveWhy
+            )
 
             nextViewController.whywhyAnalysis = whywhyAnalysis
             navigationController?.pushViewController(nextViewController, animated: true)

@@ -17,6 +17,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // 画面が表示される直前にtableViewを更新
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let data = DataStorage()
+        whywhyAnalysisList = data.loadAllWhyAnalyticsData()
         tableView.reloadData()
     }
     
@@ -52,14 +54,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let row = whywhyAnalysisList.count - indexPath.row - 1
         if(cell.measuresLabel.text != nil ) {
-            cell.measuresLabel.text = "問題：\(whywhyAnalysisList[row].problem)"
+            cell.measuresLabel.text = "問題：\(whywhyAnalysisList[indexPath.row].problem!)"
             
         } else {
             cell.measuresLabel.text = "取得失敗したよ"
         }
         
         if(cell.problemLabel.text != nil) {
-            cell.problemLabel.text = "対策：\(whywhyAnalysisList[indexPath.row].measures)"
+            cell.problemLabel.text = "対策：\(whywhyAnalysisList[indexPath.row].measures!)"
         } else {
             cell.problemLabel.text = "取得失敗したよ"
         }
