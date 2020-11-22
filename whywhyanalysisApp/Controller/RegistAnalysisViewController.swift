@@ -10,62 +10,25 @@ import UIKit
 
 class RegistAnalysisViewController: UIViewController {
     
-    var problem = ""
-    var measures = ""
-    var oneWhy = ""
-    var twoWhy = ""
-    var threeWhy = ""
-    var fourWhy = ""
-    var fiveWhy = ""
-    
     @IBOutlet weak var problemLabel: UILabel!
     
     @IBOutlet weak var measuresLabel: UILabel!
-    
+
+    var whywhyAnalysis: WhywhyAnalysis!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        problemLabel.text = problem
-        measuresLabel.text = measures
-        isModalInPresentation = true
-        
+        problemLabel.text = whywhyAnalysis.problem
+        measuresLabel.text = whywhyAnalysis.measures
     }
     
-    
-    @IBAction func registAnalysis(_ sender: Any) {
-        let analysis: Whywhyanalysis = Whywhyanalysis()
-        if(problem != "") {
-            analysis.problem = problemLabel.text!
-        }
-        
-        if(measures != "") {
-            analysis.measures = measuresLabel.text!
-        }
-        
-        if(oneWhy != "") {
-            analysis.oneWhy = oneWhy
-        }
-        
-        if(twoWhy != "") {
-            analysis.twoWhy = twoWhy
-        }
-        
-        if(threeWhy != "") {
-            analysis.threeWhy = threeWhy
-        }
-        
-        if(fourWhy != "") {
-            analysis.fourWhy = fourWhy
-        }
-        
-        if(fiveWhy != "") {
-            analysis.fiveWhy = fiveWhy
-        }
+    // 何故何故分析を登録
+    @IBAction func registAnalysis(_ sender: Any) {       
         let data = DataStorage()
-        data.createData(analysis)
+        data.createWhyAnalyticsData(whywhyAnalysis)
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

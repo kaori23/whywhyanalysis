@@ -10,20 +10,20 @@ import Foundation
 import RealmSwift
 
 class DataStorage {
-        var itemList: Results<Whywhyanalysis>!
+        var itemList: Results<WhywhyAnalysis>!
     
     // 全項目全件取得
-    func loadAllData() -> Array<Whywhyanalysis> {
+    func loadAllWhyAnalyticsData() -> Array<WhywhyAnalysis> {
         // データベースからデータを取得
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         let realm = try! Realm(configuration: config)
-         itemList = realm.objects(Whywhyanalysis.self)
+         itemList = realm.objects(WhywhyAnalysis.self)
         return Array(itemList)
     }
     
     // 新規何故何故分析を追加
-    func createData(_ analysis:Whywhyanalysis) {
+    func createWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
         // Realmデータベースを取得
         let realm = try! Realm()
         // データベースに追加

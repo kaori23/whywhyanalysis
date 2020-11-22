@@ -11,8 +11,7 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var whywhyAnalysisList: Array<Whywhyanalysis> = []
-//    var test: Array<Whywhyanalysis> = []
+    var whywhyAnalysisList: Array<WhywhyAnalysis> = []
     let cellHeigh:CGFloat = 125
     
     // 画面が表示される直前にtableViewを更新
@@ -35,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Realmからデータを全件取得
         let data = DataStorage()
-        whywhyAnalysisList = data.loadAllData()
+        whywhyAnalysisList = data.loadAllWhyAnalyticsData()
         
         
         // tableViewにカスタムセルを登録
