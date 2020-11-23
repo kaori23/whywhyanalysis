@@ -30,10 +30,10 @@ class WhywhyAnalysis: Object {
     // 5WHY
     @objc dynamic var fiveWhy: String
     
-    // 分析回数
-    @objc dynamic var whywhyanalysiscount = ""
+//    // 分析回数
+//    @objc dynamic var whywhyanalysiscount = ""
     
-    init(problem: String, measures: String, oneWhy: String,
+  convenience init(problem: String, measures: String, oneWhy: String,
          twoWhy: String, threeWhy: String, fourWhy:String, fiveWhy: String) {
         self.problem = ""
         self.measures = ""

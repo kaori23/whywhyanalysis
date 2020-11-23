@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var whywhyAnalysisList: Array<WhywhyAnalysis> = []
     let cellHeigh:CGFloat = 125
     
-    // 画面が表示される直前にtableViewを更新
+    // 画面が表示される直前にtableViewを更新　何回も呼ばれる
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    // 最初だけ
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +35,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Realmからデータを全件取得
         let data = DataStorage()
-        whywhyAnalysisList = data.loadAllWhyAnalyticsData()
+        
+//            data.loadAllWhyAnalyticsData()
         
         
         // tableViewにカスタムセルを登録
