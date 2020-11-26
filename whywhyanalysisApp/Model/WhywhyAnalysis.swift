@@ -11,36 +11,37 @@ import RealmSwift
 
 class WhywhyAnalysis: Object {
     // 問題
-    @objc dynamic var problem: String
+    @objc dynamic var problem: String!
     // 対策
-    @objc dynamic var measures: String
+    @objc dynamic var measures: String!
     
     // 1WHY
-    @objc dynamic var oneWhy: String
+    @objc dynamic var oneWhy: String!
     
     // 2WHY
-    @objc dynamic var twoWhy: String
+    @objc dynamic var twoWhy: String!
     
     // 3WHY
-    @objc dynamic var threeWhy: String
+    @objc dynamic var threeWhy: String!
     
     // 4WHY
-    @objc dynamic var fourWhy: String
+    @objc dynamic var fourWhy: String!
     
     // 5WHY
-    @objc dynamic var fiveWhy: String
+    @objc dynamic var fiveWhy: String!
     
     // 分析回数
     @objc dynamic var whywhyanalysiscount = ""
     
-    init(problem: String, measures: String, oneWhy: String,
-         twoWhy: String, threeWhy: String, fourWhy:String, fiveWhy: String) {
-        self.problem = ""
-        self.measures = ""
-        self.oneWhy = ""
-        self.twoWhy = ""
-        self.threeWhy = ""
-        self.fourWhy = ""
-        self.fiveWhy = ""
+    convenience init(problem: String, measures: String, oneWhy: String,
+                     twoWhy: String, threeWhy: String, fourWhy:String, fiveWhy: String) {
+        self.init()
+        self.problem = problem
+        self.measures = measures
+        self.oneWhy = oneWhy
+        self.twoWhy = twoWhy
+        self.threeWhy = threeWhy
+        self.fourWhy = fourWhy
+        self.fiveWhy = fiveWhy
     }
 }
