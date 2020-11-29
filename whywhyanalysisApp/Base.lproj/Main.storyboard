@@ -35,7 +35,7 @@
                                 <rect key="frame" x="297" y="567" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="apq-C8-Xfw" kind="push" id="rmK-6x-4gv"/>
+                                    <segue destination="apq-C8-Xfw" kind="show" id="QNJ-CG-pAN"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aNG-LC-PO5">
