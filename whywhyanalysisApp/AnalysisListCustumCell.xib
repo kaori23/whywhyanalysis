@@ -14,14 +14,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="問題ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NN-sQ-tG0" customClass="anaysisListCustomCell" customModule="whywhyanalysisApp" customModuleProvider="target">
-                    <rect key="frame" x="66" y="49" width="87" height="21"/>
+                    <rect key="frame" x="66" y="49" width="219" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="対策ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-at-u87">
-                    <rect key="frame" x="66" y="20" width="87" height="21"/>
+                    <rect key="frame" x="66" y="20" width="219" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -31,8 +31,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
-                <outlet property="measuresLabel" destination="Yc4-at-u87" id="qol-Fn-AGm"/>
-                <outlet property="problemLabel" destination="2NN-sQ-tG0" id="yzc-hC-1z1"/>
+                <outlet property="measuresLabel" destination="Yc4-at-u87" id="WJq-kK-RBS"/>
+                <outlet property="problemLabel" destination="2NN-sQ-tG0" id="EIO-0o-LUO"/>
             </connections>
             <point key="canvasLocation" x="-258.75" y="66.549295774647888"/>
         </view>
