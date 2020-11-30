@@ -12,12 +12,11 @@ class ValidateUtility {
         
     //Sting?型の空文字チェック
     static func textEmplyCheck(optinalText: String?) -> Bool {
-        var flag = false
         if let optinalText = optinalText {
             // 空白文字を削除
             let text = optinalText.trimmingCharacters(in: .whitespacesAndNewlines)
-            flag = text.isEmpty
+            return !text.isEmpty
         }
-        return flag
+        return false
     }
 }
