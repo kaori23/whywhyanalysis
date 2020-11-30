@@ -35,9 +35,9 @@ class CreateAnalysisViewController: UIViewController {
     
     
     @IBAction func confirmPopOverClick(_ sender: Any) {
-        if(ValidateUtility.textEmplyCheck(optinalText: problemTextField.text))
-            && (ValidateUtility.textEmplyCheck(optinalText: oneWhyTextField.text))
-            && (ValidateUtility.textEmplyCheck(optinalText: measuresTextField.text)) {
+        if(ValidateUtility.isTextNotEmplyCheck(optinalText: problemTextField.text))
+            && (ValidateUtility.isTextNotEmplyCheck(optinalText: oneWhyTextField.text))
+            && (ValidateUtility.isTextNotEmplyCheck(optinalText: measuresTextField.text)) {
             let storyboard: UIStoryboard = self.storyboard!
             let nextViewController = storyboard.instantiateViewController(withIdentifier: "resistAnalysis") as! RegistAnalysisViewController
             // 2WHY以降は任意入力の為何も入力されていない場合は""を代入する
@@ -46,17 +46,17 @@ class CreateAnalysisViewController: UIViewController {
             var fourWhy = ""
             var fiveWhy = ""
 
-            if(ValidateUtility.textEmplyCheck(optinalText:twoWhyTextField.text)) {
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText:twoWhyTextField.text)) {
                 twoWhy = twoWhyTextField.text!
             }
-            if(ValidateUtility.textEmplyCheck(optinalText: threeWhyTextField.text)) {
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText: threeWhyTextField.text)) {
                 threeWhy = threeWhyTextField.text!
             }
             
-            if(ValidateUtility.textEmplyCheck(optinalText: fourWhyTextFIeld.text)) {
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText: fourWhyTextFIeld.text)) {
                 fourWhy = fourWhyTextFIeld.text!
             }
-            if(ValidateUtility.textEmplyCheck(optinalText: fiveWhyTextField.text)) {
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText: fiveWhyTextField.text)) {
                 fiveWhy = fiveWhyTextField.text!
             }
             
