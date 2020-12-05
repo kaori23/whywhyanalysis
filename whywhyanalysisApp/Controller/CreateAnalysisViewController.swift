@@ -38,8 +38,7 @@ class CreateAnalysisViewController: UIViewController {
         if(ValidateUtility.isTextNotEmplyCheck(optinalText: problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: oneWhyTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: measuresTextField.text)) {
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextViewController = storyboard.instantiateViewController(withIdentifier: "resistAnalysis") as! RegistAnalysisViewController
+            let nextViewController = R.storyboard.main.resistAnalysis()
             // 2WHY以降は任意入力の為何も入力されていない場合は""を代入する
             var twoWhy = ""
             var threeWhy = ""
@@ -61,9 +60,13 @@ class CreateAnalysisViewController: UIViewController {
             }
             
             let whywhyAnalysis = WhywhyAnalysis(problem: problemTextField.text!, measures: measuresTextField.text!, oneWhy: oneWhyTextField.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)
-
-            nextViewController.whywhyAnalysis = whywhyAnalysis
-            navigationController?.pushViewController(nextViewController, animated: true)
+            
+            if nextViewController != nil {
+            nextViewController!.whywhyAnalysis = whywhyAnalysis
+            navigationController?.pushViewController(nextViewController!, animated: true)
+            } else {
+                print("画面遷移失敗")
+            }
         } else {
             print("空の項目あり")
         }
