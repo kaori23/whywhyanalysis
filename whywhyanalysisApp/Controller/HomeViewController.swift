@@ -48,6 +48,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return whywhyAnalysisList.count
     }
     
+    // セルをタップした場合、何故何故分析詳細画面に遷移する
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = whywhyAnalysisList.count - indexPath.row - 1
+        let whywhyAnalysis = whywhyAnalysisList[row]
+        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
+        if nextViewController != nil {
+            nextViewController!.whywhyAnalysis = whywhyAnalysis
+            navigationController?.pushViewController(nextViewController!, animated: true)
+        } else {
+            print("画面遷移失敗")
+        }
+       }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! AnalysisListCustumCell
         
