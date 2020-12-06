@@ -16,13 +16,22 @@ class RegistAnalysisViewController: UIViewController {
 
     var whywhyAnalysis: WhywhyAnalysis!
     
+    var mode = ""
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        problemLabel.text = whywhyAnalysis.problem
-        measuresLabel.text = whywhyAnalysis.measures
+//        print(mode)
+//        problemLabel.text = whywhyAnalysis.problem!
+//        measuresLabel.text = whywhyAnalysis.measures!
+    }
+    
+    override func loadView() {
+        
     }
     
     // 何故何故分析を登録

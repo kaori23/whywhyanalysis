@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var whywhyAnalysisList: Array<WhywhyAnalysis> = []
     let cellHeigh:CGFloat = 125
     
@@ -55,6 +56,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if nextViewController != nil {
             nextViewController!.whywhyAnalysis = whywhyAnalysis
+            nextViewController!.mode = "編集"
             navigationController?.pushViewController(nextViewController!, animated: true)
         } else {
             print("画面遷移失敗")
@@ -79,4 +81,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return cell
     }
+    
+    @IBAction func addAnalysisClick(_ sender: Any) {
+        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
+        if nextViewController != nil {
+            nextViewController!.mode = "新規作成"
+            navigationController?.pushViewController(nextViewController!, animated: true)
+        } else {
+            print("画面遷移失敗")
+        }
+        
+    }
+    
 }
