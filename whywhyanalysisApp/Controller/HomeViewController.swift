@@ -90,7 +90,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             print("画面遷移失敗")
         }
-        
     }
-    
 }
