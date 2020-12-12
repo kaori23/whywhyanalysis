@@ -9,22 +9,71 @@
 import UIKit
 
 class EditAnalysisViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var whywhyAnalysis: WhywhyAnalysis!
+    var analysisView: ViewWhywhyAnalysis!
+    var mode = ""
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        analysisView = (Bundle.main.loadNibNamed("ViewWhywhyAnalysis", owner: self, options: nil)!.first! as! ViewWhywhyAnalysis)
+        analysisView.mode = mode
+        analysisView.confirmButton.addTarget(self, action: #selector(self.confirmClick(btn:)), for: .touchUpInside)
+        
+        if(analysisView.mode == "編集") {
+            analysisView.whywhyAnalysis = whywhyAnalysis
+            analysisView.problemTextField.text = whywhyAnalysis.problem
+            analysisView.oneWhyTextFiled.text = whywhyAnalysis.oneWhy
+            analysisView.measuresTextField.text = whywhyAnalysis.measures
+            
+            if(whywhyAnalysis.twoWhy != nil) {
+                analysisView.twoWhyTextField.text = whywhyAnalysis.twoWhy
+            }
+            if(whywhyAnalysis.threeWhy != nil) {
+                analysisView.threeWhyTextField.text = whywhyAnalysis.threeWhy
+            }
+            if(whywhyAnalysis.fourWhy != nil) {
+                analysisView.fourWhyTextField.text = whywhyAnalysis.fourWhy
+            }
+            if(whywhyAnalysis.fiveWhy != nil) {
+                analysisView.fiveWhyTextField.text = whywhyAnalysis.fiveWhy
+            }
+        }
+        self.view.addSubview(analysisView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func confirmClick(btn: UIButton) {
+        
+        if (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.problemTextField.text))
+            && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.oneWhyTextFiled.text))
+            && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.measuresTextField.text)) {
+            // 2WHY以降は任意入力の為何も入力されていない場合は""を代入する
+            var twoWhy = ""
+            var threeWhy = ""
+            var fourWhy = ""
+            var fiveWhy = ""
+            
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText:analysisView.twoWhyTextField.text)) {
+                twoWhy = analysisView.twoWhyTextField.text!
+            }
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.threeWhyTextField.text)) {
+                threeWhy = analysisView.threeWhyTextField.text!
+            }
+            
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.fourWhyTextField.text)) {
+                fourWhy = analysisView.fourWhyTextField.text!
+            }
+            if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.fiveWhyTextField.text)) {
+                fiveWhy = analysisView.fiveWhyTextField.text!
+            }
+            let whywhyAnalysis = WhywhyAnalysis(problem: analysisView.problemTextField.text!, measures: analysisView.measuresTextField.text!, oneWhy: analysisView.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)
+            let nextViewController = R.storyboard.main.resistAnalysis()
+            nextViewController?.whywhyAnalysis = whywhyAnalysis
+            nextViewController?.mode = analysisView.mode
+            if nextViewController != nil {
+                navigationController?.pushViewController(nextViewController!, animated: true)
+            } else {
+                print("失敗")
+            }
+        }
     }
-    */
-
 }
