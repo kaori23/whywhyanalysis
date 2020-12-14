@@ -32,9 +32,11 @@ class RegistAnalysisViewController: UIViewController {
             data.createWhyAnalyticsData(whywhyAnalysis)
             break
         case "編集":
+            // TODO: 後ほど編集する処理を実装
             print("編集する")
             break
         default:
+            // TODO: 後ほどエラー処理またはアラート処理を実装
             print("エラー")
             break
         }

@@ -59,6 +59,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nextViewController!.mode = "編集"
             navigationController?.pushViewController(nextViewController!, animated: true)
         } else {
+            // TODO: 後ほどエラー処理を実装
             print("画面遷移失敗")
         }
        }
@@ -71,12 +72,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.measuresLabel.text = "問題：\(whywhyAnalysisList[row].problem!)"
             
         } else {
+            // TODO: 後ほどエラー処理を実装
             cell.measuresLabel.text = "取得失敗したよ"
         }
         
         if(cell.problemLabel.text != nil) {
             cell.problemLabel.text = "対策：\(whywhyAnalysisList[row].measures!)"
         } else {
+            // TODO: 後ほどエラー処理を実装
             cell.problemLabel.text = "取得失敗したよ"
         }
         return cell
@@ -88,6 +91,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nextViewController!.mode = "新規作成"
             navigationController?.pushViewController(nextViewController!, animated: true)
         } else {
+            // TODO: 後ほどエラー処理を実装
             print("画面遷移失敗")
         }
     }
