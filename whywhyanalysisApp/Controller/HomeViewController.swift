@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var whywhyAnalysisList: Array<WhywhyAnalysis> = []
     let cellHeigh:CGFloat = 125
     
@@ -48,6 +49,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return whywhyAnalysisList.count
     }
     
+    // セルをタップした場合、何故何故分析詳細画面に遷移する
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = whywhyAnalysisList.count - indexPath.row - 1
+        let whywhyAnalysis = whywhyAnalysisList[row]
+        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
+        if nextViewController != nil {
+            nextViewController!.whywhyAnalysis = whywhyAnalysis
+            nextViewController!.mode = "編集"
+            navigationController?.pushViewController(nextViewController!, animated: true)
+        } else {
+            // TODO: 後ほどエラー処理を実装
+            print("画面遷移失敗")
+        }
+       }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! AnalysisListCustumCell
         
@@ -56,14 +72,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.measuresLabel.text = "問題：\(whywhyAnalysisList[row].problem!)"
             
         } else {
+            // TODO: 後ほどエラー処理を実装
             cell.measuresLabel.text = "取得失敗したよ"
         }
         
         if(cell.problemLabel.text != nil) {
             cell.problemLabel.text = "対策：\(whywhyAnalysisList[row].measures!)"
         } else {
+            // TODO: 後ほどエラー処理を実装
             cell.problemLabel.text = "取得失敗したよ"
         }
         return cell
+    }
+    
+    @IBAction func addAnalysisClick(_ sender: Any) {
+        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
+        if nextViewController != nil {
+            nextViewController!.mode = "新規作成"
+            navigationController?.pushViewController(nextViewController!, animated: true)
+        } else {
+            // TODO: 後ほどエラー処理を実装
+            print("画面遷移失敗")
+        }
     }
 }

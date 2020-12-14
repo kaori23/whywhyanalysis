@@ -7,6 +7,7 @@ target 'whywhyanalysisApp' do
 
   # Pods for whywhyanalysisApp
   pod 'RealmSwift'
+  pod 'R.swift'
   target 'whywhyanalysisAppTests' do
     inherit! :search_paths
     # Pods for testing

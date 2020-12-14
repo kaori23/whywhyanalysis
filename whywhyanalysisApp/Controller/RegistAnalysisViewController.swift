@@ -16,19 +16,30 @@ class RegistAnalysisViewController: UIViewController {
 
     var whywhyAnalysis: WhywhyAnalysis!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+    var mode = ""
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         problemLabel.text = whywhyAnalysis.problem
         measuresLabel.text = whywhyAnalysis.measures
     }
-    
+
     // 何故何故分析を登録
-    @IBAction func registAnalysis(_ sender: Any) {       
+    @IBAction func registAnalysis(_ sender: Any) {
         let data = DataStorage()
-        data.createWhyAnalyticsData(whywhyAnalysis)
+        switch mode {
+        case "新規作成":
+            data.createWhyAnalyticsData(whywhyAnalysis)
+            break
+        case "編集":
+            // TODO: 後ほど編集する処理を実装
+            print("編集する")
+            break
+        default:
+            // TODO: 後ほどエラー処理またはアラート処理を実装
+            print("エラー")
+            break
+        }
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
