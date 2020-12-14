@@ -17,7 +17,7 @@ class EditAnalysisViewController: UIViewController {
         
         analysisView = (Bundle.main.loadNibNamed("ViewWhywhyAnalysis", owner: self, options: nil)!.first! as! ViewWhywhyAnalysis)
         analysisView.mode = mode
-        analysisView.confirmButton.addTarget(self, action: #selector(self.confirmClick(btn:)), for: .touchUpInside)
+        analysisView.goRegistButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
         
         if(analysisView.mode == "編集") {
             analysisView.whywhyAnalysis = whywhyAnalysis
@@ -41,7 +41,7 @@ class EditAnalysisViewController: UIViewController {
         self.view.addSubview(analysisView)
     }
     
-    @objc func confirmClick(btn: UIButton) {
+    @objc func goRegistClick(btn: UIButton) {
         
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.oneWhyTextFiled.text))

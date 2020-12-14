@@ -24,7 +24,7 @@ class ViewWhywhyAnalysis: UIView {
     
     @IBOutlet weak var measuresTextField: UITextField!
     
-    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var goRegistButton: UIButton!
     
     var whywhyAnalysis: WhywhyAnalysis!
     
