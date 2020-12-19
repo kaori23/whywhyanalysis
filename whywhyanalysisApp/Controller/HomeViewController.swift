@@ -82,6 +82,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             // TODO: 後ほどエラー処理を実装
             cell.problemLabel.text = "取得失敗したよ"
         }
+        
+        if(cell.statusLabel.text != nil) {
+            cell.statusLabel.text = whywhyAnalysisList[row].status!
+        }
+        
         return cell
     }
     

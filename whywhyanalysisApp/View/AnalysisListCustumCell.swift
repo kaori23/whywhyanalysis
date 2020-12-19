@@ -9,11 +9,12 @@
 import UIKit
 
 class AnalysisListCustumCell: UITableViewCell {
-
+    
     @IBOutlet weak var measuresLabel: UILabel!
     
     @IBOutlet weak var problemLabel: UILabel!
     
+    @IBOutlet weak var statusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -51,6 +51,7 @@ class EditAnalysisViewController: UIViewController {
             var threeWhy = ""
             var fourWhy = ""
             var fiveWhy = ""
+            let status = "実施中"
             
             if(ValidateUtility.isTextNotEmplyCheck(optinalText:analysisView.twoWhyTextField.text)) {
                 twoWhy = analysisView.twoWhyTextField.text!
@@ -65,9 +66,18 @@ class EditAnalysisViewController: UIViewController {
             if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.fiveWhyTextField.text)) {
                 fiveWhy = analysisView.fiveWhyTextField.text!
             }
-            let whywhyAnalysis = WhywhyAnalysis(problem: analysisView.problemTextField.text!, measures: analysisView.measuresTextField.text!, oneWhy: analysisView.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)
+   
+            // 修正後の内容で初期化
+            let editWhywhyAnalysis = WhywhyAnalysis(problem: analysisView.problemTextField.text!, measures: analysisView.measuresTextField.text!, oneWhy: analysisView.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy, status: status)
+            
+            // 画面遷移
             let nextViewController = R.storyboard.main.resistAnalysis()
-            nextViewController?.whywhyAnalysis = whywhyAnalysis
+            nextViewController?.whywhyAnalysis = editWhywhyAnalysis
+            
+            if(mode == "編集") {
+                nextViewController?.whywhyAnalysis.whywhyAnalysisNo = whywhyAnalysis.whywhyAnalysisNo
+                nextViewController?.whywhyAnalysis.status = whywhyAnalysis.status
+            } 
             nextViewController?.mode = analysisView.mode
             if nextViewController != nil {
                 navigationController?.pushViewController(nextViewController!, animated: true)

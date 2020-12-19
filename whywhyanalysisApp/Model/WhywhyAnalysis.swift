@@ -10,6 +10,9 @@ import Foundation
 import RealmSwift
 
 class WhywhyAnalysis: Object {
+    
+    // 何故何故分析No.(PRIMARY KEY)
+    @objc dynamic var whywhyAnalysisNo: Int = 0
     // 問題
     @objc dynamic var problem: String!
     // 対策
@@ -33,8 +36,16 @@ class WhywhyAnalysis: Object {
     // 分析回数
     @objc dynamic var whywhyanalysiscount = ""
     
+    //
+    @objc dynamic var status: String!
+    
+    override static func primaryKey() -> String? {
+        return "whywhyAnalysisNo"
+    }
+    
     convenience init(problem: String, measures: String, oneWhy: String,
-                     twoWhy: String, threeWhy: String, fourWhy:String, fiveWhy: String) {
+                     twoWhy: String, threeWhy: String, fourWhy:String,
+                     fiveWhy: String, status: String) {
         self.init()
         self.problem = problem
         self.measures = measures
@@ -43,5 +54,6 @@ class WhywhyAnalysis: Object {
         self.threeWhy = threeWhy
         self.fourWhy = fourWhy
         self.fiveWhy = fiveWhy
+        self.status = status
     }
 }
