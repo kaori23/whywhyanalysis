@@ -37,13 +37,7 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
             status = statusList[0]
             statusNum = 0
         } else if(mode == "編集") {
-            status = whywhyAnalysis.status
-            for s in statusList {
-                if(s == status) {
-                    break
-                }
-                statusNum += 1
-            }
+            statusNum = statusList.firstIndex(of: whywhyAnalysis.status)!
         }
         
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
