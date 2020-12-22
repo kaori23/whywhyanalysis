@@ -24,12 +24,37 @@ class DataStorage {
     
     // 新規何故何故分析を追加
     func createWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
+        // WhywhyAnalysisNoの最大値
+        let maxWhywhyAnalysisNo = try! Realm().objects(WhywhyAnalysis.self).sorted(byKeyPath: "whywhyAnalysisNo").last?.whywhyAnalysisNo
+        if maxWhywhyAnalysisNo != nil {
+            analysis.whywhyAnalysisNo = maxWhywhyAnalysisNo! + 1
+        } else {
+            analysis.whywhyAnalysisNo = 1
+        }
         // Realmデータベースを取得
         let realm = try! Realm()
         // データベースに追加
         try! realm.write {
             realm.add(analysis)
         }
+    }
+    
+    // 何故何故分析を編集
+    func editWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
+        // Realmデータベースを取得
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(analysis, update: .all)
+        }
+    }
+    
+    // 特定の何故何故分析を取得
+    func loadWhywhyAnalytics(_ whywhyAnalysisNo:Int) -> WhywhyAnalysis {
+        // Realmデータベースを取得
+        let realm = try! Realm()
+        let analysisList =  realm.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
+        
+        return analysisList[0]
     }
     
 }
