@@ -23,6 +23,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
+    //セルの編集を許可する
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let row = whywhyAnalysisList.count - indexPath.row - 1
+        let whywhyAnalysisNo = whywhyAnalysisList[row].whywhyAnalysisNo
+        //ここでDB処理を追加
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            //ここでDB処理を追加
+            let data = DataStorage()
+            data.deleteWhywhyAnalytics(whywhyAnalysisNo)
+            whywhyAnalysisList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "削除する"
+    }
+    
     // セルの高さを設定
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeigh

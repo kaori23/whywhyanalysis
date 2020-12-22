@@ -57,4 +57,19 @@ class DataStorage {
         return analysisList[0]
     }
     
+    // 特定の何故何故分析を削除
+    func deleteWhywhyAnalytics(_ whywhyAnalysisNo:Int) {
+        // Realmデータベースを取得
+        let realm = try! Realm()
+        let analysis =  realm.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo).first!
+        do {
+            try! realm.write {
+                realm.delete(analysis)
+            }
+        } catch {
+            // TODO: 後ほどエラー処理を実装
+            print("エラー")
+        }
+    }
+    
 }
