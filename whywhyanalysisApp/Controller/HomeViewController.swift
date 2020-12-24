@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return true
     }
     
-    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
+    //スワイプしたセルを削除　
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let row = whywhyAnalysisList.count - indexPath.row - 1
         let whywhyAnalysisNo = whywhyAnalysisList[row].whywhyAnalysisNo
