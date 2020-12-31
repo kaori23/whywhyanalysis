@@ -13,29 +13,49 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="問題ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NN-sQ-tG0" customClass="anaysisListCustomCell" customModule="whywhyanalysisApp" customModuleProvider="target">
-                    <rect key="frame" x="16" y="98" width="219" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題ラベル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NN-sQ-tG0" customClass="anaysisListCustomCell" customModule="whywhyanalysisApp" customModuleProvider="target">
+                    <rect key="frame" x="10" y="60" width="300" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="R20-0H-6K7"/>
+                        <constraint firstAttribute="width" constant="300" id="RKe-sa-nTW"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="対策ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-at-u87">
-                    <rect key="frame" x="16" y="69" width="219" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="対策ラベル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-at-u87">
+                    <rect key="frame" x="10" y="32" width="300" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="Dz7-St-tM1"/>
+                        <constraint firstAttribute="height" constant="20" id="fjy-co-bFr"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAh-2a-ieh">
-                    <rect key="frame" x="210" y="30" width="89" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ステータス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAh-2a-ieh">
+                    <rect key="frame" x="160" y="6" width="60" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="452-vA-55T"/>
+                        <constraint firstAttribute="width" constant="60" id="nhM-of-KHd"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="AAh-2a-ieh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="J4s-eF-06O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yc4-at-u87" secondAttribute="trailing" constant="10" id="RYb-0w-FZ9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AAh-2a-ieh" secondAttribute="trailing" constant="100" id="UU7-tC-uYx"/>
+                <constraint firstItem="2NN-sQ-tG0" firstAttribute="top" secondItem="Yc4-at-u87" secondAttribute="bottom" constant="8" id="bjO-l3-qVk"/>
+                <constraint firstItem="2NN-sQ-tG0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ciQ-5d-ooZ"/>
+                <constraint firstItem="Yc4-at-u87" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="hbF-iY-Xx6"/>
+                <constraint firstItem="2NN-sQ-tG0" firstAttribute="top" secondItem="AAh-2a-ieh" secondAttribute="bottom" constant="24" id="t9c-9k-vwn"/>
+                <constraint firstItem="Yc4-at-u87" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wBv-7P-YEq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
                 <outlet property="measuresLabel" destination="Yc4-at-u87" id="WJq-kK-RBS"/>
