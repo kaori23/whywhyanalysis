@@ -29,5 +29,19 @@ class ViewWhywhyAnalysis: UIView {
     var whywhyAnalysis: WhywhyAnalysis!
     
     var mode = ""
-
+    
+    @IBOutlet weak var analysisView: UIView!
+    
+    @IBOutlet weak var measuresLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let viewBgColor = UIColor(red: 243/255, green: 250/255, blue: 253/255, alpha: 1)
+        let labelBgColor = UIColor(red: 145/255, green: 222/255, blue: 252/255, alpha: 1)
+        analysisView.backgroundColor = viewBgColor
+        measuresLabel.backgroundColor = labelBgColor
+        measuresLabel.textColor = .white
+        
+    }
 }
