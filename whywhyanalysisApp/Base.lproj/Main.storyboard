@@ -194,15 +194,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" restorationIdentifier="confirmButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89t-s4-tNp">
                                 <rect key="frame" x="157.5" y="571" width="60" height="40"/>
-                                <color key="backgroundColor" red="0.46240979430000001" green="0.65963476899999995" blue="0.81570786240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Frb-jR-qNc"/>
                                     <constraint firstAttribute="height" constant="40" id="SyW-xr-IBe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="登録">
-                                    <color key="titleColor" red="0.99222213029999995" green="0.99598556760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="登録"/>
                                 <connections>
                                     <action selector="registAnalysis:" destination="URt-nh-7uV" eventType="touchUpInside" id="Fg0-Zf-bcn"/>
                                 </connections>

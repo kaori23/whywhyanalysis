@@ -46,6 +46,7 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
         confirmButton.backgroundColor = buttonBgColor
+        confirmButton.tintColor = .white
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
