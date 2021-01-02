@@ -17,7 +17,7 @@ class EditAnalysisViewController: UIViewController {
         
         analysisView = (Bundle.main.loadNibNamed("ViewWhywhyAnalysis", owner: self, options: nil)!.first! as! ViewWhywhyAnalysis)
         analysisView.mode = mode
-        analysisView.goRegistButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
+        analysisView.confirmButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
         
         if(analysisView.mode == "編集") {
             analysisView.whywhyAnalysis = whywhyAnalysis
@@ -37,6 +37,9 @@ class EditAnalysisViewController: UIViewController {
             if(whywhyAnalysis.fiveWhy != nil) {
                 analysisView.fiveWhyTextField.text = whywhyAnalysis.fiveWhy
             }
+            analysisView.confirmButton.setTitle("編集", for: UIControl.State.normal)
+        } else {
+            analysisView.confirmButton.setTitle("登録", for: UIControl.State.normal)
         }
         self.view.addSubview(analysisView)
     }

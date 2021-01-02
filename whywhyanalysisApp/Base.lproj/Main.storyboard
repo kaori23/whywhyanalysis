@@ -199,6 +199,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Frb-jR-qNc"/>
                                     <constraint firstAttribute="height" constant="40" id="SyW-xr-IBe"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="登録">
                                     <color key="titleColor" red="0.99222213029999995" green="0.99598556760000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -247,6 +248,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dJr-P2-uCq"/>
                     <connections>
+                        <outlet property="confirmButton" destination="89t-s4-tNp" id="e15-lu-f9p"/>
                         <outlet property="measuresLabel" destination="mcn-8Z-duW" id="0Zx-MG-Li7"/>
                         <outlet property="problemLabel" destination="btg-5T-evG" id="N40-sY-DRg"/>
                         <outlet property="statusPickerView" destination="dj1-LE-BKz" id="sTX-y1-meN"/>

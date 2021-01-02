@@ -189,10 +189,12 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKh-Ka-X1s">
-                    <rect key="frame" x="164.5" y="627" width="46" height="20"/>
+                    <rect key="frame" x="157.5" y="627" width="60" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="5r7-gT-zhw"/>
+                        <constraint firstAttribute="width" constant="60" id="07X-on-lrX"/>
+                        <constraint firstAttribute="height" constant="30" id="0fH-Hv-5sR"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Button"/>
                 </button>
             </subviews>
@@ -214,9 +216,9 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="analysisView" destination="1c2-cp-ylY" id="clh-OU-dah"/>
+                <outlet property="confirmButton" destination="qKh-Ka-X1s" id="u4g-2E-4H3"/>
                 <outlet property="fiveWhyTextField" destination="qPR-8W-VIN" id="eqJ-Vf-40Y"/>
                 <outlet property="fourWhyTextField" destination="MSb-mb-e5D" id="8Nm-Gm-z2F"/>
-                <outlet property="goRegistButton" destination="qKh-Ka-X1s" id="TLi-kv-JKk"/>
                 <outlet property="measuresLabel" destination="DRW-HS-EZ8" id="hmk-4M-lAI"/>
                 <outlet property="measuresTextField" destination="QVx-vJ-nZy" id="40U-Is-EOs"/>
                 <outlet property="oneWhyTextFiled" destination="xjS-nl-j7W" id="LLw-rS-dHb"/>

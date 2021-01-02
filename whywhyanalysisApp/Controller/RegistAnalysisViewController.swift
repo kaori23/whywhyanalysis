@@ -16,6 +16,9 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
     
     @IBOutlet weak var statusPickerView: UIPickerView!
     
+    
+    @IBOutlet weak var confirmButton: UIButton!
+    
     let statusList = ["実施中", "達成", "未達成"]
     
     var whywhyAnalysis: WhywhyAnalysis!
@@ -25,6 +28,8 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
     var status = ""
     
     var statusNum = 0
+    
+    let buttonBgColor = UIColor(red: 113/255, green: 205/255, blue: 255/255, alpha: 1)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,8 +44,8 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
         } else if(mode == "編集") {
             statusNum = statusList.firstIndex(of: whywhyAnalysis.status)!
         }
-        
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
+        confirmButton.backgroundColor = buttonBgColor
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
