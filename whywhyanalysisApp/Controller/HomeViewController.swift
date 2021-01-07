@@ -12,8 +12,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     var whywhyAnalysisList: Array<WhywhyAnalysis> = []
-    let cellHeigh:CGFloat = 125
+    let cellHeigh:CGFloat = 100
     
     // 画面が表示される直前にtableViewを更新
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +68,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // tableViewにカスタムセルを登録
         tableView.register(UINib(nibName: "AnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         tableView.tableFooterView = UIView()
+        
+        // レイアウト設定
+        let viewBgColor = UIColor(red: 100/255, green: 249/255, blue: 255/255, alpha: 1)
+        let borderColor = UIColor(red: 139/255, green: 222/255, blue: 255/255, alpha: 1)
+        tableView.separatorColor = viewBgColor
+        titleLabel.layer.borderWidth = 1
+        titleLabel.layer.borderColor = borderColor.cgColor
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
