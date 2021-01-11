@@ -115,19 +115,8 @@
 		125DFB5225596297004F09D6 /* whywhyanalysisApp */ = {
 			isa = PBXGroup;
 			children = (
-				125DF0D92585E2820028F573 /* ViewWhywhyAnalysis.xib */,
-				126D348B257CD106006197A6 /* Main.storyboard */,
-				126D3488257B655D006197A6 /* R.generated.swift */,
-				12B088BC2569081500B24487 /* Utility */,
-				12B088BB256907EE00B24487 /* View */,
-				12B088BA2569061B00B24487 /* Controller */,
-				12B088B72568EDFC00B24487 /* Model */,
-				125DFB5325596297004F09D6 /* AppDelegate.swift */,
-				125DFB5525596297004F09D6 /* SceneDelegate.swift */,
-				125DFB5C25596298004F09D6 /* Assets.xcassets */,
-				125DFB5E25596298004F09D6 /* LaunchScreen.storyboard */,
-				125DFB6125596298004F09D6 /* Info.plist */,
-				12B088B02568DC5F00B24487 /* AnalysisListCustumCell.xib */,
+				12D22EF025AC012D00F1307A /* Resource */,
+				12D22EEF25AC008700F1307A /* Src */,
 			);
 			path = whywhyanalysisApp;
 			sourceTree = "<group>";
@@ -163,6 +152,8 @@
 		12B088BB256907EE00B24487 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				125DF0D92585E2820028F573 /* ViewWhywhyAnalysis.xib */,
+				12B088B02568DC5F00B24487 /* AnalysisListCustumCell.xib */,
 				125DF0D72585E2700028F573 /* ViewWhywhyAnalysis.swift */,
 				12B088AF2568DC5F00B24487 /* AnalysisListCustumCell.swift */,
 			);
@@ -175,6 +166,31 @@
 				12B088B52568E26500B24487 /* ValidateUtility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		12D22EEF25AC008700F1307A /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				125DFB5325596297004F09D6 /* AppDelegate.swift */,
+				125DFB5525596297004F09D6 /* SceneDelegate.swift */,
+				125DFB5E25596298004F09D6 /* LaunchScreen.storyboard */,
+				126D348B257CD106006197A6 /* Main.storyboard */,
+				12B088B72568EDFC00B24487 /* Model */,
+				12B088BB256907EE00B24487 /* View */,
+				12B088BA2569061B00B24487 /* Controller */,
+				12B088BC2569081500B24487 /* Utility */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		12D22EF025AC012D00F1307A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				126D3488257B655D006197A6 /* R.generated.swift */,
+				125DFB5C25596298004F09D6 /* Assets.xcassets */,
+				125DFB6125596298004F09D6 /* Info.plist */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		C85CE23677EBAA00EC5192E9 /* Pods */ = {
@@ -564,7 +580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45ZTS6KQP7;
-				INFOPLIST_FILE = whywhyanalysisApp/Info.plist;
+				INFOPLIST_FILE = whywhyanalysisApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,7 +599,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45ZTS6KQP7;
-				INFOPLIST_FILE = whywhyanalysisApp/Info.plist;
+				INFOPLIST_FILE = whywhyanalysisApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
