@@ -9,7 +9,6 @@
 import Foundation
 
 class ValidateUtility {
-        
     //Sting?型の空文字チェック
     static func isTextNotEmplyCheck(optinalText: String?) -> Bool {
         if let optinalText = optinalText {

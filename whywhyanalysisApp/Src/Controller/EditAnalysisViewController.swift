@@ -14,17 +14,17 @@ class EditAnalysisViewController: UIViewController {
     var mode = ""
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         analysisView = (Bundle.main.loadNibNamed("ViewWhywhyAnalysis", owner: self, options: nil)!.first! as? ViewWhywhyAnalysis)
         analysisView.mode = mode
         analysisView.confirmButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
-        
+
         if(analysisView.mode == "編集") {
             analysisView.whywhyAnalysis = whywhyAnalysis
             analysisView.problemTextField.text = whywhyAnalysis.problem
             analysisView.oneWhyTextFiled.text = whywhyAnalysis.oneWhy
             analysisView.measuresTextField.text = whywhyAnalysis.measures
-            
+
             if(whywhyAnalysis.twoWhy != nil) {
                 analysisView.twoWhyTextField.text = whywhyAnalysis.twoWhy
             }
@@ -43,9 +43,8 @@ class EditAnalysisViewController: UIViewController {
         }
         self.view.addSubview(analysisView)
     }
-    
+
     @objc func goRegistClick(btn: UIButton) {
-        
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.measuresTextField.text)) {
@@ -55,32 +54,29 @@ class EditAnalysisViewController: UIViewController {
             var fourWhy = ""
             var fiveWhy = ""
             let status = "実施中"
-            
+
             if(ValidateUtility.isTextNotEmplyCheck(optinalText:analysisView.twoWhyTextField.text)) {
                 twoWhy = analysisView.twoWhyTextField.text!
             }
             if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.threeWhyTextField.text)) {
                 threeWhy = analysisView.threeWhyTextField.text!
             }
-            
             if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.fourWhyTextField.text)) {
                 fourWhy = analysisView.fourWhyTextField.text!
             }
             if(ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.fiveWhyTextField.text)) {
                 fiveWhy = analysisView.fiveWhyTextField.text!
             }
-   
             // 修正後の内容で初期化
             let editWhywhyAnalysis = WhywhyAnalysis(problem: analysisView.problemTextField.text!, measures: analysisView.measuresTextField.text!, oneWhy: analysisView.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy, status: status)
-            
             // 画面遷移
             let nextViewController = R.storyboard.main.resistAnalysis()
             nextViewController?.whywhyAnalysis = editWhywhyAnalysis
-            
+
             if(mode == "編集") {
                 nextViewController?.whywhyAnalysis.whywhyAnalysisNo = whywhyAnalysis.whywhyAnalysisNo
                 nextViewController?.whywhyAnalysis.status = whywhyAnalysis.status
-            } 
+            }
             nextViewController?.mode = analysisView.mode
             if nextViewController != nil {
                 navigationController?.pushViewController(nextViewController!, animated: true)

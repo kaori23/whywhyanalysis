@@ -11,7 +11,7 @@ import RealmSwift
 
 class DataStorage {
         var itemList: Results<WhywhyAnalysis>!
-    
+
     // 全項目全件取得
     func loadAllWhyAnalyticsData() -> Array<WhywhyAnalysis> {
         // データベースからデータを取得
@@ -21,11 +21,10 @@ class DataStorage {
             let realm = try? Realm(configuration: config)
             itemList = realm?.objects(WhywhyAnalysis.self)
         } catch {
-            
         }
         return Array(itemList)
     }
-    
+
     // 新規何故何故分析を追加
     func createWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
         // WhywhyAnalysisNoの最大値
@@ -45,7 +44,7 @@ class DataStorage {
         } catch {
         }
     }
-    
+
     // 何故何故分析を編集
     func editWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
         // Realmデータベースを取得
@@ -55,10 +54,9 @@ class DataStorage {
                 realm?.add(analysis, update: .all)
             }
         } catch {
-            
         }
     }
-    
+
     // 特定の何故何故分析を取得
     func loadWhywhyAnalytics(_ whywhyAnalysisNo:Int) -> WhywhyAnalysis {
         // Realmデータベースを取得
@@ -68,11 +66,10 @@ class DataStorage {
             analysisList =  realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
         } catch {
             // TODO:
-            
         }
         return analysisList[0]
     }
-    
+
     // 特定の何故何故分析を削除
     func deleteWhywhyAnalytics(_ whywhyAnalysisNo:Int) {
         // Realmデータベースを取得
@@ -88,5 +85,4 @@ class DataStorage {
             // TODO: 後ほどエラー処理を実装
         }
     }
-    
 }
