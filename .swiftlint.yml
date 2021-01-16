@@ -115,6 +115,9 @@ opt_in_rules:
   - vertical_whitespace_opening_braces
   - xct_specific_matcher
   - yoda_condition
+# 無効にするルール
+disabled_rules:
+  - todo
 
 # 1行の文字列制限
 line_length:
