@@ -15,27 +15,29 @@ class EditWhywhyAnalysisViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        cell = (Bundle.main.loadNibNamed("WhywhyAnalysisCell", owner: self, options: nil)!.first! as! WhywhyAnalysisCell)
-        cell.mode = mode
-        cell.confirmButton.addTarget(self, action: #selector(self.confirmClick(btn:)), for: .touchUpInside)
-        
-        if(cell.mode == "編集") {
-            cell.whywhyAnalysis = whywhyAnalysis
-            cell.problemTextField.text = whywhyAnalysis.problem
-            cell.oneWhyTextFiled.text = whywhyAnalysis.oneWhy
-            cell.measuresTextField.text = whywhyAnalysis.measures
+        cell = (Bundle.main.loadNibNamed("WhywhyAnalysisCell", owner: self, options: nil)!.first! as? WhywhyAnalysisCell)
+        if cell != nil {
+            cell.mode = mode
+            cell.confirmButton.addTarget(self, action: #selector(self.confirmClick(btn:)), for: .touchUpInside)
             
-            if(whywhyAnalysis.twoWhy != nil) {
-                cell.twoWhyTextField.text = whywhyAnalysis.twoWhy
-            }
-            if(whywhyAnalysis.threeWhy != nil) {
-                cell.threeWhyTextField.text = whywhyAnalysis.threeWhy
-            }
-            if(whywhyAnalysis.fourWhy != nil) {
-                cell.fourWhyTextField.text = whywhyAnalysis.fourWhy
-            }
-            if(whywhyAnalysis.fiveWhy != nil) {
-                cell.fiveWhyTextField.text = whywhyAnalysis.fiveWhy
+            if(cell.mode == "編集") {
+                cell.whywhyAnalysis = whywhyAnalysis
+                cell.problemTextField.text = whywhyAnalysis.problem
+                cell.oneWhyTextFiled.text = whywhyAnalysis.oneWhy
+                cell.measuresTextField.text = whywhyAnalysis.measures
+                
+                if(whywhyAnalysis.twoWhy != nil) {
+                    cell.twoWhyTextField.text = whywhyAnalysis.twoWhy
+                }
+                if(whywhyAnalysis.threeWhy != nil) {
+                    cell.threeWhyTextField.text = whywhyAnalysis.threeWhy
+                }
+                if(whywhyAnalysis.fourWhy != nil) {
+                    cell.fourWhyTextField.text = whywhyAnalysis.fourWhy
+                }
+                if(whywhyAnalysis.fiveWhy != nil) {
+                    cell.fiveWhyTextField.text = whywhyAnalysis.fiveWhy
+                }
             }
         }
         self.view.addSubview(cell)

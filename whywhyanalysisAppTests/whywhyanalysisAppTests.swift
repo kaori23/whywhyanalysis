@@ -9,7 +9,7 @@
 import XCTest
 @testable import whywhyanalysisApp
 
-class whywhyanalysisAppTests: XCTestCase {
+class WhywhyanalysisAppTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
