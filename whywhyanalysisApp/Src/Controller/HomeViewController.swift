@@ -94,18 +94,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? AnalysisListCustumCell
         let row = whywhyAnalysisList.count - indexPath.row - 1
-        if(cell?.measuresLabel.text != nil ) {
+        if cell?.measuresLabel.text != nil {
             cell?.measuresLabel.text = "問題：\(whywhyAnalysisList[row].problem!)"
         } else {
             // TODO: 後ほどエラー処理を実装
         }
-        if(cell?.problemLabel.text != nil) {
+        if cell?.problemLabel.text != nil {
             cell?.problemLabel.text = "対策：\(whywhyAnalysisList[row].measures!)"
         } else {
             // TODO: 後ほどエラー処理を実装
             cell?.problemLabel.text = "取得失敗したよ"
         }
-        if(cell?.statusLabel.text != nil) {
+        if cell?.statusLabel.text != nil {
             cell?.statusLabel.text = whywhyAnalysisList[row].status!
         }
 

@@ -20,22 +20,22 @@ class EditWhywhyAnalysisViewController: UIViewController {
             cell.mode = mode
             cell.confirmButton.addTarget(self, action: #selector(self.confirmClick(btn:)), for: .touchUpInside)
 
-            if(cell.mode == "編集") {
+            if cell.mode == "編集" {
                 cell.whywhyAnalysis = whywhyAnalysis
                 cell.problemTextField.text = whywhyAnalysis.problem
                 cell.oneWhyTextFiled.text = whywhyAnalysis.oneWhy
                 cell.measuresTextField.text = whywhyAnalysis.measures
 
-                if(whywhyAnalysis.twoWhy != nil) {
+                if whywhyAnalysis.twoWhy != nil {
                     cell.twoWhyTextField.text = whywhyAnalysis.twoWhy
                 }
-                if(whywhyAnalysis.threeWhy != nil) {
+                if whywhyAnalysis.threeWhy != nil {
                     cell.threeWhyTextField.text = whywhyAnalysis.threeWhy
                 }
-                if(whywhyAnalysis.fourWhy != nil) {
+                if whywhyAnalysis.fourWhy != nil {
                     cell.fourWhyTextField.text = whywhyAnalysis.fourWhy
                 }
-                if(whywhyAnalysis.fiveWhy != nil) {
+                if whywhyAnalysis.fiveWhy != nil {
                     cell.fiveWhyTextField.text = whywhyAnalysis.fiveWhy
                 }
             }
@@ -53,16 +53,16 @@ class EditWhywhyAnalysisViewController: UIViewController {
             var fourWhy = ""
             var fiveWhy = ""
 
-            if(ValidateUtility.isTextNotEmplyCheck(optinalText:cell.twoWhyTextField.text)) {
+            if ValidateUtility.isTextNotEmplyCheck(optinalText:cell.twoWhyTextField.text) {
                 twoWhy = cell.twoWhyTextField.text!
             }
-            if(ValidateUtility.isTextNotEmplyCheck(optinalText: cell.threeWhyTextField.text)) {
+            if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.threeWhyTextField.text) {
                 threeWhy = cell.threeWhyTextField.text!
             }
-            if(ValidateUtility.isTextNotEmplyCheck(optinalText: cell.fourWhyTextField.text)) {
+            if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.fourWhyTextField.text) {
                 fourWhy = cell.fourWhyTextField.text!
             }
-            if(ValidateUtility.isTextNotEmplyCheck(optinalText: cell.fiveWhyTextField.text)) {
+            if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.fiveWhyTextField.text) {
                 fiveWhy = cell.fiveWhyTextField.text!
             }
             let whywhyAnalysis = WhywhyAnalysis(problem: cell.problemTextField.text!, measures: cell.measuresTextField.text!, oneWhy: cell.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)

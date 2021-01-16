@@ -27,10 +27,10 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
 
         problemLabel.text = whywhyAnalysis.problem
         measuresLabel.text = whywhyAnalysis.measures
-        if(mode == "新規作成") {
+        if mode == "新規作成" {
             status = statusList[0]
             statusNum = 0
-        } else if(mode == "編集") {
+        } else if mode == "編集" {
             statusNum = statusList.firstIndex(of: whywhyAnalysis.status)!
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
@@ -72,7 +72,6 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
 
         default:
             // TODO: 後ほどエラー処理またはアラート処理を実装
-            print("エラー")
             break
         }
         self.navigationController?.popToRootViewController(animated: true)
