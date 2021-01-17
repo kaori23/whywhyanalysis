@@ -119,6 +119,7 @@ opt_in_rules:
 disabled_rules:
  # 対応するワーニングを見やすくする為一時的に無効
   - todo
+  - force_unwrapping
  # Interface Builderでレイアウトを作成している為無効
   - prohibited_interface_builder
  # アプリがクラッシュする可能性があるので無効
