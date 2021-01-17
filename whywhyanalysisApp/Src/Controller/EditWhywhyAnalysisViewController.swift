@@ -53,7 +53,7 @@ class EditWhywhyAnalysisViewController: UIViewController {
             var fourWhy = ""
             var fiveWhy = ""
 
-            if ValidateUtility.isTextNotEmplyCheck(optinalText:cell.twoWhyTextField.text) {
+            if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.twoWhyTextField.text) {
                 twoWhy = cell.twoWhyTextField.text!
             }
             if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.threeWhyTextField.text) {

@@ -69,7 +69,6 @@ class DataStorage {
         }
         return analysisList[0]
     }
-
     // 特定の何故何故分析を削除
     func deleteWhywhyAnalytics(_ whywhyAnalysisNo:Int) {
         // Realmデータベースを取得

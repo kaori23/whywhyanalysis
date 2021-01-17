@@ -36,7 +36,7 @@ class WhywhyAnalysis: Object {
     }
 
     convenience init(problem: String, measures: String, oneWhy: String,
-                     twoWhy: String, threeWhy: String, fourWhy:String,
+                     twoWhy: String, threeWhy: String, fourWhy: String,
                      fiveWhy: String, status: String) {
         self.init()
         self.problem = problem
