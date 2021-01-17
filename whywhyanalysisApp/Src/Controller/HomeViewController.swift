@@ -12,7 +12,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
     internal var whywhyAnalysisList: Array<WhywhyAnalysis> = []
-    internal let cellHeigh:CGFloat = 100
+    internal let cellHeigh: CGFloat = 100
 
     // 画面が表示される直前にtableViewを更新
     override internal func viewWillAppear(_ animated: Bool) {

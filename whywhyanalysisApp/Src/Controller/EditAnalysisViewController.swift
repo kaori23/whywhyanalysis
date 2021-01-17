@@ -55,7 +55,7 @@ internal class EditAnalysisViewController: UIViewController {
             var fiveWhy = ""
             let status = "実施中"
 
-            if ValidateUtility.isTextNotEmplyCheck(optinalText:analysisView.twoWhyTextField.text) {
+            if ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.twoWhyTextField.text) {
                 twoWhy = analysisView.twoWhyTextField.text!
             }
             if ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.threeWhyTextField.text) {

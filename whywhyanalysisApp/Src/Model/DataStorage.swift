@@ -26,7 +26,7 @@ internal class DataStorage {
     }
 
     // 新規何故何故分析を追加
-    internal func createWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
+    internal func createWhyAnalyticsData(_ analysis: WhywhyAnalysis) {
         // WhywhyAnalysisNoの最大値
         let maxWhywhyAnalysisNo = try? Realm().objects(WhywhyAnalysis.self).sorted(byKeyPath: "whywhyAnalysisNo").last?.whywhyAnalysisNo
         if maxWhywhyAnalysisNo != nil {
@@ -46,7 +46,7 @@ internal class DataStorage {
     }
 
     // 何故何故分析を編集
-    internal func editWhyAnalyticsData(_ analysis:WhywhyAnalysis) {
+    internal func editWhyAnalyticsData(_ analysis: WhywhyAnalysis) {
         // Realmデータベースを取得
         do {
             let realm = try? Realm()
@@ -58,9 +58,9 @@ internal class DataStorage {
     }
 
     // 特定の何故何故分析を取得
-    internal func loadWhywhyAnalytics(_ whywhyAnalysisNo:Int) -> WhywhyAnalysis {
+    internal func loadWhywhyAnalytics(_ whywhyAnalysisNo: Int) -> WhywhyAnalysis {
         // Realmデータベースを取得
-        var analysisList :Results<WhywhyAnalysis>!
+        var analysisList: Results<WhywhyAnalysis>!
         do {
             let realm = try? Realm()
             analysisList = realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
@@ -70,7 +70,7 @@ internal class DataStorage {
         return analysisList[0]
     }
     // 特定の何故何故分析を削除
-    internal func deleteWhywhyAnalytics(_ whywhyAnalysisNo:Int) {
+    internal func deleteWhywhyAnalytics(_ whywhyAnalysisNo: Int) {
         // Realmデータベースを取得
         do {
             let realm = try? Realm()
