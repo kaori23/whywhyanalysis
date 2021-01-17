@@ -9,20 +9,20 @@
 import UIKit
 
 internal class ViewWhywhyAnalysis: UIView {
-    @IBOutlet weak internal var problemTextField: UITextField!
-    @IBOutlet weak internal var oneWhyTextFiled: UITextField!
-    @IBOutlet weak internal var twoWhyTextField: UITextField!
-    @IBOutlet weak internal var threeWhyTextField: UITextField!
-    @IBOutlet weak internal var fourWhyTextField: UITextField!
-    @IBOutlet weak internal var fiveWhyTextField: UITextField!
-    @IBOutlet weak internal var measuresTextField: UITextField!
+    @IBOutlet internal weak var problemTextField: UITextField!
+    @IBOutlet internal weak var oneWhyTextFiled: UITextField!
+    @IBOutlet internal weak var twoWhyTextField: UITextField!
+    @IBOutlet internal weak var threeWhyTextField: UITextField!
+    @IBOutlet internal weak var fourWhyTextField: UITextField!
+    @IBOutlet internal weak var fiveWhyTextField: UITextField!
+    @IBOutlet internal weak var measuresTextField: UITextField!
     internal var whywhyAnalysis: WhywhyAnalysis!
     internal var mode = ""
-    @IBOutlet weak internal var analysisView: UIView!
-    @IBOutlet weak internal var measuresLabel: UILabel!
-    @IBOutlet weak internal var confirmButton: UIButton!
+    @IBOutlet internal weak var analysisView: UIView!
+    @IBOutlet internal weak var measuresLabel: UILabel!
+    @IBOutlet internal weak var confirmButton: UIButton!
 
-    internal override func awakeFromNib() {
+    override internal func awakeFromNib() {
         super.awakeFromNib()
 
         let viewBgColor = UIColor(red: 243/255, green: 250/255, blue: 253/255, alpha: 1)

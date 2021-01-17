@@ -10,11 +10,11 @@ import XCTest
 @testable import whywhyanalysisApp
 
 internal class WhywhyanalysisAppTests: XCTestCase {
-    internal override func setUpWithError() throws {
+    override internal func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    internal override func tearDownWithError() throws {
+    override internal func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 

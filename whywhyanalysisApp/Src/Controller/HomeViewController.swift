@@ -9,10 +9,10 @@
 import UIKit
 
 internal class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak internal var tableView: UITableView!
-    @IBOutlet weak internal var titleLabel: UILabel!
+    @IBOutlet internal weak var tableView: UITableView!
+    @IBOutlet internal weak var titleLabel: UILabel!
     internal var whywhyAnalysisList: Array<WhywhyAnalysis> = []
-    let cellHeigh:CGFloat = 100
+    internal let cellHeigh:CGFloat = 100
 
     // 画面が表示される直前にtableViewを更新
     override internal func viewWillAppear(_ animated: Bool) {
@@ -51,7 +51,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         return cellHeigh
     }
 
-    internal override func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self

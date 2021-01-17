@@ -9,10 +9,10 @@
 import UIKit
 
 internal class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet weak internal var problemLabel: UILabel!
-    @IBOutlet weak internal var measuresLabel: UILabel!
-    @IBOutlet weak internal var statusPickerView: UIPickerView!
-    @IBOutlet weak internal var confirmButton: UIButton!
+    @IBOutlet internal weak var problemLabel: UILabel!
+    @IBOutlet internal weak var measuresLabel: UILabel!
+    @IBOutlet internal weak var statusPickerView: UIPickerView!
+    @IBOutlet internal weak var confirmButton: UIButton!
     internal let statusList = ["実施中", "達成", "未達成"]
     internal var whywhyAnalysis: WhywhyAnalysis!
     internal var mode = ""
