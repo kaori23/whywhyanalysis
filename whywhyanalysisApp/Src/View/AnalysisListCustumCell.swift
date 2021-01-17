@@ -8,11 +8,11 @@
 
 import UIKit
 
-class AnalysisListCustumCell: UITableViewCell {
-    @IBOutlet weak var measuresLabel: UILabel!
-    @IBOutlet weak var problemLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    override func awakeFromNib() {
+internal class AnalysisListCustumCell: UITableViewCell {
+    @IBOutlet weak internal var measuresLabel: UILabel!
+    @IBOutlet weak internal var problemLabel: UILabel!
+    @IBOutlet weak internal var statusLabel: UILabel!
+    internal override func awakeFromNib() {
         super.awakeFromNib()
         // レイアウト設定
         let backgroundColor = UIColor(red: 113/255, green: 205/255, blue: 255/255, alpha: 1)
@@ -21,7 +21,7 @@ class AnalysisListCustumCell: UITableViewCell {
         statusLabel.textAlignment = NSTextAlignment.center
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    internal override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }

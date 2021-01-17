@@ -8,21 +8,21 @@
 
 import UIKit
 
-class ViewWhywhyAnalysis: UIView {
-    @IBOutlet weak var problemTextField: UITextField!
-    @IBOutlet weak var oneWhyTextFiled: UITextField!
-    @IBOutlet weak var twoWhyTextField: UITextField!
-    @IBOutlet weak var threeWhyTextField: UITextField!
-    @IBOutlet weak var fourWhyTextField: UITextField!
-    @IBOutlet weak var fiveWhyTextField: UITextField!
-    @IBOutlet weak var measuresTextField: UITextField!
-    var whywhyAnalysis: WhywhyAnalysis!
-    var mode = ""
-    @IBOutlet weak var analysisView: UIView!
-    @IBOutlet weak var measuresLabel: UILabel!
-    @IBOutlet weak var confirmButton: UIButton!
+internal class ViewWhywhyAnalysis: UIView {
+    @IBOutlet weak internal var problemTextField: UITextField!
+    @IBOutlet weak internal var oneWhyTextFiled: UITextField!
+    @IBOutlet weak internal var twoWhyTextField: UITextField!
+    @IBOutlet weak internal var threeWhyTextField: UITextField!
+    @IBOutlet weak internal var fourWhyTextField: UITextField!
+    @IBOutlet weak internal var fiveWhyTextField: UITextField!
+    @IBOutlet weak internal var measuresTextField: UITextField!
+    internal var whywhyAnalysis: WhywhyAnalysis!
+    internal var mode = ""
+    @IBOutlet weak internal var analysisView: UIView!
+    @IBOutlet weak internal var measuresLabel: UILabel!
+    @IBOutlet weak internal var confirmButton: UIButton!
 
-    override func awakeFromNib() {
+    internal override func awakeFromNib() {
         super.awakeFromNib()
 
         let viewBgColor = UIColor(red: 243/255, green: 250/255, blue: 253/255, alpha: 1)

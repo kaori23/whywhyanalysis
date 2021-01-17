@@ -8,19 +8,19 @@
 
 import UIKit
 
-class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet weak var problemLabel: UILabel!
-    @IBOutlet weak var measuresLabel: UILabel!
-    @IBOutlet weak var statusPickerView: UIPickerView!
-    @IBOutlet weak var confirmButton: UIButton!
-    let statusList = ["実施中", "達成", "未達成"]
-    var whywhyAnalysis: WhywhyAnalysis!
-    var mode = ""
-    var status = ""
-    var statusNum = 0
-    let buttonBgColor = UIColor(red: 113/255, green: 205/255, blue: 255/255, alpha: 1)
+internal class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak internal var problemLabel: UILabel!
+    @IBOutlet weak internal var measuresLabel: UILabel!
+    @IBOutlet weak internal var statusPickerView: UIPickerView!
+    @IBOutlet weak internal var confirmButton: UIButton!
+    internal let statusList = ["実施中", "達成", "未達成"]
+    internal var whywhyAnalysis: WhywhyAnalysis!
+    internal var mode = ""
+    internal var status = ""
+    internal var statusNum = 0
+    internal let buttonBgColor = UIColor(red: 113/255, green: 205/255, blue: 255/255, alpha: 1)
 
-    override func viewWillAppear(_ animated: Bool) {
+    override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
@@ -38,28 +38,28 @@ class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIP
         confirmButton.tintColor = .white
     }
 
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return statusList.count
     }
 
-    func pickerView(_ pickerView: UIPickerView,
+    internal func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
         return statusList[row]
     }
 
-    func pickerView(_ pickerView: UIPickerView,
+    internal func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,
                     inComponent component: Int) {
         status = statusList[row]
     }
 
     // 何故何故分析を登録
-    @IBAction func registAnalysis(_ sender: Any) {
+    @IBAction internal func registAnalysis(_ sender: Any) {
         whywhyAnalysis.status = status
         let data = DataStorage()
         switch mode {

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var titleLabel: UILabel!
-    var whywhyAnalysisList: Array<WhywhyAnalysis> = []
+internal class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak internal var tableView: UITableView!
+    @IBOutlet weak internal var titleLabel: UILabel!
+    internal var whywhyAnalysisList: Array<WhywhyAnalysis> = []
     let cellHeigh:CGFloat = 100
 
     // 画面が表示される直前にtableViewを更新
-    override func viewWillAppear(_ animated: Bool) {
+    override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let data = DataStorage()
         whywhyAnalysisList = data.loadAllWhyAnalyticsData()
@@ -23,13 +23,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     //セルの編集を許可する
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
         return true
     }
 
     //スワイプしたセルを削除　
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let row = whywhyAnalysisList.count - indexPath.row - 1
         let whywhyAnalysisNo = whywhyAnalysisList[row].whywhyAnalysisNo
         //ここでDB処理を追加
@@ -42,16 +42,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
 
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+    internal func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "削除する"
     }
 
     // セルの高さを設定
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeigh
     }
 
-    override func viewDidLoad() {
+    internal override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
@@ -72,12 +72,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         titleLabel.layer.borderColor = borderColor.cgColor
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return whywhyAnalysisList.count
     }
 
     // セルをタップした場合、何故何故分析詳細画面に遷移する
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = whywhyAnalysisList.count - indexPath.row - 1
         let whywhyAnalysis = whywhyAnalysisList[row]
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
@@ -91,7 +91,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
        }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? AnalysisListCustumCell
         let row = whywhyAnalysisList.count - indexPath.row - 1
         if cell?.measuresLabel.text != nil {
@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell!
     }
     
-    @IBAction func addAnalysisClick(_ sender: Any) {
+    @IBAction internal func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if nextViewController != nil {
             nextViewController!.mode = "新規作成"

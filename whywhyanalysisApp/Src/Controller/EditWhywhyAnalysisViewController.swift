@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EditWhywhyAnalysisViewController: UIViewController {
-    var whywhyAnalysis: WhywhyAnalysis!
-    var cell: WhywhyAnalysisCell!
-    var mode = ""
-    override func viewWillAppear(_ animated: Bool) {
+internal class EditWhywhyAnalysisViewController: UIViewController {
+    internal var whywhyAnalysis: WhywhyAnalysis!
+    private var cell: WhywhyAnalysisCell!
+    internal var mode = ""
+    override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         cell = (Bundle.main.loadNibNamed("WhywhyAnalysisCell", owner: self, options: nil)!.first! as? WhywhyAnalysisCell)
@@ -43,7 +43,7 @@ class EditWhywhyAnalysisViewController: UIViewController {
         self.view.addSubview(cell)
     }
 
-    @objc func confirmClick(btn: UIButton) {
+    @objc private func confirmClick(btn: UIButton) {
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: cell.problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: cell.oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: cell.measuresTextField.text)) {

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EditAnalysisViewController: UIViewController {
-    var whywhyAnalysis: WhywhyAnalysis!
-    var analysisView: ViewWhywhyAnalysis!
-    var mode = ""
-    override func viewWillAppear(_ animated: Bool) {
+internal class EditAnalysisViewController: UIViewController {
+    internal var whywhyAnalysis: WhywhyAnalysis!
+    internal var analysisView: ViewWhywhyAnalysis!
+    internal var mode = ""
+    override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         analysisView = (Bundle.main.loadNibNamed("ViewWhywhyAnalysis", owner: self, options: nil)!.first! as? ViewWhywhyAnalysis)
@@ -44,7 +44,7 @@ class EditAnalysisViewController: UIViewController {
         self.view.addSubview(analysisView)
     }
 
-    @objc func goRegistClick(btn: UIButton) {
+    @objc private func goRegistClick(btn: UIButton) {
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.measuresTextField.text)) {
