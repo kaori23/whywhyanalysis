@@ -117,7 +117,14 @@ opt_in_rules:
   - yoda_condition
 # 無効にするルール
 disabled_rules:
+ # 対応するワーニングを見やすくする為一時的に無効
   - todo
+ # Interface Builderでレイアウトを作成している為無効
+  - prohibited_interface_builder
+ # アプリがクラッシュする可能性があるので無効
+  - strong_iboutlet
+ # 他のファイルから値渡ししている為無効
+  - private_outlet
 
 # 1行の文字列制限
 line_length:
