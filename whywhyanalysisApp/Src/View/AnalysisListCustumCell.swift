@@ -16,7 +16,7 @@ internal class AnalysisListCustumCell: UITableViewCell {
     override internal func awakeFromNib() {
         super.awakeFromNib()
         // レイアウト設定
-        let backgroundColor = UIColor(red: 113/255, green: 205/255, blue: 255/255, alpha: 1)
+        let backgroundColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
         statusLabel.backgroundColor = backgroundColor
         statusLabel.textColor = .white
         statusLabel.textAlignment = NSTextAlignment.center

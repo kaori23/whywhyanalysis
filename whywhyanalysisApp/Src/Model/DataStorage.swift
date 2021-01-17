@@ -63,7 +63,7 @@ internal class DataStorage {
         var analysisList :Results<WhywhyAnalysis>!
         do {
             let realm = try? Realm()
-            analysisList =  realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
+            analysisList = realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
         } catch {
             // TODO:
         }
@@ -74,7 +74,7 @@ internal class DataStorage {
         // Realmデータベースを取得
         do {
             let realm = try? Realm()
-            let analysis =  realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo).first!
+            let analysis = realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo).first!
             if analysis != nil {
                 try? realm?.write {
                     realm?.delete(analysis!)

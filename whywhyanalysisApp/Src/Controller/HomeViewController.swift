@@ -65,8 +65,8 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         tableView.tableFooterView = UIView()
 
         // レイアウト設定
-        let viewBgColor = UIColor(red: 100/255, green: 249/255, blue: 255/255, alpha: 1)
-        let borderColor = UIColor(red: 139/255, green: 222/255, blue: 255/255, alpha: 1)
+        let viewBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
+        let borderColor = UIColor(red: 139 / 255, green: 222 / 255, blue: 255 / 255, alpha: 1)
         tableView.separatorColor = viewBgColor
         titleLabel.layer.borderWidth = 1
         titleLabel.layer.borderColor = borderColor.cgColor

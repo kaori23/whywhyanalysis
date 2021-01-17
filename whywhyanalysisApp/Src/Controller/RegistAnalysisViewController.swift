@@ -18,7 +18,7 @@ internal class RegistAnalysisViewController: UIViewController,  UIPickerViewDele
     internal var mode = ""
     internal var status = ""
     internal var statusNum = 0
-    internal let buttonBgColor = UIColor(red: 113/255, green: 205/255, blue: 255/255, alpha: 1)
+    internal let buttonBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
 
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
