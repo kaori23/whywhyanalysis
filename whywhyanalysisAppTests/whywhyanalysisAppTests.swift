@@ -6,8 +6,8 @@
 //  Copyright © 2020 長塚かおり. All rights reserved.
 //
 
-import XCTest
 @testable import whywhyanalysisApp
+import XCTest
 
 internal class WhywhyanalysisAppTests: XCTestCase {
     override internal func setUpWithError() throws {
