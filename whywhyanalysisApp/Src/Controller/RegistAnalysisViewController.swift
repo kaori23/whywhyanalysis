@@ -59,7 +59,7 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
     }
 
     // 何故何故分析を登録
-    @IBAction internal func registAnalysis(_ sender: Any) {
+    @IBAction private func registAnalysis(_ sender: Any) {
         whywhyAnalysis.status = status
         let data = DataStorage()
         switch mode {

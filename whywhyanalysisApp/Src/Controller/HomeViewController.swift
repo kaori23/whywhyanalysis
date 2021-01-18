@@ -112,7 +112,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         return cell!
     }
 
-    @IBAction internal func addAnalysisClick(_ sender: Any) {
+    @IBAction private func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if nextViewController != nil {
             nextViewController!.mode = "新規作成"
