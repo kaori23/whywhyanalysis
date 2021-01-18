@@ -44,7 +44,8 @@ internal class EditAnalysisViewController: UIViewController {
         self.view.addSubview(analysisView)
     }
 
-    @objc private func goRegistClick(btn: UIButton) {
+    @objc
+    private func goRegistClick(btn: UIButton) {
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.measuresTextField.text)) {

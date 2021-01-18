@@ -43,7 +43,8 @@ internal class EditWhywhyAnalysisViewController: UIViewController {
         self.view.addSubview(cell)
     }
 
-    @objc private func confirmClick(btn: UIButton) {
+    @objc
+    private func confirmClick(btn: UIButton) {
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: cell.problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: cell.oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: cell.measuresTextField.text)) {
