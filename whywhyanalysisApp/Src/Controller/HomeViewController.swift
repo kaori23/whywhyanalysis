@@ -25,7 +25,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     //セルの編集を許可する
     internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
-        return true
+        true
     }
 
     //スワイプしたセルを削除　
@@ -43,17 +43,17 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     internal func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "削除する"
+        "削除する"
     }
 
     // セルの高さを設定
     internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeigh
+        cellHeigh
     }
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -73,7 +73,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return whywhyAnalysisList.count
+        whywhyAnalysisList.count
     }
 
     // セルをタップした場合、何故何故分析詳細画面に遷移する
@@ -111,7 +111,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
 
         return cell!
     }
-    
+
     @IBAction internal func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if nextViewController != nil {

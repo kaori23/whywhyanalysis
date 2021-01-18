@@ -32,7 +32,7 @@ internal class WhywhyAnalysis: Object {
     @objc internal dynamic var status: String!
 
     override internal static func primaryKey() -> String? {
-        return "whywhyAnalysisNo"
+        "whywhyAnalysisNo"
     }
 
     internal convenience init(problem: String, measures: String, oneWhy: String,

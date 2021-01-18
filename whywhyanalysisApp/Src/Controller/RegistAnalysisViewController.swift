@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class RegistAnalysisViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
+internal class RegistAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var statusPickerView: UIPickerView!
@@ -39,17 +39,17 @@ internal class RegistAnalysisViewController: UIViewController,  UIPickerViewDele
     }
 
     internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
 
     internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return statusList.count
+        statusList.count
     }
 
     internal func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        return statusList[row]
+        statusList[row]
     }
 
     internal func pickerView(_ pickerView: UIPickerView,
