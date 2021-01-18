@@ -22,19 +22,19 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         tableView.reloadData()
     }
 
-    //セルの編集を許可する
+    // セルの編集を許可する
     internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
     {
         true
     }
 
-    //スワイプしたセルを削除　
+    // スワイプしたセルを削除
     internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let row = whywhyAnalysisList.count - indexPath.row - 1
         let whywhyAnalysisNo = whywhyAnalysisList[row].whywhyAnalysisNo
-        //ここでDB処理を追加
+        // ここでDB処理を追加
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            //ここでDB処理を追加
+            // ここでDB処理を追加
             let data = DataStorage()
             data.deleteWhywhyAnalytics(whywhyAnalysisNo)
             whywhyAnalysisList.remove(at: indexPath.row)

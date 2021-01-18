@@ -9,7 +9,7 @@
 import Foundation
 
 internal class ValidateUtility {
-    //Sting?型の空文字チェック
+    // Sting?型の空文字チェック
     internal static func isTextNotEmplyCheck(optinalText: String?) -> Bool {
         if let optinalText = optinalText {
             // 空白文字を削除
