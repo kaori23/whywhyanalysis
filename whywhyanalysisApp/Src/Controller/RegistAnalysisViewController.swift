@@ -47,14 +47,12 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
     }
 
     internal func pickerView(_ pickerView: UIPickerView,
-                    titleForRow row: Int,
-                    forComponent component: Int) -> String? {
+                             titleForRow row: Int, forComponent component: Int) -> String? {
         statusList[row]
     }
 
     internal func pickerView(_ pickerView: UIPickerView,
-                    didSelectRow row: Int,
-                    inComponent component: Int) {
+                             didSelectRow row: Int, inComponent component: Int) {
         status = statusList[row]
     }
 
