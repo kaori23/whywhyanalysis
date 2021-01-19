@@ -63,10 +63,9 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
         switch mode {
         case "新規作成":
             data.createWhyAnalyticsData(whywhyAnalysis)
-            break
+
         case "編集":
             data.editWhyAnalyticsData(whywhyAnalysis)
-            break
 
         default:
             // TODO: 後ほどエラー処理またはアラート処理を実装
