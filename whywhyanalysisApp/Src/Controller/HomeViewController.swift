@@ -23,8 +23,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     // セルの編集を許可する
-    internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    {
+    internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }
 
