@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal class ValidateUtility {
+internal enum ValidateUtility {
     // Sting?型の空文字チェック
     internal static func isTextNotEmplyCheck(optinalText: String?) -> Bool {
         if let optinalText = optinalText {
