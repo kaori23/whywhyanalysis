@@ -11,7 +11,7 @@ import UIKit
 internal class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
-    internal var whywhyAnalysisList: Array<WhywhyAnalysis> = []
+    internal var whywhyAnalysisList: [WhywhyAnalysis] = []
     internal let cellHeigh: CGFloat = 100
 
     // 画面が表示される直前にtableViewを更新

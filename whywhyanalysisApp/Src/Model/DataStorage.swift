@@ -13,7 +13,7 @@ internal class DataStorage {
        internal var itemList: Results<WhywhyAnalysis>?
 
     // 全項目全件取得
-    internal func loadAllWhyAnalyticsData() -> Array<WhywhyAnalysis> {
+    internal func loadAllWhyAnalyticsData() -> [WhywhyAnalysis] {
         // データベースからデータを取得
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
