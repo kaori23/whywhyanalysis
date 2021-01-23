@@ -14,7 +14,7 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
     @IBOutlet internal weak var statusPickerView: UIPickerView!
     @IBOutlet internal weak var confirmButton: UIButton!
     internal let statusList = ["実施中", "達成", "未達成"]
-    internal var whywhyAnalysis: WhywhyAnalysis!
+    internal var whywhyAnalysis: WhywhyAnalysis?
     internal var mode = ""
     internal var status = ""
     internal var statusNum = 0
@@ -25,13 +25,13 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
 
-        problemLabel.text = whywhyAnalysis.problem
-        measuresLabel.text = whywhyAnalysis.measures
+        problemLabel.text = whywhyAnalysis?.problem
+        measuresLabel.text = whywhyAnalysis?.measures
         if mode == "新規作成" {
             status = statusList[0]
             statusNum = 0
         } else if mode == "編集" {
-            statusNum = statusList.firstIndex(of: whywhyAnalysis.status)!
+            statusNum = statusList.firstIndex(of: whywhyAnalysis?.status! ?? "実施中")!
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
         confirmButton.backgroundColor = buttonBgColor
@@ -58,14 +58,14 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
 
     // 何故何故分析を登録
     @IBAction private func registAnalysis(_ sender: Any) {
-        whywhyAnalysis.status = status
+        whywhyAnalysis!.status = status
         let data = DataStorage()
         switch mode {
         case "新規作成":
-            data.createWhyAnalyticsData(whywhyAnalysis)
+            data.createWhyAnalyticsData(whywhyAnalysis!)
 
         case "編集":
-            data.editWhyAnalyticsData(whywhyAnalysis)
+            data.editWhyAnalyticsData(whywhyAnalysis!)
 
         default:
             // TODO: 後ほどエラー処理またはアラート処理を実装

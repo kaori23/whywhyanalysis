@@ -16,7 +16,7 @@ internal class ViewWhywhyAnalysis: UIView {
     @IBOutlet internal weak var fourWhyTextField: UITextField!
     @IBOutlet internal weak var fiveWhyTextField: UITextField!
     @IBOutlet internal weak var measuresTextField: UITextField!
-    internal var whywhyAnalysis: WhywhyAnalysis!
+    internal var whywhyAnalysis: WhywhyAnalysis?
     internal var mode = ""
     @IBOutlet internal weak var analysisView: UIView!
     @IBOutlet internal weak var measuresLabel: UILabel!

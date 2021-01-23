@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 internal class DataStorage {
-       internal var itemList: Results<WhywhyAnalysis>!
+       internal var itemList: Results<WhywhyAnalysis>?
 
     // 全項目全件取得
     internal func loadAllWhyAnalyticsData() -> Array<WhywhyAnalysis> {
@@ -22,7 +22,7 @@ internal class DataStorage {
             itemList = realm?.objects(WhywhyAnalysis.self)
         } catch {
         }
-        return Array(itemList)
+        return Array(itemList!)
     }
 
     // 新規何故何故分析を追加
@@ -60,14 +60,14 @@ internal class DataStorage {
     // 特定の何故何故分析を取得
     internal func loadWhywhyAnalytics(_ whywhyAnalysisNo: Int) -> WhywhyAnalysis {
         // Realmデータベースを取得
-        var analysisList: Results<WhywhyAnalysis>!
+        var analysisList: Results<WhywhyAnalysis>?
         do {
             let realm = try? Realm()
             analysisList = realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
         } catch {
             // TODO:
         }
-        return analysisList[0]
+        return analysisList![0]
     }
     // 特定の何故何故分析を削除
     internal func deleteWhywhyAnalytics(_ whywhyAnalysisNo: Int) {

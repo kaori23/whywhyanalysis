@@ -9,8 +9,8 @@
 import UIKit
 
 internal class EditWhywhyAnalysisViewController: UIViewController {
-    internal var whywhyAnalysis: WhywhyAnalysis!
-    private var cell: WhywhyAnalysisCell!
+    internal var whywhyAnalysis: WhywhyAnalysis?
+    private var cell: WhywhyAnalysisCell?
     internal var mode = ""
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
