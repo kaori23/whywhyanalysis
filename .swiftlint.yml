@@ -117,20 +117,46 @@ opt_in_rules:
   - yoda_condition
 # 無効にするルール
 disabled_rules:
- # 対応するワーニングを見やすくする為一時的に無効
-  - todo
-  - force_unwrapping
- # Interface Builderでレイアウトを作成している為無効
+# Interface Builderでレイアウトを作成している為無効
   - prohibited_interface_builder
- # アプリがクラッシュする可能性があるので無効
+# アプリがクラッシュする可能性があるので無効(@IBOutletをweakで定義したい)
   - strong_iboutlet
- # 他のファイルから値渡ししている為無効
+# 他のファイルから値渡ししている為無効
   - private_outlet
+# 型宣言を明示的にする事で他のルールに引っかかる為無効
+  - explicit_type_interface
+# インスタンス破棄前に実行する事がない為無効 
+  - required_deinit
+# 引数の多い関数を使用する際引数全て一行にしたり引数一つずつ一行にすると見づらい為無効
+  - multiline_parameters
+# 引数ごとに括弧をつけると行数の増加に繋がる為無効
+  - multiline_parameters_brackets
+# 後ほど対応するワーニングを見やすくする為一時的に無効
+  - todo
+  - empty_xctest_method
+  - file_name
+# メソッド引数のインデント幅を統一すると見にくくなるので無効 
+  - indentation_width
 
+# ワーニング発生条件や解決法が分からないので一時的に無効にしているルール一覧
+# 画像や色の初期化よりもオブジェクトリテラルを優先？？
+  - object_literal
+# 型内のプロパティやメソッドの並び順を強制する？？
+  - type_contents_order
+# Letとvarは、空白行で他のステートメントと区切る必要がある??
+  - let_var_whitespace
+# オプションのコレクションよりも空のコレクションを優先??
+  - discouraged_optional_collection
+# 未使用のオプションのバインディング??
+  - unused_optional_binding
+# ファイルのヘッダーのプロジェクトパターンを指定してもワーニングが発生している？
+  - file_header
+ # 強制アンラップをしないと実装できない箇所がある為無効にする？
+  - force_unwrapping 
 # 1行の文字列制限
 line_length:
-- 200   # warning
-- 300   # error
+- 300   # warning
+- 400   # error
 
 # 型の行数制限
 type_body_length:
@@ -146,6 +172,16 @@ file_length:
 function_body_length:
 - 100   # warning
 - 200   # error
+
+file_header:
+  required_pattern: |  
+                    \/\/
+                    \/\/  .*?\.swift
+                    \/\/  SwiftLint
+                    \/\/
+                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
+                    \/\/  Copyright © \d{4} Realm\. All rights reserved\.
+                    \/\/
 
 type_name:
   min_length: 3
