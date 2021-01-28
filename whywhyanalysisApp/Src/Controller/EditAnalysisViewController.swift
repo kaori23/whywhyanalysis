@@ -12,6 +12,7 @@ internal class EditAnalysisViewController: UIViewController {
     internal var whywhyAnalysis: WhywhyAnalysis?
     internal var analysisView: ViewWhywhyAnalysis?
     internal var mode = ""
+
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 

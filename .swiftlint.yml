@@ -143,8 +143,6 @@ disabled_rules:
 # ワーニング発生条件や解決法が分からないので一時的に無効にしているルール一覧
 # 型内のプロパティやメソッドの並び順を強制する？？
   - type_contents_order
-# Letとvarは、空白行で他のステートメントと区切る必要がある??
-  - let_var_whitespace
 # オプションのコレクションよりも空のコレクションを優先??
   - discouraged_optional_collection
 # 未使用のオプションのバインディング??
