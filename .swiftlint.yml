@@ -137,10 +137,10 @@ disabled_rules:
   - file_name
 # メソッド引数のインデント幅を統一すると見にくくなるので無効 
   - indentation_width
+# オブジェクトリテラルを不採用にしている為無効
+  - object_literal
 
 # ワーニング発生条件や解決法が分からないので一時的に無効にしているルール一覧
-# 画像や色の初期化よりもオブジェクトリテラルを優先？？
-  - object_literal
 # 型内のプロパティやメソッドの並び順を強制する？？
   - type_contents_order
 # Letとvarは、空白行で他のステートメントと区切る必要がある??
@@ -151,8 +151,7 @@ disabled_rules:
   - unused_optional_binding
 # ファイルのヘッダーのプロジェクトパターンを指定してもワーニングが発生している？
   - file_header
- # 強制アンラップをしないと実装できない箇所がある為無効にする？
-  - force_unwrapping 
+
 # 1行の文字列制限
 line_length:
 - 300   # warning
@@ -177,10 +176,10 @@ file_header:
   required_pattern: |  
                     \/\/
                     \/\/  .*?\.swift
-                    \/\/  SwiftLint
+                    \/\/  whywhyanalysisApp
                     \/\/
-                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{2}\.
-                    \/\/  Copyright © \d{4} Realm\. All rights reserved\.
+                    \/\/  Created by 長塚かおり on \d{1,2}\/\d{1,2}\/\d{2}\.
+                    \/\/  Copyright © 2020 長塚かおり. All rights reserved.
                     \/\/
 
 type_name:

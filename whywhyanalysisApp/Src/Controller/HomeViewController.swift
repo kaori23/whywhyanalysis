@@ -80,10 +80,10 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         let row = whywhyAnalysisList.count - indexPath.row - 1
         let whywhyAnalysis = whywhyAnalysisList[row]
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
-        if nextViewController != nil {
-            nextViewController!.whywhyAnalysis = whywhyAnalysis
-            nextViewController!.mode = "編集"
-            navigationController?.pushViewController(nextViewController!, animated: true)
+        if let nextVC = nextViewController {
+            nextVC.whywhyAnalysis = whywhyAnalysis
+            nextVC.mode = "編集"
+            navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
             print("画面遷移失敗")
@@ -93,29 +93,32 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? AnalysisListCustumCell
         let row = whywhyAnalysisList.count - indexPath.row - 1
-        if cell?.measuresLabel.text != nil {
-            cell?.measuresLabel.text = "問題：\(whywhyAnalysisList[row].problem!)"
-        } else {
-            // TODO: 後ほどエラー処理を実装
-        }
-        if cell?.problemLabel.text != nil {
-            cell?.problemLabel.text = "対策：\(whywhyAnalysisList[row].measures!)"
-        } else {
-            // TODO: 後ほどエラー処理を実装
-            cell?.problemLabel.text = "取得失敗したよ"
-        }
-        if cell?.statusLabel.text != nil {
-            cell?.statusLabel.text = whywhyAnalysisList[row].status!
-        }
+        if let cell = cell {
+            if  let problem = whywhyAnalysisList[row].problem {
+                cell.problemLabel.text = problem
+            } else {
+                // TODO: 後ほどエラー処理を実装
+            }
 
+            if let measure = whywhyAnalysisList[row].measures {
+                cell.measuresLabel.text = measure
+            } else {
+                // TODO: 後ほどエラー処理を実装
+            }
+
+            if let status = whywhyAnalysisList[row].status {
+                cell.statusLabel.text = status
+            }
+        }
+        // swiftlint:disable:next force_unwrapping
         return cell!
     }
 
     @IBAction private func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
-        if nextViewController != nil {
-            nextViewController!.mode = "新規作成"
-            navigationController?.pushViewController(nextViewController!, animated: true)
+        if let nextVC = nextViewController {
+            nextVC.mode = "新規作成"
+            navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
             print("画面遷移失敗")

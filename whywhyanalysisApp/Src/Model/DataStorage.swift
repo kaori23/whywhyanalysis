@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 internal class DataStorage {
-       internal var itemList: Results<WhywhyAnalysis>?
+       internal var analysisList: Results<WhywhyAnalysis>?
 
     // 全項目全件取得
     internal func loadAllWhyAnalyticsData() -> [WhywhyAnalysis] {
@@ -18,28 +18,31 @@ internal class DataStorage {
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         do {
-            let realm = try? Realm(configuration: config)
-            itemList = realm?.objects(WhywhyAnalysis.self)
+            let realm = try Realm(configuration: config)
+            analysisList = realm.objects(WhywhyAnalysis.self)
         } catch {
         }
-        return Array(itemList!)
+        // HomeViewController側で表示を制御しているので強制アンラップを許容
+        // swiftlint:disable:next force_unwrapping
+        return Array(analysisList!)
     }
 
     // 新規何故何故分析を追加
     internal func createWhyAnalyticsData(_ analysis: WhywhyAnalysis) {
-        // WhywhyAnalysisNoの最大値
-        let maxWhywhyAnalysisNo = try? Realm().objects(WhywhyAnalysis.self).sorted(byKeyPath: "whywhyAnalysisNo").last?.whywhyAnalysisNo
-        if maxWhywhyAnalysisNo != nil {
-            analysis.whywhyAnalysisNo = maxWhywhyAnalysisNo! + 1
-        } else {
-            analysis.whywhyAnalysisNo = 1
-        }
         do {
+            // WhywhyAnalysisNoの最大値
+            let maxAnalysisNo = try Realm().objects(WhywhyAnalysis.self).sorted(byKeyPath: "whywhyAnalysisNo").last?.whywhyAnalysisNo
+
+            if let maxAnalysisNo = maxAnalysisNo {
+                analysis.whywhyAnalysisNo = maxAnalysisNo + 1
+            } else {
+                analysis.whywhyAnalysisNo = 1
+            }
             // Realmデータベースを取得
-            let realm = try? Realm()
+            let realm = try Realm()
             // データベースに追加
-            try? realm?.write {
-                realm?.add(analysis)
+            try realm.write {
+                realm.add(analysis)
             }
         } catch {
         }
@@ -49,9 +52,9 @@ internal class DataStorage {
     internal func editWhyAnalyticsData(_ analysis: WhywhyAnalysis) {
         // Realmデータベースを取得
         do {
-            let realm = try? Realm()
-            try? realm?.write {
-                realm?.add(analysis, update: .all)
+            let realm = try Realm()
+            try realm.write {
+                realm.add(analysis, update: .all)
             }
         } catch {
         }
@@ -60,24 +63,26 @@ internal class DataStorage {
     // 特定の何故何故分析を取得
     internal func loadWhywhyAnalytics(_ whywhyAnalysisNo: Int) -> WhywhyAnalysis {
         // Realmデータベースを取得
-        var analysisList: Results<WhywhyAnalysis>?
         do {
-            let realm = try? Realm()
-            analysisList = realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
+            let realm = try Realm()
+            analysisList = realm.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
         } catch {
             // TODO:
         }
+        // DBに確実に存在するもののみを取得するので強制アンラップを許容
+        // swiftlint:disable:next force_unwrapping
         return analysisList![0]
     }
+
     // 特定の何故何故分析を削除
     internal func deleteWhywhyAnalytics(_ whywhyAnalysisNo: Int) {
         // Realmデータベースを取得
         do {
-            let realm = try? Realm()
-            let analysis = realm?.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo).first!
-            if analysis != nil {
-                try? realm?.write {
-                    realm?.delete(analysis!)
+            let realm = try Realm()
+            let analysis = realm.objects(WhywhyAnalysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo).first
+            if  let analysis = analysis {
+                try realm.write {
+                    realm.delete(analysis)
                 }
             }
         } catch {

@@ -25,13 +25,17 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
 
-        problemLabel.text = whywhyAnalysis?.problem
-        measuresLabel.text = whywhyAnalysis?.measures
-        if mode == "新規作成" {
-            status = statusList[0]
-            statusNum = 0
-        } else if mode == "編集" {
-            statusNum = statusList.firstIndex(of: whywhyAnalysis?.status! ?? "実施中")!
+        if let whywhyAnalysis = whywhyAnalysis {
+            problemLabel.text = whywhyAnalysis.problem
+            measuresLabel.text = whywhyAnalysis.measures
+            if mode == "新規作成" {
+                status = statusList[0]
+                statusNum = 0
+            } else if mode == "編集" {
+                if let analysisStatus = whywhyAnalysis.status {
+                    statusNum = statusList.firstIndex(of: analysisStatus) ?? 0
+                }
+            }
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
         confirmButton.backgroundColor = buttonBgColor
@@ -58,19 +62,21 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
 
     // 何故何故分析を登録
     @IBAction private func registAnalysis(_ sender: Any) {
-        whywhyAnalysis!.status = status
-        let data = DataStorage()
-        switch mode {
-        case "新規作成":
-            data.createWhyAnalyticsData(whywhyAnalysis!)
+        if let whywhyAnalysis = whywhyAnalysis {
+            whywhyAnalysis.status = status
+            let data = DataStorage()
+            switch mode {
+            case "新規作成":
+                data.createWhyAnalyticsData(whywhyAnalysis)
 
-        case "編集":
-            data.editWhyAnalyticsData(whywhyAnalysis!)
+            case "編集":
+                data.editWhyAnalyticsData(whywhyAnalysis)
 
-        default:
-            // TODO: 後ほどエラー処理またはアラート処理を実装
-            break
+            default:
+                // TODO: 後ほどエラー処理またはアラート処理を実装
+                break
+            }
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        self.navigationController?.popToRootViewController(animated: true)
     }
 }

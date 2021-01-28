@@ -15,8 +15,8 @@ internal class EditWhywhyAnalysisViewController: UIViewController {
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        cell = (Bundle.main.loadNibNamed("WhywhyAnalysisCell", owner: self, options: nil)!.first! as? WhywhyAnalysisCell)
-        if cell != nil {
+        cell = (Bundle.main.loadNibNamed("WhywhyAnalysisCell", owner: self, options: nil)?.first as? WhywhyAnalysisCell)
+        if let cell = cell {
             cell.mode = mode
             cell.confirmButton.addTarget(self, action: #selector(self.confirmClick(btn:)), for: .touchUpInside)
 
@@ -55,23 +55,28 @@ internal class EditWhywhyAnalysisViewController: UIViewController {
             var fiveWhy = ""
 
             if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.twoWhyTextField.text) {
+                // swiftlint:disable:next force_unwrapping
                 twoWhy = cell.twoWhyTextField.text!
             }
             if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.threeWhyTextField.text) {
+                // swiftlint:disable:next force_unwrapping
                 threeWhy = cell.threeWhyTextField.text!
             }
             if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.fourWhyTextField.text) {
+                // swiftlint:disable:next force_unwrapping
                 fourWhy = cell.fourWhyTextField.text!
             }
             if ValidateUtility.isTextNotEmplyCheck(optinalText: cell.fiveWhyTextField.text) {
+                // swiftlint:disable:next force_unwrapping
                 fiveWhy = cell.fiveWhyTextField.text!
             }
-            let whywhyAnalysis = WhywhyAnalysis(problem: cell.problemTextField.text!, measures: cell.measuresTextField.text!, oneWhy: cell.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)
+            // swiftlint:disable:next force_unwrapping
+            let whywhyAnalysis = WhywhyAnalysis(problem: cell.problemTextField.text, measures: cell.measuresTextField.text!, oneWhy: cell.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy)
             let nextViewController = R.storyboard.main.resistAnalysis()
-            nextViewController?.whywhyAnalysis = whywhyAnalysis
-            nextViewController?.mode = cell.mode
-            if nextViewController != nil {
-                navigationController?.pushViewController(nextViewController!, animated: true)
+            if let nextVC = nextViewController {
+                nextVC.whywhyAnalysis = whywhyAnalysis
+                nextVC.mode = cell.mode
+                navigationController?.pushViewController(nextVC, animated: true)
             } else {
                 print("失敗")
             }
