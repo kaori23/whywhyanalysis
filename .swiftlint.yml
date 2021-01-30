@@ -145,8 +145,6 @@ disabled_rules:
   - type_contents_order
 # オプションのコレクションよりも空のコレクションを優先??
   - discouraged_optional_collection
-# 未使用のオプションのバインディング??
-  - unused_optional_binding
 # ファイルのヘッダーのプロジェクトパターンを指定してもワーニングが発生している？
   - file_header
 
