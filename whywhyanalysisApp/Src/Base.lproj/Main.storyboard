@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="196" y="805.54722638680664"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Show Analysis List View Controller-->
         <scene sceneID="RCg-FY-SAZ">
             <objects>
-                <viewController storyboardIdentifier="top" id="i5Z-bF-1Z8" customClass="HomeViewController" customModule="whywhyanalysisApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="top" id="i5Z-bF-1Z8" customClass="ShowAnalysisListViewController" customModule="whywhyanalysisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ggm-Yj-bg3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1028" y="1546"/>
         </scene>
-        <!--Regist Analysis View Controller-->
+        <!--Confirm Analysis View Controller-->
         <scene sceneID="obm-Yn-wJ9">
             <objects>
-                <viewController storyboardIdentifier="resistAnalysis" modalPresentationStyle="overCurrentContext" id="URt-nh-7uV" customClass="RegistAnalysisViewController" customModule="whywhyanalysisApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resistAnalysis" modalPresentationStyle="overCurrentContext" id="URt-nh-7uV" customClass="ConfirmAnalysisViewController" customModule="whywhyanalysisApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IJH-zM-e91">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

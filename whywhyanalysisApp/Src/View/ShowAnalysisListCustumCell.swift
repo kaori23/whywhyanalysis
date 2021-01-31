@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class AnalysisListCustumCell: UITableViewCell {
+internal class ShowAnalysisListCustumCell: UITableViewCell {
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var statusLabel: UILabel!

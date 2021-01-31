@@ -8,8 +8,8 @@
 
 import UIKit
 
-internal class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    internal var whywhyAnalysisList: [WhywhyAnalysis] = []
+internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    internal var whywhyAnalysisList: [Analysis] = []
     internal let cellHeigh: CGFloat = 100
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
@@ -32,7 +32,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         let data = DataStorage()
         whywhyAnalysisList = data.loadAllWhyAnalyticsData()
         // tableViewにカスタムセルを登録
-        tableView.register(UINib(nibName: "AnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        tableView.register(UINib(nibName: "ShowAnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         tableView.tableFooterView = UIView()
 
         // レイアウト設定
@@ -102,7 +102,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
        }
 
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? AnalysisListCustumCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? ShowAnalysisListCustumCell
         let row = whywhyAnalysisList.count - indexPath.row - 1
         if let cell = cell {
             if  let problem = whywhyAnalysisList[row].problem {
