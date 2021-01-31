@@ -8,10 +8,9 @@
 
 import Foundation
 
-class ValidateUtility {
-        
-    //Sting?型の空文字チェック
-    static func isTextNotEmplyCheck(optinalText: String?) -> Bool {
+internal enum ValidateUtility {
+    // Sting?型の空文字チェック
+    internal static func isTextNotEmplyCheck(optinalText: String?) -> Bool {
         if let optinalText = optinalText {
             // 空白文字を削除
             let text = optinalText.trimmingCharacters(in: .whitespacesAndNewlines)

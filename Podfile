@@ -8,9 +8,12 @@ target 'whywhyanalysisApp' do
   # Pods for whywhyanalysisApp
   pod 'RealmSwift'
   pod 'R.swift'
+  pod 'SwiftLint'
+
   target 'whywhyanalysisAppTests' do
     inherit! :search_paths
-    # Pods for testing
+   # Pods for testing
+   pod 'SwiftLint'
   end
 
 end

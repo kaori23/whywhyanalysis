@@ -9,43 +9,31 @@
 import Foundation
 import RealmSwift
 
-class WhywhyAnalysis: Object {
-    
+internal class WhywhyAnalysis: Object {
     // 何故何故分析No.(PRIMARY KEY)
-    @objc dynamic var whywhyAnalysisNo: Int = 0
+    @objc internal dynamic var whywhyAnalysisNo: Int = 0
     // 問題
-    @objc dynamic var problem: String!
+    @objc internal dynamic var problem: String?
     // 対策
-    @objc dynamic var measures: String!
-    
+    @objc internal dynamic var measures: String?
     // 1WHY
-    @objc dynamic var oneWhy: String!
-    
+    @objc internal dynamic var oneWhy: String?
     // 2WHY
-    @objc dynamic var twoWhy: String!
-    
+    @objc internal dynamic var twoWhy: String?
     // 3WHY
-    @objc dynamic var threeWhy: String!
-    
+    @objc internal dynamic var threeWhy: String?
     // 4WHY
-    @objc dynamic var fourWhy: String!
-    
+    @objc internal dynamic var fourWhy: String?
     // 5WHY
-    @objc dynamic var fiveWhy: String!
-    
+    @objc internal dynamic var fiveWhy: String?
     // 分析回数
-    @objc dynamic var whywhyanalysiscount = ""
-    
+    @objc internal dynamic var whywhyanalysiscount = ""
     //
-    @objc dynamic var status: String!
-    
-    override static func primaryKey() -> String? {
-        return "whywhyAnalysisNo"
-    }
-    
-    convenience init(problem: String, measures: String, oneWhy: String,
-                     twoWhy: String, threeWhy: String, fourWhy:String,
-                     fiveWhy: String, status: String) {
+    @objc internal dynamic var status: String?
+
+    internal convenience init(problem: String, measures: String, oneWhy: String,
+                              twoWhy: String, threeWhy: String, fourWhy: String,
+                              fiveWhy: String, status: String) {
         self.init()
         self.problem = problem
         self.measures = measures
@@ -55,5 +43,9 @@ class WhywhyAnalysis: Object {
         self.fourWhy = fourWhy
         self.fiveWhy = fiveWhy
         self.status = status
+    }
+
+    override internal static func primaryKey() -> String? {
+        "whywhyAnalysisNo"
     }
 }
