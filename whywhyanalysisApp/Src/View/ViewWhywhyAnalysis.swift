@@ -9,6 +9,8 @@
 import UIKit
 
 internal class ViewWhywhyAnalysis: UIView {
+    internal var whywhyAnalysis: WhywhyAnalysis?
+    internal var mode = ""
     @IBOutlet internal weak var problemTextField: UITextField!
     @IBOutlet internal weak var oneWhyTextFiled: UITextField!
     @IBOutlet internal weak var twoWhyTextField: UITextField!
@@ -16,8 +18,6 @@ internal class ViewWhywhyAnalysis: UIView {
     @IBOutlet internal weak var fourWhyTextField: UITextField!
     @IBOutlet internal weak var fiveWhyTextField: UITextField!
     @IBOutlet internal weak var measuresTextField: UITextField!
-    internal var whywhyAnalysis: WhywhyAnalysis?
-    internal var mode = ""
     @IBOutlet internal weak var analysisView: UIView!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var confirmButton: UIButton!

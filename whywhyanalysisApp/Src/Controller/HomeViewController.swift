@@ -9,10 +9,10 @@
 import UIKit
 
 internal class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet internal weak var tableView: UITableView!
-    @IBOutlet internal weak var titleLabel: UILabel!
     internal var whywhyAnalysisList: [WhywhyAnalysis] = []
     internal let cellHeigh: CGFloat = 100
+    @IBOutlet internal weak var tableView: UITableView!
+    @IBOutlet internal weak var titleLabel: UILabel!
 
     // 画面が表示される直前にtableViewを更新
     override internal func viewWillAppear(_ animated: Bool) {
@@ -20,6 +20,38 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         let data = DataStorage()
         whywhyAnalysisList = data.loadAllWhyAnalyticsData()
         tableView.reloadData()
+    }
+
+    override internal func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        // Realmからデータを全件取得
+        let data = DataStorage()
+        whywhyAnalysisList = data.loadAllWhyAnalyticsData()
+        // tableViewにカスタムセルを登録
+        tableView.register(UINib(nibName: "AnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        tableView.tableFooterView = UIView()
+
+        // レイアウト設定
+        let viewBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
+        let borderColor = UIColor(red: 139 / 255, green: 222 / 255, blue: 255 / 255, alpha: 1)
+        tableView.separatorColor = viewBgColor
+        titleLabel.layer.borderWidth = 1
+        titleLabel.layer.borderColor = borderColor.cgColor
+    }
+
+    @IBAction private func addAnalysisClick(_ sender: Any) {
+        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
+        if let nextVC = nextViewController {
+            nextVC.mode = "新規作成"
+            navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            // TODO: 後ほどエラー処理を実装
+            print("画面遷移失敗")
+        }
     }
 
     // セルの編集を許可する
@@ -48,27 +80,6 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
     // セルの高さを設定
     internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         cellHeigh
-    }
-
-    override internal func viewDidLoad() {
-        super.viewDidLoad()
-
-        tableView.delegate = self
-        tableView.dataSource = self
-
-        // Realmからデータを全件取得
-        let data = DataStorage()
-        whywhyAnalysisList = data.loadAllWhyAnalyticsData()
-        // tableViewにカスタムセルを登録
-        tableView.register(UINib(nibName: "AnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
-        tableView.tableFooterView = UIView()
-
-        // レイアウト設定
-        let viewBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
-        let borderColor = UIColor(red: 139 / 255, green: 222 / 255, blue: 255 / 255, alpha: 1)
-        tableView.separatorColor = viewBgColor
-        titleLabel.layer.borderWidth = 1
-        titleLabel.layer.borderColor = borderColor.cgColor
     }
 
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,16 +123,5 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
         }
         // swiftlint:disable:next force_unwrapping
         return cell!
-    }
-
-    @IBAction private func addAnalysisClick(_ sender: Any) {
-        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
-        if let nextVC = nextViewController {
-            nextVC.mode = "新規作成"
-            navigationController?.pushViewController(nextVC, animated: true)
-        } else {
-            // TODO: 後ほどエラー処理を実装
-            print("画面遷移失敗")
-        }
     }
 }

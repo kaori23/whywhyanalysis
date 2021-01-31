@@ -31,10 +31,6 @@ internal class WhywhyAnalysis: Object {
     //
     @objc internal dynamic var status: String?
 
-    override internal static func primaryKey() -> String? {
-        "whywhyAnalysisNo"
-    }
-
     internal convenience init(problem: String, measures: String, oneWhy: String,
                               twoWhy: String, threeWhy: String, fourWhy: String,
                               fiveWhy: String, status: String) {
@@ -47,5 +43,9 @@ internal class WhywhyAnalysis: Object {
         self.fourWhy = fourWhy
         self.fiveWhy = fiveWhy
         self.status = status
+    }
+
+    override internal static func primaryKey() -> String? {
+        "whywhyAnalysisNo"
     }
 }

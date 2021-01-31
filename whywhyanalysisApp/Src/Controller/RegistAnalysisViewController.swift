@@ -9,16 +9,16 @@
 import UIKit
 
 internal class RegistAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet internal weak var problemLabel: UILabel!
-    @IBOutlet internal weak var measuresLabel: UILabel!
-    @IBOutlet internal weak var statusPickerView: UIPickerView!
-    @IBOutlet internal weak var confirmButton: UIButton!
     internal let statusList = ["実施中", "達成", "未達成"]
     internal var whywhyAnalysis: WhywhyAnalysis?
     internal var mode = ""
     internal var status = ""
     internal var statusNum = 0
     internal let buttonBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    @IBOutlet internal weak var problemLabel: UILabel!
+    @IBOutlet internal weak var measuresLabel: UILabel!
+    @IBOutlet internal weak var statusPickerView: UIPickerView!
+    @IBOutlet internal weak var confirmButton: UIButton!
 
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,24 +42,6 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
         confirmButton.tintColor = .white
     }
 
-    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
-
-    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        statusList.count
-    }
-
-    internal func pickerView(_ pickerView: UIPickerView,
-                             titleForRow row: Int, forComponent component: Int) -> String? {
-        statusList[row]
-    }
-
-    internal func pickerView(_ pickerView: UIPickerView,
-                             didSelectRow row: Int, inComponent component: Int) {
-        status = statusList[row]
-    }
-
     // 何故何故分析を登録
     @IBAction private func registAnalysis(_ sender: Any) {
         if let whywhyAnalysis = whywhyAnalysis {
@@ -78,5 +60,22 @@ internal class RegistAnalysisViewController: UIViewController, UIPickerViewDeleg
             }
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        statusList.count
+    }
+
+    internal func pickerView(_ pickerView: UIPickerView,
+                             titleForRow row: Int, forComponent component: Int) -> String? {
+        statusList[row]
+    }
+
+    internal func pickerView(_ pickerView: UIPickerView,
+                             didSelectRow row: Int, inComponent component: Int) {
+        status = statusList[row]
+    }
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
     }
 }
