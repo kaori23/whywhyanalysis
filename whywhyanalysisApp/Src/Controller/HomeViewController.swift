@@ -121,6 +121,7 @@ internal class HomeViewController: UIViewController, UITableViewDataSource, UITa
                 cell.statusLabel.text = status
             }
         }
+        // cellは必ず値が入る為強制アンラップを許容
         // swiftlint:disable:next force_unwrapping
         return cell!
     }
