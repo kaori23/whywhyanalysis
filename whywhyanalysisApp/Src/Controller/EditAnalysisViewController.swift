@@ -9,14 +9,14 @@
 import UIKit
 
 internal class EditAnalysisViewController: UIViewController {
-    internal var whywhyAnalysis: WhywhyAnalysis?
-    internal var analysisView: ViewWhywhyAnalysis?
+    internal var whywhyAnalysis: Analysis?
+    internal var analysisView: EditAnalysis?
     internal var mode = ""
 
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        analysisView = (Bundle.main.loadNibNamed("ViewWhywhyAnalysis", owner: self, options: nil)?.first as? ViewWhywhyAnalysis)
+        analysisView = (Bundle.main.loadNibNamed("EditAnalysis", owner: self, options: nil)?.first as? EditAnalysis)
 
         if let analysisView = analysisView {
             analysisView.mode = mode
@@ -86,7 +86,7 @@ internal class EditAnalysisViewController: UIViewController {
                 // 修正後の内容で初期化
                 // ValidateUtility.isTextNotEmplyCheckでnilチェックをしているので強制アンラップを許容
                 // swiftlint:disable:next force_unwrapping
-                let editWhywhyAnalysis = WhywhyAnalysis(problem: analysisView.problemTextField.text!, measures: analysisView.measuresTextField.text!, oneWhy: analysisView.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy, status: status)
+                let editWhywhyAnalysis = Analysis(problem: analysisView.problemTextField.text!, measures: analysisView.measuresTextField.text!, oneWhy: analysisView.oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy, status: status)
                 // 画面遷移
                 let nextViewController = R.storyboard.main.resistAnalysis()
 

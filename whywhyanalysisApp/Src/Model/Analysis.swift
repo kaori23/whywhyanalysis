@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-internal class WhywhyAnalysis: Object {
+internal class Analysis: Object {
     // 何故何故分析No.(PRIMARY KEY)
     @objc internal dynamic var whywhyAnalysisNo: Int = 0
     // 問題

@@ -8,8 +8,8 @@
 
 import UIKit
 
-internal class ViewWhywhyAnalysis: UIView {
-    internal var whywhyAnalysis: WhywhyAnalysis?
+internal class EditAnalysis: UIView {
+    internal var whywhyAnalysis: Analysis?
     internal var mode = ""
     @IBOutlet internal weak var problemTextField: UITextField!
     @IBOutlet internal weak var oneWhyTextFiled: UITextField!

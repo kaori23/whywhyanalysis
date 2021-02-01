@@ -8,9 +8,9 @@
 
 import UIKit
 
-internal class RegistAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     internal let statusList = ["実施中", "達成", "未達成"]
-    internal var whywhyAnalysis: WhywhyAnalysis?
+    internal var whywhyAnalysis: Analysis?
     internal var mode = ""
     internal var status = ""
     internal var statusNum = 0
