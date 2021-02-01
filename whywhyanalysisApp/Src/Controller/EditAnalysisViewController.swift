@@ -104,6 +104,12 @@ internal class EditAnalysisViewController: UIViewController {
                 } else {
                     // TODO: 後ほどアラート処理を実装
                 }
+            } else {
+                // 警告ポップアップ処理
+                let alertController = UIAlertController(title: "エラー", message: "問題内容または分析内容、対策内容は必須です", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(defaultAction)
+                present(alertController, animated: true, completion: nil)
             }
         }
     }
