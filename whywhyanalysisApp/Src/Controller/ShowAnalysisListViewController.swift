@@ -118,11 +118,26 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
             }
 
             if let status = whywhyAnalysisList[row].status {
-                cell.statusLabel.text = status
+                cell.statusButton.setTitle(status, for: .normal)
             }
+            cell.statusButton.tag = row
+            cell.statusButton.addTarget(self, action: #selector(self.buttonEvent(_: )), for: UIControl.Event.touchUpInside)
         }
         // cellは必ず値が入る為強制アンラップを許容
         // swiftlint:disable:next force_unwrapping
         return cell!
+    }
+
+    @objc
+    internal func buttonEvent(_ sender: UIButton) {
+        let whywhyAnalysis = whywhyAnalysisList[sender.tag]
+        let nextViewController = R.storyboard.main.changeStatus()
+        if let nextVC = nextViewController {
+            nextVC.whywhyAnalysis = whywhyAnalysis
+            navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            // TODO: 後ほどエラー処理を実装
+            print("画面遷移失敗")
+        }
     }
 }
