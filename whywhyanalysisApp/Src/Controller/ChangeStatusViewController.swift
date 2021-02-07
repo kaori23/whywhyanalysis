@@ -6,6 +6,7 @@
 //  Copyright © 2021 長塚かおり. All rights reserved.
 //
 
+import SwiftMessages
 import UIKit
 
 internal class ChangeStatusViewController: UIViewController {
@@ -82,7 +83,20 @@ internal class ChangeStatusViewController: UIViewController {
             if let status = status {
                 let data = DataStorage()
                 data.changeStatusAnalytics(status, whywhyAnalysis.whywhyAnalysisNo)
+
+                let view = MessageView.viewFromNib(layout: .messageView)
+                view.configureTheme(.success)
+                view.configureDropShadow()
+                view.configureContent(title: "sucess", body: "ステータスの変更が完了しました")
+                view.button?.isHidden = true
+                view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+                SwiftMessages.show(view: view)
+            } else {
+                // TODO: 後ほどエラー処理を実装 statusがnilの時
             }
+        } else {
+            // TODO: 後ほどエラー処理を実装 whywhyAnalysisがnilの時
         }
     }
 }
