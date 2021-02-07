@@ -12,6 +12,8 @@ import UIKit
 internal class ChangeStatusViewController: UIViewController {
     internal var whywhyAnalysis: Analysis?
     internal var status: String?
+    internal let backgroundColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    internal let contentEdgeInsets = UIEdgeInsets(top: 5.0, left: 7.0, bottom: 5.0, right: 7.0)
 
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var problemLabel: UILabel!
@@ -24,8 +26,17 @@ internal class ChangeStatusViewController: UIViewController {
         super.viewDidLoad()
 
         inProgressButton.backgroundColor = .gray
+        inProgressButton.setTitleColor(UIColor.white, for: .normal)
+        inProgressButton.contentEdgeInsets = contentEdgeInsets
         achieveButton.backgroundColor = .gray
+        achieveButton.setTitleColor(UIColor.white, for: .normal)
+        achieveButton.contentEdgeInsets = contentEdgeInsets
         notAchievedButton.backgroundColor = .gray
+        notAchievedButton.setTitleColor(UIColor.white, for: .normal)
+        notAchievedButton.contentEdgeInsets = contentEdgeInsets
+        confirmButton.backgroundColor = UIColor(red: 70 / 255, green: 190 / 255, blue: 255 / 255, alpha: 1)
+        confirmButton.setTitleColor(UIColor.white, for: .normal)
+        confirmButton.contentEdgeInsets = contentEdgeInsets
 
         if let whywhyAnalysis = whywhyAnalysis {
             if ValidateUtility.isTextNotEmplyCheck(optinalText: whywhyAnalysis.problem) {
@@ -40,13 +51,15 @@ internal class ChangeStatusViewController: UIViewController {
                 // エラー処理
             }
 
-            switch whywhyAnalysis.status {
+            status = whywhyAnalysis.status
+
+            switch status {
             case "実施中":
-                inProgressButton.backgroundColor = .blue
+                inProgressButton.backgroundColor = backgroundColor
             case "達成":
-                achieveButton.backgroundColor = .blue
+                achieveButton.backgroundColor = backgroundColor
             case "未達成":
-                notAchievedButton.backgroundColor = .blue
+                notAchievedButton.backgroundColor = backgroundColor
 
             default:
                 // TODO: エラー処理
@@ -58,7 +71,7 @@ internal class ChangeStatusViewController: UIViewController {
     }
 
     @IBAction private func selectInProgressButton(_ sender: Any) {
-        inProgressButton.backgroundColor = .blue
+        inProgressButton.backgroundColor = backgroundColor
         achieveButton.backgroundColor = .gray
         notAchievedButton.backgroundColor = .gray
         status = "実施中"
@@ -66,7 +79,7 @@ internal class ChangeStatusViewController: UIViewController {
 
     @IBAction private func selectAchieveButton(_ sender: Any) {
         inProgressButton.backgroundColor = .gray
-        achieveButton.backgroundColor = .blue
+        achieveButton.backgroundColor = backgroundColor
         notAchievedButton.backgroundColor = .gray
         status = "達成"
     }
@@ -74,7 +87,7 @@ internal class ChangeStatusViewController: UIViewController {
     @IBAction private func selectNotAchievedButton(_ sender: Any) {
         inProgressButton.backgroundColor = .gray
         achieveButton.backgroundColor = .gray
-        notAchievedButton.backgroundColor = .blue
+        notAchievedButton.backgroundColor = backgroundColor
         status = "未達成"
     }
 
@@ -87,7 +100,7 @@ internal class ChangeStatusViewController: UIViewController {
                 let view = MessageView.viewFromNib(layout: .messageView)
                 view.configureTheme(.success)
                 view.configureDropShadow()
-                view.configureContent(title: "sucess", body: "ステータスの変更が完了しました")
+                view.configureContent(title: "sucess", body: "ステータスを\(status)に変更しました")
                 view.button?.isHidden = true
                 view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
                 (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
