@@ -80,10 +80,8 @@ internal class ChangeStatusViewController: UIViewController {
     @IBAction private func changeStatusConfirmButton(_ sender: Any) {
         if let whywhyAnalysis = whywhyAnalysis {
             if let status = status {
-                print(whywhyAnalysis)
                 let data = DataStorage()
                 data.changeStatusAnalytics(status, whywhyAnalysis.whywhyAnalysisNo)
-                print(whywhyAnalysis)
             }
         }
     }

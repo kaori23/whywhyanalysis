@@ -128,7 +128,7 @@
                                 <rect key="frame" x="50" y="30" width="46" height="30"/>
                                 <state key="normal" title="実施中"/>
                                 <connections>
-                                    <action selector="selectInProgressButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="xt3-qs-5ln"/>
+                                    <action selector="selectInProgressButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="j5j-Da-PKu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpQ-K2-TFB">
@@ -166,7 +166,6 @@
                                 <state key="normal" title="確定"/>
                                 <connections>
                                     <action selector="changeStatusConfirmButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="BbR-cW-73K"/>
-                                    <action selector="selectInProgressButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="tQf-ei-30X"/>
                                 </connections>
                             </button>
                         </subviews>
