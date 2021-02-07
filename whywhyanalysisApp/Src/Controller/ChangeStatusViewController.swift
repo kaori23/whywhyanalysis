@@ -42,13 +42,13 @@ internal class ChangeStatusViewController: UIViewController {
             if ValidateUtility.isTextNotEmplyCheck(optinalText: whywhyAnalysis.problem) {
                 problemLabel.text = whywhyAnalysis.problem
             } else {
-                // エラー処理
+                // TODO: エラー処理
             }
 
             if ValidateUtility.isTextNotEmplyCheck(optinalText: whywhyAnalysis.measures) {
                 measuresLabel.text = whywhyAnalysis.measures
             } else {
-                // エラー処理
+                // TODO: エラー処理
             }
 
             status = whywhyAnalysis.status
