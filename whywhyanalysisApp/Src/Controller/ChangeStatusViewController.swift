@@ -21,7 +21,7 @@ internal class ChangeStatusViewController: UIViewController {
     @IBOutlet internal weak var achieveButton: UIButton!
     @IBOutlet internal weak var notAchievedButton: UIButton!
     @IBOutlet internal weak var confirmButton: UIButton!
-    // 必要項目に全て値が入っている事前提で作るため、画面遷移前に値が入っているかチェックが必要
+
     override internal func viewDidLoad() {
         super.viewDidLoad()
 
