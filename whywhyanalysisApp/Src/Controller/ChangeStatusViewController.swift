@@ -66,8 +66,6 @@ internal class ChangeStatusViewController: UIViewController {
                 print("エラー処理")
             }
         }
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction private func selectInProgressButton(_ sender: Any) {
@@ -105,6 +103,8 @@ internal class ChangeStatusViewController: UIViewController {
                 view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
                 (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
                 SwiftMessages.show(view: view)
+
+                self.navigationController?.popViewController(animated: true)
             } else {
                 // TODO: 後ほどエラー処理を実装 statusがnilの時
             }
