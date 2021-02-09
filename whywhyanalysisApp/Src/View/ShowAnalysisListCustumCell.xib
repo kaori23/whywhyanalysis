@@ -33,26 +33,27 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ステータス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAh-2a-ieh">
-                    <rect key="frame" x="160" y="6" width="60" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoQ-yX-hr8">
+                    <rect key="frame" x="170" y="10" width="100" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="452-vA-55T"/>
-                        <constraint firstAttribute="width" constant="60" id="nhM-of-KHd"/>
+                        <constraint firstAttribute="width" constant="100" id="bSk-M2-Nx9"/>
+                        <constraint firstAttribute="height" constant="30" id="u7S-WA-mY7"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <state key="normal" title="ステータスボタン"/>
+                    <connections>
+                        <action selector="changeStatusButton:" destination="-1" eventType="touchUpInside" id="I3m-vI-iGi"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="AAh-2a-ieh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="J4s-eF-06O"/>
+                <constraint firstItem="Yc4-at-u87" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="CAA-mg-6SB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zoQ-yX-hr8" secondAttribute="trailing" constant="50" id="D7q-0x-Tix"/>
+                <constraint firstItem="zoQ-yX-hr8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="JbR-UA-Tst"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yc4-at-u87" secondAttribute="trailing" constant="10" id="RYb-0w-FZ9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AAh-2a-ieh" secondAttribute="trailing" constant="100" id="UU7-tC-uYx"/>
                 <constraint firstItem="2NN-sQ-tG0" firstAttribute="top" secondItem="Yc4-at-u87" secondAttribute="bottom" constant="8" id="bjO-l3-qVk"/>
                 <constraint firstItem="2NN-sQ-tG0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ciQ-5d-ooZ"/>
                 <constraint firstItem="Yc4-at-u87" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="hbF-iY-Xx6"/>
-                <constraint firstItem="2NN-sQ-tG0" firstAttribute="top" secondItem="AAh-2a-ieh" secondAttribute="bottom" constant="24" id="t9c-9k-vwn"/>
                 <constraint firstItem="Yc4-at-u87" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wBv-7P-YEq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -60,7 +61,7 @@
             <connections>
                 <outlet property="measuresLabel" destination="Yc4-at-u87" id="WJq-kK-RBS"/>
                 <outlet property="problemLabel" destination="2NN-sQ-tG0" id="EIO-0o-LUO"/>
-                <outlet property="statusLabel" destination="AAh-2a-ieh" id="7dK-9K-ED9"/>
+                <outlet property="statusButton" destination="zoQ-yX-hr8" id="cdc-fe-813"/>
             </connections>
             <point key="canvasLocation" x="-258.75" y="66.549295774647888"/>
         </view>

@@ -8,11 +8,15 @@ PODS:
   - RealmSwift (10.2.0):
     - Realm (= 10.2.0)
   - SwiftLint (0.42.0)
+  - SwiftMessages (9.0.0):
+    - SwiftMessages/App (= 9.0.0)
+  - SwiftMessages/App (9.0.0)
 
 DEPENDENCIES:
   - R.swift
   - RealmSwift
   - SwiftLint
+  - SwiftMessages
 
 SPEC REPOS:
   trunk:
@@ -21,6 +25,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SwiftLint
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
@@ -28,7 +33,8 @@ SPEC CHECKSUMS:
   Realm: d7914ebf66bb182469726f997c4c38eff286aab0
   RealmSwift: aad08b7dc8c732b7b5794286e9df83739bf834f1
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftMessages: 55274ca3a239062398603008ed81924cfd1fe798
 
-PODFILE CHECKSUM: 9ea2e20ffdee245179bc238ccc5132e08bbf95b0
+PODFILE CHECKSUM: 95e61d5380ee71287bedc4e1323e5ddd93880b52
 
 COCOAPODS: 1.10.0

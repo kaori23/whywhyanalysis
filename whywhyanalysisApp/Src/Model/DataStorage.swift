@@ -89,4 +89,17 @@ internal class DataStorage {
             // TODO: 後ほどエラー処理を実装
         }
     }
+
+    // ステータスのみを更新
+    internal func changeStatusAnalytics(_ status: String, _ whywhyAnalysisNo: Int) {
+        do {
+            let realm = try Realm()
+            analysisList = realm.objects(Analysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
+            try realm.write {
+                analysisList?[0].status = status
+            }
+        } catch {
+            // TODO: 後ほどエラー処理を実装
+        }
+    }
 }

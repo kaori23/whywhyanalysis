@@ -116,6 +116,93 @@
             </objects>
             <point key="canvasLocation" x="1071.2" y="806.44677661169419"/>
         </scene>
+        <!--Change Status View Controller-->
+        <scene sceneID="DTY-bk-fzh">
+            <objects>
+                <viewController storyboardIdentifier="changeStatus" id="bkt-m3-jRA" customClass="ChangeStatusViewController" customModule="whywhyanalysisApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JhA-1C-wfB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-ch-Glm">
+                                <rect key="frame" x="50" y="30" width="46" height="30"/>
+                                <state key="normal" title="実施中"/>
+                                <connections>
+                                    <action selector="selectInProgressButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="j5j-Da-PKu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpQ-K2-TFB">
+                                <rect key="frame" x="172" y="30" width="31" height="30"/>
+                                <state key="normal" title="達成"/>
+                                <connections>
+                                    <action selector="selectAchieveButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="i57-Pd-mfo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w76-MX-4Y8">
+                                <rect key="frame" x="279" y="30" width="46" height="30"/>
+                                <state key="normal" title="未達成"/>
+                                <connections>
+                                    <action selector="selectNotAchievedButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="TST-j6-26N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="対策ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-52-LbT">
+                                <rect key="frame" x="15" y="101" width="345" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L80-mi-v55">
+                                <rect key="frame" x="15" y="140" width="345" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="PMM-MJ-KaF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VA-04-1jm">
+                                <rect key="frame" x="167" y="190" width="41" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="確定"/>
+                                <connections>
+                                    <action selector="changeStatusConfirmButton:" destination="bkt-m3-jRA" eventType="touchUpInside" id="BbR-cW-73K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="L80-mi-v55" firstAttribute="top" secondItem="Dg3-52-LbT" secondAttribute="bottom" constant="15" id="0UW-KY-nFy"/>
+                            <constraint firstItem="w76-MX-4Y8" firstAttribute="top" secondItem="XY8-K6-UdQ" secondAttribute="top" constant="30" id="3iv-W6-FAW"/>
+                            <constraint firstItem="Dfk-ch-Glm" firstAttribute="top" secondItem="XY8-K6-UdQ" secondAttribute="top" constant="30" id="8jJ-9A-zXS"/>
+                            <constraint firstItem="w76-MX-4Y8" firstAttribute="leading" secondItem="rpQ-K2-TFB" secondAttribute="trailing" constant="76" id="9Tk-SI-byQ"/>
+                            <constraint firstItem="Dfk-ch-Glm" firstAttribute="leading" secondItem="XY8-K6-UdQ" secondAttribute="leading" constant="50" id="C3f-la-5Yf"/>
+                            <constraint firstItem="XY8-K6-UdQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w76-MX-4Y8" secondAttribute="trailing" symbolic="YES" id="LHm-al-w00"/>
+                            <constraint firstItem="L80-mi-v55" firstAttribute="leading" secondItem="XY8-K6-UdQ" secondAttribute="leading" constant="15" id="Ncx-f3-5bw"/>
+                            <constraint firstItem="XY8-K6-UdQ" firstAttribute="trailing" secondItem="Dg3-52-LbT" secondAttribute="trailing" constant="15" id="QrO-ib-wCw"/>
+                            <constraint firstItem="rpQ-K2-TFB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dfk-ch-Glm" secondAttribute="trailing" constant="8" symbolic="YES" id="R3d-b8-7ln"/>
+                            <constraint firstItem="rpQ-K2-TFB" firstAttribute="centerX" secondItem="JhA-1C-wfB" secondAttribute="centerX" id="SQG-H8-1dD"/>
+                            <constraint firstItem="rpQ-K2-TFB" firstAttribute="top" secondItem="XY8-K6-UdQ" secondAttribute="top" constant="30" id="TAV-mA-2hH"/>
+                            <constraint firstItem="XY8-K6-UdQ" firstAttribute="trailing" secondItem="L80-mi-v55" secondAttribute="trailing" constant="15" id="e1f-3m-1Rs"/>
+                            <constraint firstItem="Dg3-52-LbT" firstAttribute="top" secondItem="Dfk-ch-Glm" secondAttribute="bottom" constant="41" id="fKK-hd-ZLg" userLabel="対策ラベル.top = 実施中.bottom + 40"/>
+                            <constraint firstItem="6VA-04-1jm" firstAttribute="centerX" secondItem="JhA-1C-wfB" secondAttribute="centerX" id="irY-Im-zUM"/>
+                            <constraint firstItem="6VA-04-1jm" firstAttribute="top" secondItem="L80-mi-v55" secondAttribute="bottom" constant="30" id="m7S-31-TUR"/>
+                            <constraint firstItem="Dg3-52-LbT" firstAttribute="leading" secondItem="XY8-K6-UdQ" secondAttribute="leading" constant="15" id="ouH-nX-ANC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XY8-K6-UdQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="achieveButton" destination="rpQ-K2-TFB" id="If8-t7-CyS"/>
+                        <outlet property="confirmButton" destination="6VA-04-1jm" id="2Qr-y3-G2S"/>
+                        <outlet property="inProgressButton" destination="Dfk-ch-Glm" id="9Ea-4O-agL"/>
+                        <outlet property="measuresLabel" destination="Dg3-52-LbT" id="tcv-pp-JLr"/>
+                        <outlet property="notAchievedButton" destination="w76-MX-4Y8" id="tye-6R-BPV"/>
+                        <outlet property="problemLabel" destination="L80-mi-v55" id="hoA-gx-4Da"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBF-wY-akp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="822"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="foS-4N-frJ">
             <objects>
