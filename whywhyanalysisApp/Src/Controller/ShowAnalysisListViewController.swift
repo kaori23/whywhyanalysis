@@ -11,8 +11,10 @@ import UIKit
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
     internal let cellHeigh: CGFloat = 100
+    internal let viewBgColor = UIColor(red: 243 / 255, green: 250 / 255, blue: 253 / 255, alpha: 1)
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
+    @IBOutlet internal weak var backgroundView: UIView!
 
     // 画面が表示される直前にtableViewを更新
     override internal func viewWillAppear(_ animated: Bool) {
@@ -24,7 +26,8 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-
+        backgroundView.backgroundColor = viewBgColor
+        titleLabel.layer.borderColor = UIColor.link.cgColor
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -36,11 +39,9 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         tableView.tableFooterView = UIView()
 
         // レイアウト設定
-        let viewBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
-        let borderColor = UIColor(red: 139 / 255, green: 222 / 255, blue: 255 / 255, alpha: 1)
-        tableView.separatorColor = viewBgColor
+        let tableBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
+        tableView.separatorColor = tableBgColor
         titleLabel.layer.borderWidth = 1
-        titleLabel.layer.borderColor = borderColor.cgColor
     }
 
     @IBAction private func addAnalysisClick(_ sender: Any) {

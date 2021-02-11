@@ -12,7 +12,8 @@ import UIKit
 internal class ChangeStatusViewController: UIViewController {
     internal var whywhyAnalysis: Analysis?
     internal var status: String?
-    internal let backgroundColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    internal let selectBtnColor = UIColor(red: 50 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    internal let btnBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
     internal let contentEdgeInsets = UIEdgeInsets(top: 5.0, left: 7.0, bottom: 5.0, right: 7.0)
 
     @IBOutlet internal weak var measuresLabel: UILabel!
@@ -34,7 +35,7 @@ internal class ChangeStatusViewController: UIViewController {
         notAchievedButton.backgroundColor = .gray
         notAchievedButton.setTitleColor(UIColor.white, for: .normal)
         notAchievedButton.contentEdgeInsets = contentEdgeInsets
-        confirmButton.backgroundColor = UIColor(red: 70 / 255, green: 190 / 255, blue: 255 / 255, alpha: 1)
+        confirmButton.backgroundColor = btnBgColor
         confirmButton.setTitleColor(UIColor.white, for: .normal)
         confirmButton.contentEdgeInsets = contentEdgeInsets
 
@@ -55,11 +56,11 @@ internal class ChangeStatusViewController: UIViewController {
 
             switch status {
             case "実施中":
-                inProgressButton.backgroundColor = backgroundColor
+                inProgressButton.backgroundColor = selectBtnColor
             case "達成":
-                achieveButton.backgroundColor = backgroundColor
+                achieveButton.backgroundColor = selectBtnColor
             case "未達成":
-                notAchievedButton.backgroundColor = backgroundColor
+                notAchievedButton.backgroundColor = selectBtnColor
 
             default:
                 // TODO: エラー処理
@@ -69,7 +70,7 @@ internal class ChangeStatusViewController: UIViewController {
     }
 
     @IBAction private func selectInProgressButton(_ sender: Any) {
-        inProgressButton.backgroundColor = backgroundColor
+        inProgressButton.backgroundColor = selectBtnColor
         achieveButton.backgroundColor = .gray
         notAchievedButton.backgroundColor = .gray
         status = "実施中"
@@ -77,7 +78,7 @@ internal class ChangeStatusViewController: UIViewController {
 
     @IBAction private func selectAchieveButton(_ sender: Any) {
         inProgressButton.backgroundColor = .gray
-        achieveButton.backgroundColor = backgroundColor
+        achieveButton.backgroundColor = selectBtnColor
         notAchievedButton.backgroundColor = .gray
         status = "達成"
     }
@@ -85,7 +86,7 @@ internal class ChangeStatusViewController: UIViewController {
     @IBAction private func selectNotAchievedButton(_ sender: Any) {
         inProgressButton.backgroundColor = .gray
         achieveButton.backgroundColor = .gray
-        notAchievedButton.backgroundColor = backgroundColor
+        notAchievedButton.backgroundColor = selectBtnColor
         status = "未達成"
     }
 
