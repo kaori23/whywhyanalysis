@@ -11,7 +11,7 @@ import UIKit
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
     internal let cellHeigh: CGFloat = 100
-    internal let viewBgColor = UIColor(red: 243 / 255, green: 250 / 255, blue: 253 / 255, alpha: 1)
+    internal let appColor = AppColor()
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
     @IBOutlet internal weak var backgroundView: UIView!
@@ -26,8 +26,6 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-        backgroundView.backgroundColor = viewBgColor
-        titleLabel.layer.borderColor = UIColor.link.cgColor
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -39,8 +37,9 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         tableView.tableFooterView = UIView()
 
         // レイアウト設定
-        let tableBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
-        tableView.separatorColor = tableBgColor
+        backgroundView.backgroundColor = appColor.viewBgColor
+        titleLabel.layer.borderColor = UIColor.link.cgColor
+        tableView.separatorColor = appColor.tableBgColor
         titleLabel.layer.borderWidth = 1
     }
 

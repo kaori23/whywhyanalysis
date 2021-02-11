@@ -14,7 +14,7 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     internal var mode = ""
     internal var status = ""
     internal var statusNum = 0
-    internal let btnBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    internal let appColor = AppColor()
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var statusPickerView: UIPickerView!
@@ -38,7 +38,7 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
             }
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
-        confirmButton.backgroundColor = btnBgColor
+        confirmButton.backgroundColor = appColor.btnBgColor
         confirmButton.tintColor = .white
     }
 

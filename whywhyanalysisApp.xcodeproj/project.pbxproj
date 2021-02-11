@@ -30,7 +30,7 @@
 		12B088B42568DD0600B24487 /* ShowAnalysisListCustumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */; };
 		12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B52568E26500B24487 /* ValidateUtility.swift */; };
 		12B088B92569001000B24487 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B82569001000B24487 /* DataStorage.swift */; };
-		12C4ABAA25D552BB009E851B /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4ABA925D552BB009E851B /* AppColor.swift */; };
+		12C4ABAA25D552BB009E851B /* MyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4ABA925D552BB009E851B /* MyStyle.swift */; };
 		8B95BE7C057F568F50C31B2E /* Pods_whywhyanalysisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		12B088B02568DC5F00B24487 /* ShowAnalysisListCustumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowAnalysisListCustumCell.xib; sourceTree = "<group>"; };
 		12B088B52568E26500B24487 /* ValidateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtility.swift; sourceTree = "<group>"; };
 		12B088B82569001000B24487 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
-		12C4ABA925D552BB009E851B /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		12C4ABA925D552BB009E851B /* MyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStyle.swift; sourceTree = "<group>"; };
 		2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D77C3C06C425BC89E96F47A /* Pods-whywhyanalysisAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		772105163924D87D3122CB83 /* Pods_whywhyanalysisAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				12B088B52568E26500B24487 /* ValidateUtility.swift */,
-				12C4ABA925D552BB009E851B /* AppColor.swift */,
+				12C4ABA925D552BB009E851B /* MyStyle.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 				126274ED255FAF720064A97D /* ShowAnalysisListViewController.swift in Sources */,
 				12B088B92569001000B24487 /* DataStorage.swift in Sources */,
 				125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */,
-				12C4ABAA25D552BB009E851B /* AppColor.swift in Sources */,
+				12C4ABAA25D552BB009E851B /* MyStyle.swift in Sources */,
 				125DFB7825596858004F09D6 /* Analysis.swift in Sources */,
 				12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */,
 				125DF0DC2585E2970028F573 /* EditAnalysisViewController.swift in Sources */,
