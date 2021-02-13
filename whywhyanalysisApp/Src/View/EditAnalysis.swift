@@ -27,6 +27,11 @@ internal class EditAnalysis: UIView {
     @IBOutlet internal weak var analysisView: UIView!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var confirmButton: UIButton!
+    @IBOutlet internal weak var oneArrow: UIImageView!
+    @IBOutlet internal weak var twoArrow: UIImageView!
+    @IBOutlet internal weak var threeArrow: UIImageView!
+    @IBOutlet internal weak var fourArrow: UIImageView!
+    @IBOutlet internal weak var fiveArrow: UIImageView!
 
     override internal func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +47,12 @@ internal class EditAnalysis: UIView {
         fiveWHYLabel.textColor = appColor.whyLabelTextColor
         fiveWHYLabel.backgroundColor = appColor
             .whyLabelBgColor
+
+        oneArrow.tintColor = appColor.mainColor
+        twoArrow.tintColor = appColor.mainColor
+        threeArrow.tintColor = appColor.mainColor
+        fourArrow.tintColor = appColor.mainColor
+        fiveArrow.tintColor = appColor.mainColor
 
         analysisView.backgroundColor = appColor.viewBgColor
         measuresLabel.backgroundColor = appColor.headingLabelBgColor
