@@ -44,7 +44,6 @@ internal class ChangeStatusViewController: UIViewController {
             } else {
                 // TODO: エラー処理
             }
-
             if ValidateUtility.isTextNotEmplyCheck(optinalText: whywhyAnalysis.measures) {
                 measuresLabel.text = whywhyAnalysis.measures
             } else {
@@ -52,13 +51,14 @@ internal class ChangeStatusViewController: UIViewController {
             }
 
             status = whywhyAnalysis.status
-
             switch status {
-            case "実施中":
+            case AnalysisStatus.inProgress.rawValue:
                 inProgressButton.backgroundColor = appColor.mainColor
-            case "達成":
+
+            case AnalysisStatus.achieve.rawValue:
                 achieveButton.backgroundColor = appColor.mainColor
-            case "未達成":
+
+            case AnalysisStatus.notAchieved.rawValue:
                 notAchievedButton.backgroundColor = appColor.mainColor
 
             default:
@@ -72,21 +72,21 @@ internal class ChangeStatusViewController: UIViewController {
         inProgressButton.backgroundColor = appColor.mainColor
         achieveButton.backgroundColor = .gray
         notAchievedButton.backgroundColor = .gray
-        status = "実施中"
+        status = AnalysisStatus.inProgress.rawValue
     }
 
     @IBAction private func selectAchieveButton(_ sender: Any) {
         inProgressButton.backgroundColor = .gray
         achieveButton.backgroundColor = appColor.mainColor
         notAchievedButton.backgroundColor = .gray
-        status = "達成"
+        status = AnalysisStatus.achieve.rawValue
     }
 
     @IBAction private func selectNotAchievedButton(_ sender: Any) {
         inProgressButton.backgroundColor = .gray
         achieveButton.backgroundColor = .gray
         notAchievedButton.backgroundColor = appColor.mainColor
-        status = "未達成"
+        status = AnalysisStatus.notAchieved.rawValue
     }
 
     @IBAction private func changeStatusConfirmButton(_ sender: Any) {

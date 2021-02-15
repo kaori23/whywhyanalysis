@@ -22,7 +22,7 @@ internal class EditAnalysisViewController: UIViewController {
             analysisView.mode = mode
             analysisView.confirmButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
 
-            if analysisView.mode == "編集" {
+            if analysisView.mode == AnalysisDivision.edit.rawValue {
                 if let whywhyAnalysis = whywhyAnalysis {
                     analysisView.whywhyAnalysis = whywhyAnalysis
                     analysisView.problemTextField.text = whywhyAnalysis.problem
@@ -42,9 +42,9 @@ internal class EditAnalysisViewController: UIViewController {
                         analysisView.fiveWhyTextField.text = whywhyAnalysis.fiveWhy
                     }
                 }
-                analysisView.confirmButton.setTitle("編集", for: UIControl.State.normal)
+                analysisView.confirmButton.setTitle(AnalysisDivision.edit.rawValue, for: UIControl.State.normal)
             } else {
-                analysisView.confirmButton.setTitle("登録", for: UIControl.State.normal)
+                analysisView.confirmButton.setTitle(AnalysisDivision.new.rawValue, for: UIControl.State.normal)
             }
             self.view.addSubview(analysisView)
         }
@@ -61,7 +61,7 @@ internal class EditAnalysisViewController: UIViewController {
                 var threeWhy = ""
                 var fourWhy = ""
                 var fiveWhy = ""
-                let status = "実施中"
+                let status = AnalysisStatus.inProgress.rawValue
 
                 if ValidateUtility.isTextNotEmplyCheck(optinalText: analysisView.twoWhyTextField.text) {
                     // ValidateUtility.isTextNotEmplyCheckでnilチェックをしているので強制アンラップを許容
@@ -93,7 +93,7 @@ internal class EditAnalysisViewController: UIViewController {
                 if let nextVC = nextViewController {
                     nextVC.whywhyAnalysis = editWhywhyAnalysis
 
-                    if mode == "編集" {
+                    if mode == AnalysisDivision.edit.rawValue {
                         if let analysis = whywhyAnalysis {
                         nextVC.whywhyAnalysis?.whywhyAnalysisNo = analysis.whywhyAnalysisNo
                         nextVC.whywhyAnalysis?.status = analysis.status

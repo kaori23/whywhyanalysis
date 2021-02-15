@@ -9,7 +9,7 @@
 import UIKit
 
 internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    internal let statusList = ["実施中", "達成", "未達成"]
+    internal let statusList = [AnalysisStatus.inProgress.rawValue, AnalysisStatus.achieve.rawValue, AnalysisStatus.notAchieved.rawValue]
     internal var whywhyAnalysis: Analysis?
     internal var mode = ""
     internal var status = ""
@@ -28,10 +28,10 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         if let whywhyAnalysis = whywhyAnalysis {
             problemLabel.text = whywhyAnalysis.problem
             measuresLabel.text = whywhyAnalysis.measures
-            if mode == "新規作成" {
+            if mode == AnalysisDivision.new.rawValue {
                 status = statusList[0]
                 statusNum = 0
-            } else if mode == "編集" {
+            } else if mode == AnalysisDivision.edit.rawValue {
                 if let analysisStatus = whywhyAnalysis.status {
                     statusNum = statusList.firstIndex(of: analysisStatus) ?? 0
                 }
@@ -48,10 +48,10 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
             whywhyAnalysis.status = status
             let data = DataStorage()
             switch mode {
-            case "新規作成":
+            case AnalysisDivision.new.rawValue:
                 data.createWhyAnalyticsData(whywhyAnalysis)
 
-            case "編集":
+            case AnalysisDivision.edit.rawValue:
                 data.editWhyAnalyticsData(whywhyAnalysis)
 
             default:

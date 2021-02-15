@@ -21,6 +21,7 @@
 		126D3489257B655D006197A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D3488257B655D006197A6 /* R.generated.swift */; };
 		126D348A257B655D006197A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D3488257B655D006197A6 /* R.generated.swift */; };
 		126D348D257CD106006197A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126D348B257CD106006197A6 /* Main.storyboard */; };
+		1295DBCD25D7CB2B00B70955 /* AnalysisDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */; };
 		12B088A72568CEF300B24487 /* ConfirmAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */; };
 		12B088A92568D53100B24487 /* ConfirmAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */; };
 		12B088AA2568D84E00B24487 /* ShowAnalysisListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EC255FAF720064A97D /* ShowAnalysisListViewController.swift */; };
@@ -60,6 +61,7 @@
 		126274EC255FAF720064A97D /* ShowAnalysisListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnalysisListViewController.swift; sourceTree = "<group>"; };
 		126D3488257B655D006197A6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		126D348C257CD106006197A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisDefine.swift; sourceTree = "<group>"; };
 		12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAnalysisViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnalysisListCustumCell.swift; sourceTree = "<group>"; };
 		12B088B02568DC5F00B24487 /* ShowAnalysisListCustumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowAnalysisListCustumCell.xib; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				12B088B52568E26500B24487 /* ValidateUtility.swift */,
 				12C4ABA925D552BB009E851B /* MyStyle.swift */,
+				1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1295DBCD25D7CB2B00B70955 /* AnalysisDefine.swift in Sources */,
 				125DFB5425596297004F09D6 /* AppDelegate.swift in Sources */,
 				12B088B12568DC5F00B24487 /* ShowAnalysisListCustumCell.swift in Sources */,
 				126274ED255FAF720064A97D /* ShowAnalysisListViewController.swift in Sources */,

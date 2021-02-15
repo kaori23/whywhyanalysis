@@ -46,7 +46,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
     @IBAction private func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if let nextVC = nextViewController {
-            nextVC.mode = "新規作成"
+            nextVC.mode = AnalysisDivision.new.rawValue
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
@@ -93,7 +93,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if let nextVC = nextViewController {
             nextVC.whywhyAnalysis = whywhyAnalysis
-            nextVC.mode = "編集"
+            nextVC.mode = AnalysisDivision.edit.rawValue
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
