@@ -269,10 +269,10 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKh-Ka-X1s">
-                    <rect key="frame" x="157.5" y="627" width="60" height="30"/>
+                    <rect key="frame" x="137.5" y="627" width="100" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="07X-on-lrX"/>
                         <constraint firstAttribute="height" constant="30" id="0fH-Hv-5sR"/>
+                        <constraint firstAttribute="width" constant="100" id="sp7-q3-xgC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Button"/>
