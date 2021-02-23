@@ -10,7 +10,6 @@ import UIKit
 
 internal class ShowAnalysisListCustumCell: UITableViewCell {
     internal let status = ""
-    internal let appColor = AppColor()
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var statusButton: UIButton!
@@ -22,7 +21,7 @@ internal class ShowAnalysisListCustumCell: UITableViewCell {
     override internal func awakeFromNib() {
         super.awakeFromNib()
         // レイアウト設定
-        statusButton.backgroundColor = appColor.btnBgColor
+        statusButton.backgroundColor = AppColor.btnBgColor
         statusButton.setTitleColor(.white, for: .normal)
     }
 }

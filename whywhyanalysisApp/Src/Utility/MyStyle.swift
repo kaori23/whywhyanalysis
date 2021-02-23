@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-internal struct AppColor {
-    internal let btnBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
-    internal let mainColor = UIColor(red: 50 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
-    internal let viewBgColor = UIColor(red: 243 / 255, green: 250 / 255, blue: 253 / 255, alpha: 1)
-    internal let tableBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
-    internal let headingLabelBgColor = UIColor(red: 145 / 255, green: 222 / 255, blue: 252 / 255, alpha: 1)
-    internal let whyLabelTextColor = UIColor(red: 17 / 255, green: 188 / 255, blue: 255 / 255, alpha: 1)
-    internal let whyLabelBgColor = UIColor(red: 50 / 255, green: 200 / 255, blue: 252 / 255, alpha: 0.05)
+internal enum AppColor {
+    internal static let btnBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    internal static let mainColor = UIColor(red: 50 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+    internal static let viewBgColor = UIColor(red: 243 / 255, green: 250 / 255, blue: 253 / 255, alpha: 1)
+    internal static let tableBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
+    internal static let headingLabelBgColor = UIColor(red: 145 / 255, green: 222 / 255, blue: 252 / 255, alpha: 1)
+    internal static let whyLabelTextColor = UIColor(red: 17 / 255, green: 188 / 255, blue: 255 / 255, alpha: 1)
+    internal static let whyLabelBgColor = UIColor(red: 50 / 255, green: 200 / 255, blue: 252 / 255, alpha: 0.05)
 }

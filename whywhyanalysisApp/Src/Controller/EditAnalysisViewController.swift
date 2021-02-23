@@ -11,7 +11,7 @@ import UIKit
 internal class EditAnalysisViewController: UIViewController {
     internal var whywhyAnalysis: Analysis?
     internal var analysisView: EditAnalysis?
-    internal var mode = ""
+    internal var mode: AnalysisDivision?
 
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,7 +22,7 @@ internal class EditAnalysisViewController: UIViewController {
             analysisView.mode = mode
             analysisView.confirmButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
 
-            if analysisView.mode == AnalysisDivision.edit.rawValue {
+            if analysisView.mode == .edit {
                 if let whywhyAnalysis = whywhyAnalysis {
                     analysisView.whywhyAnalysis = whywhyAnalysis
                     analysisView.problemTextField.text = whywhyAnalysis.problem
@@ -93,7 +93,7 @@ internal class EditAnalysisViewController: UIViewController {
                 if let nextVC = nextViewController {
                     nextVC.whywhyAnalysis = editWhywhyAnalysis
 
-                    if mode == AnalysisDivision.edit.rawValue {
+                    if mode == .edit {
                         if let analysis = whywhyAnalysis {
                         nextVC.whywhyAnalysis?.whywhyAnalysisNo = analysis.whywhyAnalysisNo
                         nextVC.whywhyAnalysis?.status = analysis.status

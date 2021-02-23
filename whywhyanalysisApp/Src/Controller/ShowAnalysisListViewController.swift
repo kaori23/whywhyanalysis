@@ -11,7 +11,6 @@ import UIKit
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
     internal let cellHeigh: CGFloat = 100
-    internal let appColor = AppColor()
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
     @IBOutlet internal weak var backgroundView: UIView!
@@ -37,16 +36,16 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         tableView.tableFooterView = UIView()
 
         // レイアウト設定
-        backgroundView.backgroundColor = appColor.viewBgColor
+        backgroundView.backgroundColor = AppColor.viewBgColor
         titleLabel.layer.borderColor = UIColor.link.cgColor
-        tableView.separatorColor = appColor.tableBgColor
+        tableView.separatorColor = AppColor.tableBgColor
         titleLabel.layer.borderWidth = 1
     }
 
     @IBAction private func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if let nextVC = nextViewController {
-            nextVC.mode = AnalysisDivision.new.rawValue
+            nextVC.mode = .new
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
@@ -93,7 +92,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if let nextVC = nextViewController {
             nextVC.whywhyAnalysis = whywhyAnalysis
-            nextVC.mode = AnalysisDivision.edit.rawValue
+            nextVC.mode = .edit
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
