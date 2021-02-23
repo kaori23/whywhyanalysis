@@ -9,12 +9,11 @@
 import UIKit
 
 internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    internal let statusList = ["実施中", "達成", "未達成"]
+    internal let statusList = [AnalysisStatus.inProgress.rawValue, AnalysisStatus.achieve.rawValue, AnalysisStatus.notAchieved.rawValue]
     internal var whywhyAnalysis: Analysis?
-    internal var mode = ""
+    internal var mode: AnalysisDivision?
     internal var status = ""
     internal var statusNum = 0
-    internal let buttonBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var statusPickerView: UIPickerView!
@@ -28,17 +27,17 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         if let whywhyAnalysis = whywhyAnalysis {
             problemLabel.text = whywhyAnalysis.problem
             measuresLabel.text = whywhyAnalysis.measures
-            if mode == "新規作成" {
+            if mode == .new {
                 status = statusList[0]
                 statusNum = 0
-            } else if mode == "編集" {
+            } else if mode == .edit {
                 if let analysisStatus = whywhyAnalysis.status {
                     statusNum = statusList.firstIndex(of: analysisStatus) ?? 0
                 }
             }
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
-        confirmButton.backgroundColor = buttonBgColor
+        confirmButton.backgroundColor = AppColor.btnBgColor
         confirmButton.tintColor = .white
     }
 
@@ -48,10 +47,10 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
             whywhyAnalysis.status = status
             let data = DataStorage()
             switch mode {
-            case "新規作成":
+            case .new:
                 data.createWhyAnalyticsData(whywhyAnalysis)
 
-            case "編集":
+            case .edit:
                 data.editWhyAnalyticsData(whywhyAnalysis)
 
             default:

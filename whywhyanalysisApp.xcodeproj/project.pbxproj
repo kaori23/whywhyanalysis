@@ -21,6 +21,7 @@
 		126D3489257B655D006197A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D3488257B655D006197A6 /* R.generated.swift */; };
 		126D348A257B655D006197A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D3488257B655D006197A6 /* R.generated.swift */; };
 		126D348D257CD106006197A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126D348B257CD106006197A6 /* Main.storyboard */; };
+		1295DBCD25D7CB2B00B70955 /* AnalysisDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */; };
 		12B088A72568CEF300B24487 /* ConfirmAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */; };
 		12B088A92568D53100B24487 /* ConfirmAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */; };
 		12B088AA2568D84E00B24487 /* ShowAnalysisListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126274EC255FAF720064A97D /* ShowAnalysisListViewController.swift */; };
@@ -30,6 +31,7 @@
 		12B088B42568DD0600B24487 /* ShowAnalysisListCustumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */; };
 		12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B52568E26500B24487 /* ValidateUtility.swift */; };
 		12B088B92569001000B24487 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B82569001000B24487 /* DataStorage.swift */; };
+		12C4ABAA25D552BB009E851B /* MyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4ABA925D552BB009E851B /* MyStyle.swift */; };
 		8B95BE7C057F568F50C31B2E /* Pods_whywhyanalysisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,11 +61,13 @@
 		126274EC255FAF720064A97D /* ShowAnalysisListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnalysisListViewController.swift; sourceTree = "<group>"; };
 		126D3488257B655D006197A6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		126D348C257CD106006197A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisDefine.swift; sourceTree = "<group>"; };
 		12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAnalysisViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnalysisListCustumCell.swift; sourceTree = "<group>"; };
 		12B088B02568DC5F00B24487 /* ShowAnalysisListCustumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowAnalysisListCustumCell.xib; sourceTree = "<group>"; };
 		12B088B52568E26500B24487 /* ValidateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtility.swift; sourceTree = "<group>"; };
 		12B088B82569001000B24487 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		12C4ABA925D552BB009E851B /* MyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStyle.swift; sourceTree = "<group>"; };
 		2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D77C3C06C425BC89E96F47A /* Pods-whywhyanalysisAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		772105163924D87D3122CB83 /* Pods_whywhyanalysisAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				12B088B52568E26500B24487 /* ValidateUtility.swift */,
+				12C4ABA925D552BB009E851B /* MyStyle.swift */,
+				1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -412,11 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1295DBCD25D7CB2B00B70955 /* AnalysisDefine.swift in Sources */,
 				125DFB5425596297004F09D6 /* AppDelegate.swift in Sources */,
 				12B088B12568DC5F00B24487 /* ShowAnalysisListCustumCell.swift in Sources */,
 				126274ED255FAF720064A97D /* ShowAnalysisListViewController.swift in Sources */,
 				12B088B92569001000B24487 /* DataStorage.swift in Sources */,
 				125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */,
+				12C4ABAA25D552BB009E851B /* MyStyle.swift in Sources */,
 				125DFB7825596858004F09D6 /* Analysis.swift in Sources */,
 				12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */,
 				125DF0DC2585E2970028F573 /* EditAnalysisViewController.swift in Sources */,

@@ -10,7 +10,12 @@ import UIKit
 
 internal class EditAnalysis: UIView {
     internal var whywhyAnalysis: Analysis?
-    internal var mode = ""
+    internal var mode: AnalysisDivision?
+    @IBOutlet internal weak var oneWHYLabel: UILabel!
+    @IBOutlet internal weak var twoWHYLabel: UILabel!
+    @IBOutlet internal weak var threeWHYLabel: UILabel!
+    @IBOutlet internal weak var fourWHYLabel: UILabel!
+    @IBOutlet internal weak var fiveWHYLabel: UILabel!
     @IBOutlet internal weak var problemTextField: UITextField!
     @IBOutlet internal weak var oneWhyTextFiled: UITextField!
     @IBOutlet internal weak var twoWhyTextField: UITextField!
@@ -21,18 +26,37 @@ internal class EditAnalysis: UIView {
     @IBOutlet internal weak var analysisView: UIView!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var confirmButton: UIButton!
+    @IBOutlet internal weak var oneArrow: UIImageView!
+    @IBOutlet internal weak var twoArrow: UIImageView!
+    @IBOutlet internal weak var threeArrow: UIImageView!
+    @IBOutlet internal weak var fourArrow: UIImageView!
+    @IBOutlet internal weak var fiveArrow: UIImageView!
 
     override internal func awakeFromNib() {
         super.awakeFromNib()
 
-        let viewBgColor = UIColor(red: 243 / 255, green: 250 / 255, blue: 253 / 255, alpha: 1)
-        let labelBgColor = UIColor(red: 145 / 255, green: 222 / 255, blue: 252 / 255, alpha: 1)
-        let buttonBgColor = UIColor(red: 113 / 255, green: 205 / 255, blue: 255 / 255, alpha: 1)
+        oneWHYLabel.textColor = AppColor.whyLabelTextColor
+        oneWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        twoWHYLabel.textColor = AppColor.whyLabelTextColor
+        twoWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        threeWHYLabel.textColor = AppColor.whyLabelTextColor
+        threeWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        fourWHYLabel.textColor = AppColor.whyLabelTextColor
+        fourWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        fiveWHYLabel.textColor = AppColor.whyLabelTextColor
+        fiveWHYLabel.backgroundColor = AppColor
+            .whyLabelBgColor
 
-        analysisView.backgroundColor = viewBgColor
-        measuresLabel.backgroundColor = labelBgColor
+        oneArrow.tintColor = AppColor.mainColor
+        twoArrow.tintColor = AppColor.mainColor
+        threeArrow.tintColor = AppColor.mainColor
+        fourArrow.tintColor = AppColor.mainColor
+        fiveArrow.tintColor = AppColor.mainColor
+
+        analysisView.backgroundColor = AppColor.viewBgColor
+        measuresLabel.backgroundColor = AppColor.headingLabelBgColor
         measuresLabel.textColor = .white
-        confirmButton.backgroundColor = buttonBgColor
+        confirmButton.backgroundColor = AppColor.btnBgColor
         confirmButton.tintColor = .white
     }
 }

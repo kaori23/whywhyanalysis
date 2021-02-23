@@ -53,7 +53,6 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91812127830000001" green="0.9643211961" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Pcv-dS-0ep" firstAttribute="leading" secondItem="WAa-rR-n2e" secondAttribute="leading" constant="25" id="0Rc-7l-fRl"/>
                                     <constraint firstItem="rV6-Dt-3RX" firstAttribute="leading" secondItem="Pcv-dS-0ep" secondAttribute="trailing" constant="25" id="J1D-a4-Mms"/>
@@ -108,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="j7e-SV-J7M"/>
                     <connections>
+                        <outlet property="backgroundView" destination="WAa-rR-n2e" id="2zC-Q6-MNJ"/>
                         <outlet property="tableView" destination="aNG-LC-PO5" id="rG4-oR-PUU"/>
                         <outlet property="titleLabel" destination="rV6-Dt-3RX" id="HZP-Cw-IHS"/>
                     </connections>
@@ -280,10 +280,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" restorationIdentifier="confirmButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89t-s4-tNp">
-                                <rect key="frame" x="157.5" y="571" width="60" height="40"/>
+                                <rect key="frame" x="137.5" y="571" width="100" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Frb-jR-qNc"/>
                                     <constraint firstAttribute="height" constant="40" id="SyW-xr-IBe"/>
+                                    <constraint firstAttribute="width" constant="100" id="feZ-9I-Kzi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="登録"/>

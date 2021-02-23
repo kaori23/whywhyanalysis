@@ -13,6 +13,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
     internal let cellHeigh: CGFloat = 100
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
+    @IBOutlet internal weak var backgroundView: UIView!
 
     // 画面が表示される直前にtableViewを更新
     override internal func viewWillAppear(_ animated: Bool) {
@@ -24,7 +25,6 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -36,17 +36,16 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         tableView.tableFooterView = UIView()
 
         // レイアウト設定
-        let viewBgColor = UIColor(red: 100 / 255, green: 249 / 255, blue: 255 / 255, alpha: 1)
-        let borderColor = UIColor(red: 139 / 255, green: 222 / 255, blue: 255 / 255, alpha: 1)
-        tableView.separatorColor = viewBgColor
+        backgroundView.backgroundColor = AppColor.viewBgColor
+        titleLabel.layer.borderColor = UIColor.link.cgColor
+        tableView.separatorColor = AppColor.tableBgColor
         titleLabel.layer.borderWidth = 1
-        titleLabel.layer.borderColor = borderColor.cgColor
     }
 
     @IBAction private func addAnalysisClick(_ sender: Any) {
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if let nextVC = nextViewController {
-            nextVC.mode = "新規作成"
+            nextVC.mode = .new
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
@@ -93,7 +92,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
         if let nextVC = nextViewController {
             nextVC.whywhyAnalysis = whywhyAnalysis
-            nextVC.mode = "編集"
+            nextVC.mode = .edit
             navigationController?.pushViewController(nextVC, animated: true)
         } else {
             // TODO: 後ほどエラー処理を実装
