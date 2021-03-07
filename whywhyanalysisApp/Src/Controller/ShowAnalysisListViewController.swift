@@ -20,7 +20,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         super.viewWillAppear(animated)
         let data = DataStorage()
         whywhyAnalysisList = data.loadAllWhyAnalyticsData()
-//        tableView.reloadData()
+        tableView.reloadData()
     }
 
     override internal func viewDidLoad() {
