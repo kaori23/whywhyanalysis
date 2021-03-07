@@ -32,6 +32,7 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
                 statusNum = 0
             } else if mode == .edit {
                 if let analysisStatus = whywhyAnalysis.status {
+                    status = analysisStatus
                     statusNum = statusList.firstIndex(of: analysisStatus) ?? 0
                 }
             }
