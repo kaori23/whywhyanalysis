@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
     internal let cellHeigh: CGFloat = 100
