@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
     internal let cellHeigh: CGFloat = 100
@@ -19,7 +20,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         super.viewWillAppear(animated)
         let data = DataStorage()
         whywhyAnalysisList = data.loadAllWhyAnalyticsData()
-        tableView.reloadData()
+//        tableView.reloadData()
     }
 
     override internal func viewDidLoad() {
@@ -102,24 +103,28 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? ShowAnalysisListCustumCell
         let row = whywhyAnalysisList.count - indexPath.row - 1
-        if let cell = cell {
-            if  let problem = whywhyAnalysisList[row].problem {
-                cell.problemLabel.text = problem
-            } else {
-                // TODO: 後ほどエラー処理を実装
+        // 分析がDBにあるかを確認
+        if let analysis = try? Realm().objects(Analysis.self).filter("whywhyAnalysisNo = %@", whywhyAnalysisList[row].whywhyAnalysisNo).first
+        {
+            if let cell = cell {
+                if  let problem = analysis.problem {
+                    cell.problemLabel.text = problem
+                } else {
+                    // TODO: 後ほどエラー処理を実装
+                }
+                
+                if let measure = analysis.measures {
+                    cell.measuresLabel.text = measure
+                } else {
+                    // TODO: 後ほどエラー処理を実装
+                }
+                
+                if let status = analysis.status {
+                    cell.statusButton.setTitle(status, for: .normal)
+                }
+                cell.statusButton.tag = row
+                cell.statusButton.addTarget(self, action: #selector(self.buttonEvent(_: )), for: UIControl.Event.touchUpInside)
             }
-
-            if let measure = whywhyAnalysisList[row].measures {
-                cell.measuresLabel.text = measure
-            } else {
-                // TODO: 後ほどエラー処理を実装
-            }
-
-            if let status = whywhyAnalysisList[row].status {
-                cell.statusButton.setTitle(status, for: .normal)
-            }
-            cell.statusButton.tag = row
-            cell.statusButton.addTarget(self, action: #selector(self.buttonEvent(_: )), for: UIControl.Event.touchUpInside)
         }
         // cellは必ず値が入る為強制アンラップを許容
         // swiftlint:disable:next force_unwrapping
