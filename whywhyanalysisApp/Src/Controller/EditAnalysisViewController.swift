@@ -8,15 +8,24 @@
 
 import UIKit
 
-internal class EditAnalysisViewController: UIViewController {
+internal class EditAnalysisViewController: UIViewController, UITextFieldDelegate {
     internal var whywhyAnalysis: Analysis?
     internal var analysisView: EditAnalysis?
     internal var mode: AnalysisDivision?
+    internal var txtActiveField = UITextField()
 
     override internal func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         analysisView = (Bundle.main.loadNibNamed("EditAnalysis", owner: self, options: nil)?.first as? EditAnalysis)
+
+        analysisView?.problemTextField.delegate = self
+        analysisView?.oneWhyTextFiled.delegate = self
+        analysisView?.twoWhyTextField.delegate = self
+        analysisView?.threeWhyTextField.delegate = self
+        analysisView?.fourWhyTextField.delegate = self
+        analysisView?.fiveWhyTextField.delegate = self
+        analysisView?.measuresTextField.delegate = self
 
         if let analysisView = analysisView {
             analysisView.mode = mode
@@ -113,4 +122,11 @@ internal class EditAnalysisViewController: UIViewController {
             }
         }
     }
+
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+            //キーボードをしまう
+            self.view.endEditing(true)
+
+            return true
+        }
 }
