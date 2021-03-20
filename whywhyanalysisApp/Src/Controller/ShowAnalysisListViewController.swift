@@ -68,6 +68,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
             data.deleteWhywhyAnalytics(whywhyAnalysisNo)
             whywhyAnalysisList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            whywhyAnalysisList = data.loadAllWhyAnalyticsData()
         }
     }
 
@@ -108,7 +109,6 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
             } else {
                 // TODO: 後ほどエラー処理を実装
             }
-
             if let measure = whywhyAnalysisList[row].measures {
                 cell.measuresLabel.text = measure
             } else {
