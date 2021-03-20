@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class EditAnalysis: UIView {
+internal class EditAnalysis: UIView, UITextFieldDelegate, UIScrollViewDelegate {
     internal var whywhyAnalysis: Analysis?
     internal var mode: AnalysisDivision?
     @IBOutlet internal weak var oneWHYLabel: UILabel!
