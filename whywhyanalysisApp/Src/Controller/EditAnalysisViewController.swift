@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class EditAnalysisViewController: UIViewController, UITextFieldDelegate {
+internal class EditAnalysisViewController: UIViewController {
     internal var whywhyAnalysis: Analysis?
     internal var analysisView: EditAnalysis?
     internal var mode: AnalysisDivision?
@@ -19,14 +19,6 @@ internal class EditAnalysisViewController: UIViewController, UITextFieldDelegate
         analysisView = (Bundle.main.loadNibNamed("EditAnalysis", owner: self, options: nil)?.first as? EditAnalysis)
 
         if let analysisView = analysisView {
-            analysisView.problemTextField.delegate = self
-            analysisView.oneWhyTextFiled.delegate = self
-            analysisView.twoWhyTextField.delegate = self
-            analysisView.threeWhyTextField.delegate = self
-            analysisView.fourWhyTextField.delegate = self
-            analysisView.fiveWhyTextField.delegate = self
-            analysisView.measuresTextField.delegate = self
-
             analysisView.mode = mode
             analysisView.confirmButton.addTarget(self, action: #selector(self.goRegistClick(btn:)), for: .touchUpInside)
 
@@ -121,11 +113,4 @@ internal class EditAnalysisViewController: UIViewController, UITextFieldDelegate
             }
         }
     }
-
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            // キーボードをしまう
-            self.view.endEditing(true)
-
-            return true
-        }
 }

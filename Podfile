@@ -10,6 +10,7 @@ target 'whywhyanalysisApp' do
   pod 'R.swift'
   pod 'SwiftLint'
   pod 'SwiftMessages'
+  pod 'IQKeyboardManager'
 
   target 'whywhyanalysisAppTests' do
     inherit! :search_paths

@@ -6,6 +6,7 @@
 //  Copyright © 2020 長塚かおり. All rights reserved.
 //
 
+import IQKeyboardManager
 import UIKit
 
 @UIApplicationMain
@@ -13,6 +14,7 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
     // launchOptionsはホーム画面からアプリを起動した際にはnilが入る為許容
     // swiftlint:disable:next discouraged_optional_collection
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        IQKeyboardManager.shared().isEnabled = true
         // Override point for customization after application launch.
         return true
     }
