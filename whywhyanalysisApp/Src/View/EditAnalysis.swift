@@ -23,7 +23,14 @@ internal class EditAnalysis: UIView, UITextFieldDelegate, UIScrollViewDelegate {
     @IBOutlet internal weak var fourWhyTextField: UITextField!
     @IBOutlet internal weak var fiveWhyTextField: UITextField!
     @IBOutlet internal weak var measuresTextField: UITextField!
-    @IBOutlet internal weak var analysisView: UIView!
+
+    @IBOutlet internal weak var problemView: UIView!
+    @IBOutlet internal weak var oneAnalysisView: UIView!
+    @IBOutlet internal weak var twoAnalysisView: UIView!
+    @IBOutlet internal weak var threeAnalysisView: UIView!
+    @IBOutlet internal weak var fourAnalysisView: UIView!
+    @IBOutlet internal weak var fiveAnalysisView: UIView!
+
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var confirmButton: UIButton!
     @IBOutlet internal weak var oneArrow: UIImageView!
@@ -53,7 +60,13 @@ internal class EditAnalysis: UIView, UITextFieldDelegate, UIScrollViewDelegate {
         fourArrow.tintColor = AppColor.mainColor
         fiveArrow.tintColor = AppColor.mainColor
 
-        analysisView.backgroundColor = AppColor.viewBgColor
+        problemView.backgroundColor = AppColor.viewBgColor
+        oneAnalysisView.backgroundColor = AppColor.viewBgColor
+        twoAnalysisView.backgroundColor = AppColor.viewBgColor
+        threeAnalysisView.backgroundColor = AppColor.viewBgColor
+        fourAnalysisView.backgroundColor = AppColor.viewBgColor
+        fiveAnalysisView.backgroundColor = AppColor.viewBgColor
+
         measuresLabel.backgroundColor = AppColor.headingLabelBgColor
         measuresLabel.textColor = .white
         confirmButton.backgroundColor = AppColor.btnBgColor
