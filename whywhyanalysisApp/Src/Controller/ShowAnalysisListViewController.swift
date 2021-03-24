@@ -9,7 +9,7 @@
 import UIKit
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
-    internal let cellHeigh: CGFloat = 100
+    internal let cellHeigh: CGFloat = 130
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
     @IBOutlet internal weak var backgroundView: UIView!
@@ -38,6 +38,7 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         backgroundView.backgroundColor = AppColor.viewBgColor
         titleLabel.layer.borderColor = UIColor.link.cgColor
         tableView.separatorColor = AppColor.tableBgColor
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         titleLabel.layer.borderWidth = 1
     }
 
@@ -105,12 +106,12 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         let row = whywhyAnalysisList.count - indexPath.row - 1
         if let cell = cell {
             if  let problem = whywhyAnalysisList[row].problem {
-                cell.problemLabel.text = problem
+                cell.problemLabel.text = "問題：" + problem
             } else {
                 // TODO: 後ほどエラー処理を実装
             }
             if let measure = whywhyAnalysisList[row].measures {
-                cell.measuresLabel.text = measure
+                cell.measuresLabel.text = "対策：" + measure
             } else {
                 // TODO: 後ほどエラー処理を実装
             }
