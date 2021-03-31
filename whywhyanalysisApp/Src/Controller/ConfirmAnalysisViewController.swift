@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
     internal let statusList = [AnalysisStatus.inProgress.rawValue, AnalysisStatus.achieve.rawValue, AnalysisStatus.notAchieved.rawValue]
     internal var whywhyAnalysis: Analysis?
     internal var mode: AnalysisDivision?
@@ -42,6 +42,17 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         confirmButton.tintColor = .white
     }
 
+    override internal func viewDidLoad() {
+        super.viewDidLoad()
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(back(_:)), for: .touchUpInside)
+        button.setTitle("Back", for: .normal)
+        button.setImage(UIImage(named: "back"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        button.imageEdgeInsets = .init(top: 0, left: -10, bottom: 0, right: 10)
+        navigationItem.leftBarButtonItem = .init(customView: button)
+    }
+
     // 何故何故分析を登録
     @IBAction private func registAnalysis(_ sender: Any) {
         if let whywhyAnalysis = whywhyAnalysis {
@@ -60,6 +71,16 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
             }
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+
+    @objc
+    private func back(_ sender: Any) {
+        let nav = self.navigationController
+        // swiftlint:disable:next force_unwrapping
+        let editAnalysisViewController = nav?.viewControllers[((nav?.viewControllers.count)!) - 2] as? EditAnalysisViewController
+        // 値を渡す
+        editAnalysisViewController?.whywhyAnalysis = whywhyAnalysis
+        navigationController?.popViewController(animated: true)
     }
 
     internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
