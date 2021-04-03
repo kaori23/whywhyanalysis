@@ -19,8 +19,8 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     @IBOutlet internal weak var statusPickerView: UIPickerView!
     @IBOutlet internal weak var confirmButton: UIButton!
 
-    override internal func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override internal func viewDidLoad() {
+        super.viewDidLoad()
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
 

@@ -13,8 +13,8 @@ internal class EditAnalysisViewController: UIViewController {
     internal var analysisView: EditAnalysis?
     internal var mode: AnalysisDivision?
 
-    override internal func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override internal func viewDidLoad() {
+        super.viewDidLoad()
 
         analysisView = (Bundle.main.loadNibNamed("EditAnalysis", owner: self, options: nil)?.first as? EditAnalysis)
 
