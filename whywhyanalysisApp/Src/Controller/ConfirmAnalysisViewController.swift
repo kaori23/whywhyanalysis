@@ -42,17 +42,6 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         confirmButton.tintColor = .white
     }
 
-    override internal func viewDidLoad() {
-        super.viewDidLoad()
-        let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(back(_:)), for: .touchUpInside)
-        button.setTitle("Back", for: .normal)
-        button.setImage(UIImage(named: "back"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.imageEdgeInsets = .init(top: 0, left: -10, bottom: 0, right: 10)
-        navigationItem.leftBarButtonItem = .init(customView: button)
-    }
-
     // 何故何故分析を登録
     @IBAction private func registAnalysis(_ sender: Any) {
         if let whywhyAnalysis = whywhyAnalysis {
