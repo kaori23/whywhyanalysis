@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
     internal let statusList = [AnalysisStatus.inProgress.rawValue, AnalysisStatus.achieve.rawValue, AnalysisStatus.notAchieved.rawValue]
     internal var whywhyAnalysis: Analysis?
     internal var mode: AnalysisDivision?
@@ -19,8 +19,8 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     @IBOutlet internal weak var statusPickerView: UIPickerView!
     @IBOutlet internal weak var confirmButton: UIButton!
 
-    override internal func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override internal func viewDidLoad() {
+        super.viewDidLoad()
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
 
@@ -60,6 +60,16 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
             }
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+
+    @objc
+    private func back(_ sender: Any) {
+        let nav = self.navigationController
+        // swiftlint:disable:next force_unwrapping
+        let editAnalysisViewController = nav?.viewControllers[((nav?.viewControllers.count)!) - 2] as? EditAnalysisViewController
+        // 値を渡す
+        editAnalysisViewController?.whywhyAnalysis = whywhyAnalysis
+        navigationController?.popViewController(animated: true)
     }
 
     internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
