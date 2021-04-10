@@ -484,11 +484,11 @@
                 <outlet property="threeAnalysisView" destination="aEZ-hG-eOG" id="2fy-yl-v0O"/>
                 <outlet property="threeArrow" destination="EfZ-a8-g4J" id="a3J-PY-kH0"/>
                 <outlet property="threeWHYLabel" destination="j1o-gJ-ui8" id="fTc-Jv-5Mh"/>
-                <outlet property="threeWhyTextField" destination="8vt-43-NNq" id="CkH-3D-u8g"/>
+                <outlet property="threeWhyTextField" destination="xPN-h8-8Xr" id="0lH-O8-IhQ"/>
                 <outlet property="twoAnalysisView" destination="wDl-p0-BhU" id="bgo-wf-qqA"/>
                 <outlet property="twoArrow" destination="cvv-Ge-kzy" id="Hft-YP-e8x"/>
                 <outlet property="twoWHYLabel" destination="aCt-mf-JsX" id="tXm-hc-f1q"/>
-                <outlet property="twoWhyTextField" destination="xPN-h8-8Xr" id="pEF-2L-7TX"/>
+                <outlet property="twoWhyTextField" destination="n6p-XP-pak" id="cZF-Pm-1vK"/>
             </connections>
             <point key="canvasLocation" x="133.59999999999999" y="80.50974512743629"/>
         </view>
