@@ -167,7 +167,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="対策ラベル">
                                         <attributes>
-                                            <font key="NSFont" size="20" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="20"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
@@ -183,7 +183,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="問題ラベル">
                                         <attributes>
-                                            <font key="NSFont" size="16" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
@@ -289,7 +289,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="問題ラベル　　　　　　　　　　　　">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
@@ -314,7 +314,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="対策ラベル">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
