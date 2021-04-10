@@ -1,0 +1,44 @@
+PODS:
+  - IQKeyboardManager (6.5.6)
+  - R.swift (5.3.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - Realm (10.2.0):
+    - Realm/Headers (= 10.2.0)
+  - Realm/Headers (10.2.0)
+  - RealmSwift (10.2.0):
+    - Realm (= 10.2.0)
+  - SwiftLint (0.42.0)
+  - SwiftMessages (9.0.0):
+    - SwiftMessages/App (= 9.0.0)
+  - SwiftMessages/App (9.0.0)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - R.swift
+  - RealmSwift
+  - SwiftLint
+  - SwiftMessages
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - R.swift
+    - R.swift.Library
+    - Realm
+    - RealmSwift
+    - SwiftLint
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  R.swift: 4170fb7161c67be3bc1a847040b79367d69c419f
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  Realm: d7914ebf66bb182469726f997c4c38eff286aab0
+  RealmSwift: aad08b7dc8c732b7b5794286e9df83739bf834f1
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftMessages: 55274ca3a239062398603008ed81924cfd1fe798
+
+PODFILE CHECKSUM: 71a8193c248fa8796d0c06c2c25ace1207ce0e28
+
+COCOAPODS: 1.10.0
