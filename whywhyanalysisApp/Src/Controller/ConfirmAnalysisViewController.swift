@@ -18,9 +18,23 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var statusPickerView: UIPickerView!
     @IBOutlet internal weak var confirmButton: UIButton!
+    @IBOutlet internal weak var wordingLabel: UILabel!
+
+    @IBOutlet internal weak var problemtitleLabel: UILabel!
+    @IBOutlet internal weak var measuresTitleLabel: UILabel!
+    @IBOutlet internal weak var statusPickerTitleLabel: UILabel!
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
+        //　配色設定
+        self.view.backgroundColor = UIColor.white
+        wordingLabel.textColor = UIColor.black
+        problemtitleLabel.textColor = UIColor.black
+        problemLabel.textColor = UIColor.black
+        measuresTitleLabel.textColor = UIColor.black
+        measuresLabel.textColor = UIColor.black
+        statusPickerTitleLabel.textColor = UIColor.black
+
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
 
@@ -76,10 +90,14 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         statusList.count
     }
 
-    internal func pickerView(_ pickerView: UIPickerView,
-                             titleForRow row: Int, forComponent component: Int) -> String? {
-        statusList[row]
-    }
+    internal func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+         // 表示するラベルを生成する
+         let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 50))
+         label.textAlignment = .center
+         label.text = statusList[row]
+         label.textColor = UIColor.black
+         return label
+     }
 
     internal func pickerView(_ pickerView: UIPickerView,
                              didSelectRow row: Int, inComponent component: Int) {

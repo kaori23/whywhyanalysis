@@ -11,6 +11,9 @@ import UIKit
 internal class EditAnalysis: UIView, UITextFieldDelegate, UIScrollViewDelegate {
     internal var whywhyAnalysis: Analysis?
     internal var mode: AnalysisDivision?
+
+    @IBOutlet internal weak var measuresView: UIView!
+    @IBOutlet internal weak var confirmView: UIView!
     @IBOutlet internal weak var oneWHYLabel: UILabel!
     @IBOutlet internal weak var twoWHYLabel: UILabel!
     @IBOutlet internal weak var threeWHYLabel: UILabel!
@@ -42,17 +45,40 @@ internal class EditAnalysis: UIView, UITextFieldDelegate, UIScrollViewDelegate {
     override internal func awakeFromNib() {
         super.awakeFromNib()
 
+        self.backgroundColor = UIColor.white
+        measuresView.layer.backgroundColor = UIColor.white.cgColor
+        confirmView.layer.backgroundColor =
+            UIColor.white.cgColor
+
+        problemTextField.backgroundColor =
+            UIColor.white
+        problemTextField.textColor = UIColor.black
+
         oneWHYLabel.textColor = AppColor.whyLabelTextColor
         oneWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        oneWhyTextFiled.textColor = UIColor.black
+        oneWhyTextFiled.backgroundColor = UIColor.white
+
         twoWHYLabel.textColor = AppColor.whyLabelTextColor
         twoWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        twoWhyTextField.textColor = UIColor.black
+        twoWhyTextField.backgroundColor = UIColor.white
+
         threeWHYLabel.textColor = AppColor.whyLabelTextColor
         threeWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        threeWhyTextField.textColor = UIColor.black
+        threeWhyTextField.backgroundColor = UIColor.white
+
         fourWHYLabel.textColor = AppColor.whyLabelTextColor
         fourWHYLabel.backgroundColor = AppColor.whyLabelBgColor
+        fourWhyTextField.textColor = UIColor.black
+        fourWhyTextField.backgroundColor = UIColor.white
+
         fiveWHYLabel.textColor = AppColor.whyLabelTextColor
         fiveWHYLabel.backgroundColor = AppColor
             .whyLabelBgColor
+        fiveWhyTextField.textColor = UIColor.black
+        fiveWhyTextField.backgroundColor = UIColor.white
 
         oneArrow.tintColor = AppColor.mainColor
         twoArrow.tintColor = AppColor.mainColor
@@ -67,9 +93,12 @@ internal class EditAnalysis: UIView, UITextFieldDelegate, UIScrollViewDelegate {
         fourAnalysisView.backgroundColor = AppColor.viewBgColor
         fiveAnalysisView.backgroundColor = AppColor.viewBgColor
 
-        measuresLabel.backgroundColor = AppColor.headingLabelBgColor
         measuresLabel.textColor = .white
-        confirmButton.backgroundColor = AppColor.btnBgColor
+        measuresLabel.backgroundColor = AppColor.headingLabelBgColor
+        measuresTextField.textColor = UIColor.black
+        measuresTextField.backgroundColor = UIColor.white
+
         confirmButton.tintColor = .white
+        confirmButton.backgroundColor = AppColor.btnBgColor
     }
 }

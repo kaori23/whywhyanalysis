@@ -21,10 +21,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-10-fnT" userLabel="upView">
                             <rect key="frame" x="0.0" y="0.0" width="428" height="538.33333333333337"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqV-K0-N6Z" userLabel="problemView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqV-K0-N6Z" userLabel="problemView" customClass="CustomTextField" customModule="whywhyanalysisApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="428" height="80.666666666666671"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="問題：" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glL-J5-IDO">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="問題：" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glL-J5-IDO">
                                             <rect key="frame" x="10" y="23" width="408" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="jco-vK-5AU"/>
@@ -465,6 +465,7 @@
             </constraints>
             <connections>
                 <outlet property="confirmButton" destination="yjN-ps-h6L" id="Q58-wI-DWL"/>
+                <outlet property="confirmView" destination="sbW-re-Pb7" id="WMJ-52-NNk"/>
                 <outlet property="fiveAnalysisView" destination="vz6-6V-icK" id="phy-8P-SqL"/>
                 <outlet property="fiveArrow" destination="2fX-X4-W2g" id="aP0-lL-31F"/>
                 <outlet property="fiveWHYLabel" destination="XF8-4D-BTK" id="cHF-nC-xxN"/>
@@ -475,6 +476,7 @@
                 <outlet property="fourWhyTextField" destination="8vt-43-NNq" id="DFu-D3-LaU"/>
                 <outlet property="measuresLabel" destination="VMH-Ol-pV3" id="hxA-aE-Vyl"/>
                 <outlet property="measuresTextField" destination="3zL-Ns-jHU" id="ABg-18-Jo8"/>
+                <outlet property="measuresView" destination="xO1-aG-STK" id="Kwi-zc-QjX"/>
                 <outlet property="oneAnalysisView" destination="NQw-Bi-NAF" id="X6f-Ak-uRF"/>
                 <outlet property="oneArrow" destination="2G9-Sa-Qgp" id="DKg-fs-cZX"/>
                 <outlet property="oneWHYLabel" destination="OOK-J0-VcV" id="djg-0d-Izi"/>
