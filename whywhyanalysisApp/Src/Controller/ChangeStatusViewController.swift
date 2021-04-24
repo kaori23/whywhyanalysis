@@ -24,6 +24,7 @@ internal class ChangeStatusViewController: UIViewController {
     override internal func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor.white
         inProgressButton.backgroundColor = .gray
         inProgressButton.setTitleColor(UIColor.white, for: .normal)
         inProgressButton.contentEdgeInsets = contentEdgeInsets

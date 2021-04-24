@@ -36,6 +36,8 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
 
         // レイアウト設定
         backgroundView.backgroundColor = AppColor.viewBgColor
+        tableView.backgroundColor = UIColor.white
+        titleLabel.textColor = UIColor.black
         titleLabel.layer.borderColor = UIColor.link.cgColor
         tableView.separatorColor = AppColor.tableBgColor
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -119,6 +121,9 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
             if let status = whywhyAnalysisList[row].status {
                 cell.statusButton.setTitle(status, for: .normal)
             }
+            let cellBackgroundView = UIView()
+            cellBackgroundView.backgroundColor = UIColor.gray
+            cell.selectedBackgroundView = cellBackgroundView
             cell.statusButton.tag = row
             cell.statusButton.addTarget(self, action: #selector(self.buttonEvent(_: )), for: UIControl.Event.touchUpInside)
         }
