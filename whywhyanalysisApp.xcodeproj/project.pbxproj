@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01CB29CA5055030B57616B83 /* Pods_whywhyanalysisAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 772105163924D87D3122CB83 /* Pods_whywhyanalysisAppTests.framework */; };
 		12086DA225C98278003A04C7 /* ChangeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12086DA125C98278003A04C7 /* ChangeStatusViewController.swift */; };
 		125DF0D82585E2700028F573 /* EditAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DF0D72585E2700028F573 /* EditAnalysis.swift */; };
 		125DF0DA2585E2820028F573 /* EditAnalysis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125DF0D92585E2820028F573 /* EditAnalysis.xib */; };
@@ -32,7 +31,8 @@
 		12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B52568E26500B24487 /* ValidateUtility.swift */; };
 		12B088B92569001000B24487 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088B82569001000B24487 /* DataStorage.swift */; };
 		12C4ABAA25D552BB009E851B /* MyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4ABA925D552BB009E851B /* MyStyle.swift */; };
-		8B95BE7C057F568F50C31B2E /* Pods_whywhyanalysisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */; };
+		5427F34F8024FDA1A6FB8785 /* Pods_whywhyanalysisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51475818CBC433792AC2C096 /* Pods_whywhyanalysisApp.framework */; };
+		693F6A295C614B1FEC299582 /* Pods_whywhyanalysisAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A64B476E103920D406A8E4 /* Pods_whywhyanalysisAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11C6F1EC4ADDF7994178BE1C /* Pods-whywhyanalysisApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.release.xcconfig"; sourceTree = "<group>"; };
 		12086DA125C98278003A04C7 /* ChangeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusViewController.swift; sourceTree = "<group>"; };
 		125DF0D72585E2700028F573 /* EditAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAnalysis.swift; sourceTree = "<group>"; };
 		125DF0D92585E2820028F573 /* EditAnalysis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAnalysis.xib; sourceTree = "<group>"; };
@@ -68,12 +69,11 @@
 		12B088B52568E26500B24487 /* ValidateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUtility.swift; sourceTree = "<group>"; };
 		12B088B82569001000B24487 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		12C4ABA925D552BB009E851B /* MyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStyle.swift; sourceTree = "<group>"; };
-		2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D77C3C06C425BC89E96F47A /* Pods-whywhyanalysisAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		772105163924D87D3122CB83 /* Pods_whywhyanalysisAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D44821903846DADF3C532370 /* Pods-whywhyanalysisApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.debug.xcconfig"; sourceTree = "<group>"; };
-		DCE2D18A534E02E2E26157F3 /* Pods-whywhyanalysisAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FBD5B7916A2AE553B94D8DBD /* Pods-whywhyanalysisApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.release.xcconfig"; sourceTree = "<group>"; };
+		36A64B476E103920D406A8E4 /* Pods_whywhyanalysisAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51475818CBC433792AC2C096 /* Pods_whywhyanalysisApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whywhyanalysisApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F572ED427CE2CF28948EECA0 /* Pods-whywhyanalysisAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F59FBDDFDEB5CA0155EF78EA /* Pods-whywhyanalysisApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FAD68B4438ACB900048A84B5 /* Pods-whywhyanalysisAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisAppTests.debug.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisAppTests/Pods-whywhyanalysisAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B95BE7C057F568F50C31B2E /* Pods_whywhyanalysisApp.framework in Frameworks */,
+				5427F34F8024FDA1A6FB8785 /* Pods_whywhyanalysisApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01CB29CA5055030B57616B83 /* Pods_whywhyanalysisAppTests.framework in Frameworks */,
+				693F6A295C614B1FEC299582 /* Pods_whywhyanalysisAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 				125DFB5225596297004F09D6 /* whywhyanalysisApp */,
 				125DFB5125596297004F09D6 /* Products */,
 				C85CE23677EBAA00EC5192E9 /* Pods */,
-				E0D3AD9001A1472E7067ECCD /* Frameworks */,
+				5FBACAFB854D418E53013A7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +147,9 @@
 		12B088BB256907EE00B24487 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				125DF0D92585E2820028F573 /* EditAnalysis.xib */,
 				12B088B02568DC5F00B24487 /* ShowAnalysisListCustumCell.xib */,
 				125DF0D72585E2700028F573 /* EditAnalysis.swift */,
+				125DF0D92585E2820028F573 /* EditAnalysis.xib */,
 				12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */,
 			);
 			path = View;
@@ -190,24 +190,24 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		5FBACAFB854D418E53013A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51475818CBC433792AC2C096 /* Pods_whywhyanalysisApp.framework */,
+				36A64B476E103920D406A8E4 /* Pods_whywhyanalysisAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C85CE23677EBAA00EC5192E9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D44821903846DADF3C532370 /* Pods-whywhyanalysisApp.debug.xcconfig */,
-				FBD5B7916A2AE553B94D8DBD /* Pods-whywhyanalysisApp.release.xcconfig */,
-				DCE2D18A534E02E2E26157F3 /* Pods-whywhyanalysisAppTests.debug.xcconfig */,
-				3D77C3C06C425BC89E96F47A /* Pods-whywhyanalysisAppTests.release.xcconfig */,
+				F59FBDDFDEB5CA0155EF78EA /* Pods-whywhyanalysisApp.debug.xcconfig */,
+				11C6F1EC4ADDF7994178BE1C /* Pods-whywhyanalysisApp.release.xcconfig */,
+				FAD68B4438ACB900048A84B5 /* Pods-whywhyanalysisAppTests.debug.xcconfig */,
+				F572ED427CE2CF28948EECA0 /* Pods-whywhyanalysisAppTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		E0D3AD9001A1472E7067ECCD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2DF2BE1608123FD012E68BC6 /* Pods_whywhyanalysisApp.framework */,
-				772105163924D87D3122CB83 /* Pods_whywhyanalysisAppTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,13 +217,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 125DFB6F25596298004F09D6 /* Build configuration list for PBXNativeTarget "whywhyanalysisApp" */;
 			buildPhases = (
-				3087187AAB5358F515702ACB /* [CP] Check Pods Manifest.lock */,
+				75ADCB6802C6E567F830A42D /* [CP] Check Pods Manifest.lock */,
 				12EF93EB25790F050043B804 /* ShellScript */,
 				125DFB4C25596297004F09D6 /* Sources */,
 				125DFB4D25596297004F09D6 /* Frameworks */,
 				125DFB4E25596297004F09D6 /* Resources */,
-				39A39CC0B80996A2A1495546 /* [CP] Embed Pods Frameworks */,
 				12D22EF325ADEE8200F1307A /* ShellScript */,
+				21D184911EA58AD38FC4F2FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,7 +238,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 125DFB7225596298004F09D6 /* Build configuration list for PBXNativeTarget "whywhyanalysisAppTests" */;
 			buildPhases = (
-				D00AAE43FCA9DDA832AA885C /* [CP] Check Pods Manifest.lock */,
+				5C6501A2F0CF1E0818F8A931 /* [CP] Check Pods Manifest.lock */,
 				125DFB6225596298004F09D6 /* Sources */,
 				125DFB6325596298004F09D6 /* Frameworks */,
 				125DFB6425596298004F09D6 /* Resources */,
@@ -344,35 +344,13 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		3087187AAB5358F515702ACB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-whywhyanalysisApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		39A39CC0B80996A2A1495546 /* [CP] Embed Pods Frameworks */ = {
+		21D184911EA58AD38FC4F2FC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,7 +367,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D00AAE43FCA9DDA832AA885C /* [CP] Check Pods Manifest.lock */ = {
+		5C6501A2F0CF1E0818F8A931 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -405,6 +383,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-whywhyanalysisAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75ADCB6802C6E567F830A42D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-whywhyanalysisApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -595,7 +595,7 @@
 		};
 		125DFB7025596298004F09D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D44821903846DADF3C532370 /* Pods-whywhyanalysisApp.debug.xcconfig */;
+			baseConfigurationReference = F59FBDDFDEB5CA0155EF78EA /* Pods-whywhyanalysisApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -614,7 +614,7 @@
 		};
 		125DFB7125596298004F09D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBD5B7916A2AE553B94D8DBD /* Pods-whywhyanalysisApp.release.xcconfig */;
+			baseConfigurationReference = 11C6F1EC4ADDF7994178BE1C /* Pods-whywhyanalysisApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -633,7 +633,7 @@
 		};
 		125DFB7325596298004F09D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCE2D18A534E02E2E26157F3 /* Pods-whywhyanalysisAppTests.debug.xcconfig */;
+			baseConfigurationReference = FAD68B4438ACB900048A84B5 /* Pods-whywhyanalysisAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -656,7 +656,7 @@
 		};
 		125DFB7425596298004F09D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D77C3C06C425BC89E96F47A /* Pods-whywhyanalysisAppTests.release.xcconfig */;
+			baseConfigurationReference = F572ED427CE2CF28948EECA0 /* Pods-whywhyanalysisAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -22,6 +22,7 @@ internal class ShowAnalysisListCustumCell: UITableViewCell {
     override internal func awakeFromNib() {
         super.awakeFromNib()
         // レイアウト設定
+        self.backgroundColor = UIColor.white
         statusButton.backgroundColor = AppColor.btnBgColor
         measuresLabel.layer.borderWidth = 0.7
         measuresLabel.layer.borderColor = AppColor.mainColor.cgColor
