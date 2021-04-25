@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		12086DA225C98278003A04C7 /* ChangeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12086DA125C98278003A04C7 /* ChangeStatusViewController.swift */; };
-		125DF0D82585E2700028F573 /* EditAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DF0D72585E2700028F573 /* EditAnalysis.swift */; };
-		125DF0DA2585E2820028F573 /* EditAnalysis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125DF0D92585E2820028F573 /* EditAnalysis.xib */; };
 		125DF0DC2585E2970028F573 /* EditAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DF0DB2585E2970028F573 /* EditAnalysisViewController.swift */; };
 		125DFB5425596297004F09D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB5325596297004F09D6 /* AppDelegate.swift */; };
 		125DFB5625596297004F09D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125DFB5525596297004F09D6 /* SceneDelegate.swift */; };
@@ -48,8 +46,6 @@
 /* Begin PBXFileReference section */
 		11C6F1EC4ADDF7994178BE1C /* Pods-whywhyanalysisApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whywhyanalysisApp.release.xcconfig"; path = "Target Support Files/Pods-whywhyanalysisApp/Pods-whywhyanalysisApp.release.xcconfig"; sourceTree = "<group>"; };
 		12086DA125C98278003A04C7 /* ChangeStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusViewController.swift; sourceTree = "<group>"; };
-		125DF0D72585E2700028F573 /* EditAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAnalysis.swift; sourceTree = "<group>"; };
-		125DF0D92585E2820028F573 /* EditAnalysis.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAnalysis.xib; sourceTree = "<group>"; };
 		125DF0DB2585E2970028F573 /* EditAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAnalysisViewController.swift; sourceTree = "<group>"; };
 		125DFB5025596297004F09D6 /* whywhyanalysisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whywhyanalysisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125DFB5325596297004F09D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,8 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				12B088B02568DC5F00B24487 /* ShowAnalysisListCustumCell.xib */,
-				125DF0D72585E2700028F573 /* EditAnalysis.swift */,
-				125DF0D92585E2820028F573 /* EditAnalysis.xib */,
 				12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */,
 			);
 			path = View;
@@ -296,7 +290,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125DF0DA2585E2820028F573 /* EditAnalysis.xib in Resources */,
 				12B088B22568DC5F00B24487 /* ShowAnalysisListCustumCell.xib in Resources */,
 				126D348D257CD106006197A6 /* Main.storyboard in Resources */,
 				125DFB6025596298004F09D6 /* LaunchScreen.storyboard in Resources */,
@@ -344,7 +337,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -430,7 +423,6 @@
 				125DF0DC2585E2970028F573 /* EditAnalysisViewController.swift in Sources */,
 				12086DA225C98278003A04C7 /* ChangeStatusViewController.swift in Sources */,
 				126D3489257B655D006197A6 /* R.generated.swift in Sources */,
-				125DF0D82585E2700028F573 /* EditAnalysis.swift in Sources */,
 				12B088A72568CEF300B24487 /* ConfirmAnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +597,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = whywhyAnalysisApp.whywhyanalysisApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -624,6 +617,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = whywhyAnalysisApp.whywhyanalysisApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
