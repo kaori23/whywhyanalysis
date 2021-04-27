@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import UserNotifications
 
-internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate {
+internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UNUserNotificationCenterDelegate {
     internal let statusList = [AnalysisStatus.inProgress.rawValue, AnalysisStatus.achieve.rawValue, AnalysisStatus.notAchieved.rawValue]
     internal var whywhyAnalysis: Analysis?
     internal var mode: AnalysisDivision?
     internal var status = ""
     internal var statusNum = 0
+    internal let dateFormatter = DateFormatter()
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var statusPickerView: UIPickerView!
@@ -23,6 +25,8 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     @IBOutlet internal weak var problemtitleLabel: UILabel!
     @IBOutlet internal weak var measuresTitleLabel: UILabel!
     @IBOutlet internal weak var statusPickerTitleLabel: UILabel!
+    @IBOutlet internal weak var datePicker: UIDatePicker!
+    @IBOutlet internal weak var everydayNotificationSwitch: UISwitch!
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,8 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
 
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
+        datePicker.preferredDatePickerStyle = .wheels
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
 
         if let whywhyAnalysis = whywhyAnalysis {
             problemLabel.text = whywhyAnalysis.problem
@@ -72,18 +78,12 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
                 // TODO: 後ほどエラー処理またはアラート処理を実装
                 break
             }
+            if everydayNotificationSwitch.isOn {
+                // 毎日通知設定
+                everydayNotificationFunc()
+            }
             self.navigationController?.popToRootViewController(animated: true)
         }
-    }
-
-    @objc
-    private func back(_ sender: Any) {
-        let nav = self.navigationController
-        // swiftlint:disable:next force_unwrapping
-        let editAnalysisViewController = nav?.viewControllers[((nav?.viewControllers.count)!) - 2] as? EditAnalysisViewController
-        // 値を渡す
-        editAnalysisViewController?.whywhyAnalysis = whywhyAnalysis
-        navigationController?.popViewController(animated: true)
     }
 
     internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -105,5 +105,30 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     }
     internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
+    }
+
+    // 毎日通知機能
+    private func everydayNotificationFunc() {
+        // タイトル、本文、サウンド設定の保持
+        let content = UNMutableNotificationContent()
+        content.title = "本日の対策は実施しましたか？"
+        content.sound = UNNotificationSound.default
+
+        let date = DateComponents(hour: 20, minute: 00)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        let request = UNNotificationRequest(identifier: NSUUID().uuidString, content: content, trigger: trigger)
+
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    // フォアグラウンドの場合でも通知を表示
+    internal func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 }
