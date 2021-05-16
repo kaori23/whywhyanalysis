@@ -14,6 +14,7 @@ internal class ShowAnalysisListCustumCell: UITableViewCell {
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var statusButton: UIButton!
     @IBOutlet internal weak var problemLabelUnderline: UIView!
+    @IBOutlet internal weak var deadlineLabelUnderline: UIView!
 
     override internal func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -27,6 +28,7 @@ internal class ShowAnalysisListCustumCell: UITableViewCell {
         measuresLabel.layer.borderWidth = 0.7
         measuresLabel.layer.borderColor = AppColor.mainColor.cgColor
         problemLabelUnderline.backgroundColor = AppColor.mainColor
+        deadlineLabelUnderline.backgroundColor = AppColor.mainColor
         statusButton.setTitleColor(.white, for: .normal)
     }
 }

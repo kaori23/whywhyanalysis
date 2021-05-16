@@ -18,6 +18,7 @@
 		126D3489257B655D006197A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D3488257B655D006197A6 /* R.generated.swift */; };
 		126D348A257B655D006197A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126D3488257B655D006197A6 /* R.generated.swift */; };
 		126D348D257CD106006197A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126D348B257CD106006197A6 /* Main.storyboard */; };
+		127024EB263ECFC7006E914B /* PartsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127024EA263ECFC7006E914B /* PartsUtility.swift */; };
 		1295DBCD25D7CB2B00B70955 /* AnalysisDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */; };
 		12B088A72568CEF300B24487 /* ConfirmAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */; };
 		12B088A92568D53100B24487 /* ConfirmAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */; };
@@ -58,6 +59,7 @@
 		126274EC255FAF720064A97D /* ShowAnalysisListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnalysisListViewController.swift; sourceTree = "<group>"; };
 		126D3488257B655D006197A6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		126D348C257CD106006197A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		127024EA263ECFC7006E914B /* PartsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsUtility.swift; sourceTree = "<group>"; };
 		1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisDefine.swift; sourceTree = "<group>"; };
 		12B088A62568CEF300B24487 /* ConfirmAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAnalysisViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		12B088AF2568DC5F00B24487 /* ShowAnalysisListCustumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAnalysisListCustumCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				12B088B52568E26500B24487 /* ValidateUtility.swift */,
 				12C4ABA925D552BB009E851B /* MyStyle.swift */,
 				1295DBCC25D7CB2B00B70955 /* AnalysisDefine.swift */,
+				127024EA263ECFC7006E914B /* PartsUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				125DFB7825596858004F09D6 /* Analysis.swift in Sources */,
 				12B088B62568E26500B24487 /* ValidateUtility.swift in Sources */,
 				125DF0DC2585E2970028F573 /* EditAnalysisViewController.swift in Sources */,
+				127024EB263ECFC7006E914B /* PartsUtility.swift in Sources */,
 				12086DA225C98278003A04C7 /* ChangeStatusViewController.swift in Sources */,
 				126D3489257B655D006197A6 /* R.generated.swift in Sources */,
 				12B088A72568CEF300B24487 /* ConfirmAnalysisViewController.swift in Sources */,

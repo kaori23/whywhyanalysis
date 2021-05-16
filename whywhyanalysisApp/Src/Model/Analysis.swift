@@ -28,12 +28,18 @@ internal class Analysis: Object {
     @objc internal dynamic var fiveWhy: String?
     // 分析回数
     @objc internal dynamic var whywhyanalysiscount = ""
-    //
+    // ステータス
     @objc internal dynamic var status: String?
+    // 対策最終日
+    @objc internal dynamic var lastDate: Date?
+    // 対策最終日通知フラグ
+//    @objc internal dynamic var lastDateNotificationFlag = true
+    // 対策最終日通知id
+    @objc internal dynamic var lastDateNotificationId: String?
 
     internal convenience init(problem: String, measures: String, oneWhy: String,
                               twoWhy: String, threeWhy: String, fourWhy: String,
-                              fiveWhy: String, status: String) {
+                              fiveWhy: String, status: String, lastDate: Date, lastDateNotificationId: String) {
         self.init()
         self.problem = problem
         self.measures = measures
@@ -43,6 +49,8 @@ internal class Analysis: Object {
         self.fourWhy = fourWhy
         self.fiveWhy = fiveWhy
         self.status = status
+        self.lastDate = lastDate
+        self.lastDateNotificationId = lastDateNotificationId
     }
 
     override internal static func primaryKey() -> String? {
