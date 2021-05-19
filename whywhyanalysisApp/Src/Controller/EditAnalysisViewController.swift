@@ -33,7 +33,6 @@ internal class EditAnalysisViewController: UIViewController {
     @IBOutlet internal weak var threeAnalysisView: UIView!
     @IBOutlet internal weak var fourAnalysisView: UIView!
     @IBOutlet internal weak var fiveAnalysisView: UIView!
-
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var confirmButton: UIButton!
     @IBOutlet internal weak var oneArrow: UIImageView!
@@ -44,7 +43,50 @@ internal class EditAnalysisViewController: UIViewController {
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-        // レイアウト設定
+        doInitLayout()
+        // 初期値の設定
+        if mode == .edit {
+            if let whywhyAnalysis = whywhyAnalysis {
+                problemTextField.text = whywhyAnalysis.problem
+                oneWhyTextFiled.text = whywhyAnalysis.oneWhy
+                measuresTextField.text = whywhyAnalysis.measures
+
+                if whywhyAnalysis.twoWhy != nil {
+                    twoWhyTextField.text = whywhyAnalysis.twoWhy
+                }
+                if whywhyAnalysis.threeWhy != nil {
+                    threeWhyTextField.text = whywhyAnalysis.threeWhy
+                }
+                if whywhyAnalysis.fourWhy != nil {
+                    fourWhyTextField.text = whywhyAnalysis.fourWhy
+                }
+                if whywhyAnalysis.fiveWhy != nil {
+                    fiveWhyTextField.text = whywhyAnalysis.fiveWhy
+                }
+            }
+            confirmButton.setTitle(AnalysisDivision.edit.rawValue, for: UIControl.State.normal)
+        } else {
+            confirmButton.setTitle(AnalysisDivision.new.rawValue, for: UIControl.State.normal)
+        }
+    }
+
+    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if goRegistClick() != nil {
+            if segue.identifier == "resistAnalysis" {
+                let nextViewController = segue.destination as? ConfirmAnalysisViewController
+                if let nextVC = nextViewController {
+                    if let mode = self.mode {
+                        nextVC.mode = mode
+                    } else {
+                        nextVC.mode = AnalysisDivision.new
+                    }
+                    nextVC.whywhyAnalysis = goRegistClick()
+                }
+            }
+        }
+    }
+
+    private func doInitLayout() {
         self.view.backgroundColor = UIColor.white
         measuresView.layer.backgroundColor = UIColor.white.cgColor
         confirmView.layer.backgroundColor =
@@ -100,34 +142,9 @@ internal class EditAnalysisViewController: UIViewController {
 
         confirmButton.tintColor = .white
         confirmButton.backgroundColor = AppColor.btnBgColor
-
-        // 初期値の設定
-        if mode == .edit {
-            if let whywhyAnalysis = whywhyAnalysis {
-                problemTextField.text = whywhyAnalysis.problem
-                oneWhyTextFiled.text = whywhyAnalysis.oneWhy
-                measuresTextField.text = whywhyAnalysis.measures
-
-                if whywhyAnalysis.twoWhy != nil {
-                    twoWhyTextField.text = whywhyAnalysis.twoWhy
-                }
-                if whywhyAnalysis.threeWhy != nil {
-                    threeWhyTextField.text = whywhyAnalysis.threeWhy
-                }
-                if whywhyAnalysis.fourWhy != nil {
-                    fourWhyTextField.text = whywhyAnalysis.fourWhy
-                }
-                if whywhyAnalysis.fiveWhy != nil {
-                    fiveWhyTextField.text = whywhyAnalysis.fiveWhy
-                }
-            }
-            confirmButton.setTitle(AnalysisDivision.edit.rawValue, for: UIControl.State.normal)
-        } else {
-            confirmButton.setTitle(AnalysisDivision.new.rawValue, for: UIControl.State.normal)
-        }
     }
 
-    @IBAction private func goRegistClick(_ sender: Any) {
+     private func goRegistClick() -> Analysis? {
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: measuresTextField.text)) {
@@ -137,6 +154,8 @@ internal class EditAnalysisViewController: UIViewController {
             var fourWhy = ""
             var fiveWhy = ""
             let status = AnalysisStatus.inProgress.rawValue
+            let lastDate = Date()
+            let lastDateNotificationId = ""
 
             if ValidateUtility.isTextNotEmplyCheck(optinalText: twoWhyTextField.text) {
                 // ValidateUtility.isTextNotEmplyCheckでnilチェックをしているので強制アンラップを許容
@@ -161,19 +180,23 @@ internal class EditAnalysisViewController: UIViewController {
             // 修正後の内容で初期化
             // ValidateUtility.isTextNotEmplyCheckでnilチェックをしているので強制アンラップを許容
             // swiftlint:disable:next force_unwrapping
-            let editWhywhyAnalysis = Analysis(problem: problemTextField.text!, measures: measuresTextField.text!, oneWhy: oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy, status: status)
+            let editWhywhyAnalysis = Analysis(problem: problemTextField.text!, measures: measuresTextField.text!, oneWhy: oneWhyTextFiled.text!, twoWhy: twoWhy, threeWhy: threeWhy, fourWhy: fourWhy, fiveWhy: fiveWhy, status: status, lastDate: lastDate, lastDateNotificationId: lastDateNotificationId)
             // 画面遷移
             let nextViewController = R.storyboard.main.resistAnalysis()
             if let nextVC = nextViewController {
                 nextVC.whywhyAnalysis = editWhywhyAnalysis
                 if mode == .edit {
                     if let analysis = whywhyAnalysis {
-                        nextVC.whywhyAnalysis?.whywhyAnalysisNo = analysis.whywhyAnalysisNo
-                        nextVC.whywhyAnalysis?.status = analysis.status
+                        editWhywhyAnalysis.status = analysis.status
+                        if let lastDate = analysis.lastDate {
+                            editWhywhyAnalysis.lastDate = lastDate
+                        }
+                        if let lastDateNotificationId = analysis.lastDateNotificationId {
+                            editWhywhyAnalysis.lastDateNotificationId = lastDateNotificationId
+                        }
                     }
                 }
-                nextVC.mode = mode
-                navigationController?.pushViewController(nextVC, animated: true)
+                return editWhywhyAnalysis
             } else {
                 // TODO: 後ほどアラート処理を実装
             }
@@ -184,5 +207,6 @@ internal class EditAnalysisViewController: UIViewController {
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
         }
+        return nil
     }
 }

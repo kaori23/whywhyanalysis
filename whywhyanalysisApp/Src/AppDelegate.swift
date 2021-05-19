@@ -16,6 +16,15 @@ internal class AppDelegate: UIResponder, UIApplicationDelegate {
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
         // Override point for customization after application launch.
+        // アプリのバッジの更新、サウンド、アラートの通知に関してユーザへ確認
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, _  in
+            if granted {
+                print("許可する")
+            } else {
+                print("許可しない")
+            }
+        }
         return true
     }
 

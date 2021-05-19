@@ -14,6 +14,7 @@ internal class DataStorage {
 
     // 全項目全件取得
     internal func loadAllWhyAnalyticsData() -> [Analysis] {
+        var whywhyAnalysisList: [Analysis] = []
         // データベースからデータを取得
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
@@ -22,9 +23,10 @@ internal class DataStorage {
             analysisList = realm.objects(Analysis.self)
         } catch {
         }
-        // HomeViewController側で表示を制御しているので強制アンラップを許容
-        // swiftlint:disable:next force_unwrapping
-        return Array(analysisList!)
+        if let analysisList = analysisList {
+            whywhyAnalysisList = Array(analysisList)
+        }
+        return whywhyAnalysisList
     }
 
     // 新規何故何故分析を追加
@@ -48,7 +50,7 @@ internal class DataStorage {
         }
     }
 
-    // 何故何故分析を編集
+    // 何故何故分析を更新
     internal func editWhyAnalyticsData(_ analysis: Analysis) {
         // Realmデータベースを取得
         do {
@@ -57,6 +59,7 @@ internal class DataStorage {
                 realm.add(analysis, update: .all)
             }
         } catch {
+            // 後ほどエラー処理を実装
         }
     }
 
@@ -67,7 +70,7 @@ internal class DataStorage {
             let realm = try Realm()
             analysisList = realm.objects(Analysis.self).filter("whywhyAnalysisNo == %@", whywhyAnalysisNo)
         } catch {
-            // TODO:
+            // TODO: 後ほどエラー処理を実装
         }
         // DBに確実に存在するもののみを取得するので強制アンラップを許容
         // swiftlint:disable:next force_unwrapping
