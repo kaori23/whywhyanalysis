@@ -43,7 +43,50 @@ internal class EditAnalysisViewController: UIViewController {
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-        // レイアウト設定
+        doInitLayout()
+        // 初期値の設定
+        if mode == .edit {
+            if let whywhyAnalysis = whywhyAnalysis {
+                problemTextField.text = whywhyAnalysis.problem
+                oneWhyTextFiled.text = whywhyAnalysis.oneWhy
+                measuresTextField.text = whywhyAnalysis.measures
+
+                if whywhyAnalysis.twoWhy != nil {
+                    twoWhyTextField.text = whywhyAnalysis.twoWhy
+                }
+                if whywhyAnalysis.threeWhy != nil {
+                    threeWhyTextField.text = whywhyAnalysis.threeWhy
+                }
+                if whywhyAnalysis.fourWhy != nil {
+                    fourWhyTextField.text = whywhyAnalysis.fourWhy
+                }
+                if whywhyAnalysis.fiveWhy != nil {
+                    fiveWhyTextField.text = whywhyAnalysis.fiveWhy
+                }
+            }
+            confirmButton.setTitle(AnalysisDivision.edit.rawValue, for: UIControl.State.normal)
+        } else {
+            confirmButton.setTitle(AnalysisDivision.new.rawValue, for: UIControl.State.normal)
+        }
+    }
+
+    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if goRegistClick() != nil {
+            if segue.identifier == "resistAnalysis" {
+                let nextViewController = segue.destination as? ConfirmAnalysisViewController
+                if let nextVC = nextViewController {
+                    if let mode = self.mode {
+                        nextVC.mode = mode
+                    } else {
+                        nextVC.mode = AnalysisDivision.new
+                    }
+                    nextVC.whywhyAnalysis = goRegistClick()
+                }
+            }
+        }
+    }
+
+    private func doInitLayout() {
         self.view.backgroundColor = UIColor.white
         measuresView.layer.backgroundColor = UIColor.white.cgColor
         confirmView.layer.backgroundColor =
@@ -99,50 +142,9 @@ internal class EditAnalysisViewController: UIViewController {
 
         confirmButton.tintColor = .white
         confirmButton.backgroundColor = AppColor.btnBgColor
-
-        // 初期値の設定
-        if mode == .edit {
-            if let whywhyAnalysis = whywhyAnalysis {
-                problemTextField.text = whywhyAnalysis.problem
-                oneWhyTextFiled.text = whywhyAnalysis.oneWhy
-                measuresTextField.text = whywhyAnalysis.measures
-
-                if whywhyAnalysis.twoWhy != nil {
-                    twoWhyTextField.text = whywhyAnalysis.twoWhy
-                }
-                if whywhyAnalysis.threeWhy != nil {
-                    threeWhyTextField.text = whywhyAnalysis.threeWhy
-                }
-                if whywhyAnalysis.fourWhy != nil {
-                    fourWhyTextField.text = whywhyAnalysis.fourWhy
-                }
-                if whywhyAnalysis.fiveWhy != nil {
-                    fiveWhyTextField.text = whywhyAnalysis.fiveWhy
-                }
-            }
-            confirmButton.setTitle(AnalysisDivision.edit.rawValue, for: UIControl.State.normal)
-        } else {
-            confirmButton.setTitle(AnalysisDivision.new.rawValue, for: UIControl.State.normal)
-        }
     }
 
-    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if goRegistClick().0 {
-            if segue.identifier == "resistAnalysis" {
-                let nextViewController = segue.destination as? ConfirmAnalysisViewController
-                if let nextVC = nextViewController {
-                    if let mode = self.mode {
-                        nextVC.mode = mode
-                    } else {
-                        nextVC.mode = AnalysisDivision.new
-                    }
-                    nextVC.whywhyAnalysis = goRegistClick().1
-                }
-            }
-        }
-    }
-
-     private func goRegistClick() -> (Bool, Analysis) {
+     private func goRegistClick() -> Analysis? {
         if (ValidateUtility.isTextNotEmplyCheck(optinalText: problemTextField.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: oneWhyTextFiled.text))
             && (ValidateUtility.isTextNotEmplyCheck(optinalText: measuresTextField.text)) {
@@ -194,7 +196,7 @@ internal class EditAnalysisViewController: UIViewController {
                         }
                     }
                 }
-                return (true, editWhywhyAnalysis)
+                return editWhywhyAnalysis
             } else {
                 // TODO: 後ほどアラート処理を実装
             }
@@ -205,8 +207,6 @@ internal class EditAnalysisViewController: UIViewController {
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
         }
-        // whywhyAnalysisは使用しない為強制アンラップを許容
-        // swiftlint:disable:next force_unwrapping
-        return (false, whywhyAnalysis!)
+        return nil
     }
 }

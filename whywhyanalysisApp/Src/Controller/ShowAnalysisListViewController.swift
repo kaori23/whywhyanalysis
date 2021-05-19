@@ -24,14 +24,16 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
+        doInitLayout()
         tableView.delegate = self
         tableView.dataSource = self
 
         // tableViewにカスタムセルを登録
         tableView.register(UINib(nibName: "ShowAnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         tableView.tableFooterView = UIView()
+    }
 
-        // レイアウト設定
+    private func doInitLayout() {
         backgroundView.backgroundColor = AppColor.viewBgColor
         tableView.backgroundColor = UIColor.white
         titleLabel.textColor = UIColor.black
@@ -40,7 +42,6 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         titleLabel.layer.borderWidth = 1
     }
-
     // セルの編集を許可する
     internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true

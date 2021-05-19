@@ -43,35 +43,11 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
-        //　配色設定
-        wordingView.backgroundColor = UIColor.white
-        problemView.backgroundColor = UIColor.white
-        measuresView.backgroundColor = UIColor.white
-        statusView.backgroundColor = UIColor.white
-        deadlineView.backgroundColor = UIColor.white
-        everydayView.backgroundColor = UIColor.white
-        lastdayView.backgroundColor = UIColor.white
-        registView.backgroundColor = UIColor.white
-        wordingLabel.textColor = UIColor.black
-        problemtitleLabel.textColor = UIColor.black
-        problemLabel.textColor = UIColor.black
-        measuresTitleLabel.textColor = UIColor.black
-        measuresLabel.textColor = UIColor.black
-        statusPickerTitleLabel.textColor = UIColor.black
-        deadlineTitleLabel.textColor = UIColor.black
-        everydayNotificationTitleLabel.textColor = UIColor.black
-        lastdayNotificationTitleLabel.textColor = UIColor.black
-        datePicker.setValue(UIColor.black, forKeyPath: "textColor")
-        datePicker.setValue(false, forKey: "highlightsToday")
-
+        doInitLayout()
+        doinitDateFormat()
         statusPickerView.dataSource = self
         statusPickerView.delegate = self
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        // 端末のロケールや暦法設定に左右されないように設定
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        // 画面の表示内容を日本にする為設定
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+
         if let whywhyAnalysis = whywhyAnalysis {
             problemLabel.text = whywhyAnalysis.problem
             measuresLabel.text = whywhyAnalysis.measures
@@ -94,8 +70,6 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
             }
         }
         self.statusPickerView.selectRow(statusNum, inComponent: 0, animated: false)
-        confirmButton.backgroundColor = AppColor.btnBgColor
-        confirmButton.tintColor = .white
     }
 
     // 何故何故分析を登録
@@ -104,9 +78,9 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         let lastM = calendar.component(.month, from: datePicker.date)
         let lastD = calendar.component(.day, from: datePicker.date)
         let lastDateComponents = DateComponents(year: lastY, month: lastM, day: lastD)
-        let lastDate = calendar.date(from: lastDateComponents)
+
         // 日付チェック
-        if let lastDate = lastDate {
+        if let lastDate = calendar.date(from: lastDateComponents) {
             if isCheckedAfterDate(selectDate: lastDate) {
                 if let whywhyAnalysis = whywhyAnalysis {
                     // 値の設定
@@ -167,6 +141,39 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     }
     internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
+    }
+
+    private func doInitLayout() {
+        wordingView.backgroundColor = UIColor.white
+        problemView.backgroundColor = UIColor.white
+        measuresView.backgroundColor = UIColor.white
+        statusView.backgroundColor = UIColor.white
+        deadlineView.backgroundColor = UIColor.white
+        everydayView.backgroundColor = UIColor.white
+        lastdayView.backgroundColor = UIColor.white
+        registView.backgroundColor = UIColor.white
+        wordingLabel.textColor = UIColor.black
+        problemtitleLabel.textColor = UIColor.black
+        problemLabel.textColor = UIColor.black
+        measuresTitleLabel.textColor = UIColor.black
+        measuresLabel.textColor = UIColor.black
+        statusPickerTitleLabel.textColor = UIColor.black
+        deadlineTitleLabel.textColor = UIColor.black
+        everydayNotificationTitleLabel.textColor = UIColor.black
+        lastdayNotificationTitleLabel.textColor = UIColor.black
+        confirmButton.backgroundColor = AppColor.btnBgColor
+        confirmButton.tintColor = .white
+        datePicker.setValue(UIColor.black, forKeyPath: "textColor")
+        datePicker.setValue(false, forKey: "highlightsToday")
+    }
+
+    private func doinitDateFormat() {
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        // 端末のロケールや暦法設定に左右されないように設定
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        // 画面の表示内容を日本にする為設定
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
     }
 
     // 毎日通知機能
