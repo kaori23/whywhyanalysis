@@ -28,8 +28,6 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     @IBOutlet internal weak var statusPickerTitleLabel: UILabel!
     @IBOutlet internal weak var deadlineTitleLabel: UILabel!
     @IBOutlet internal weak var datePicker: UIDatePicker!
-    @IBOutlet internal weak var everydayNotificationTitleLabel: UILabel!
-    @IBOutlet internal weak var everydayNotificationSwitch: UISwitch!
     @IBOutlet internal weak var lastdayNotificationTitleLabel: UILabel!
     @IBOutlet internal weak var lastdayNotificationSwitch: UISwitch!
     @IBOutlet internal weak var wordingView: UIView!
@@ -37,8 +35,7 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     @IBOutlet internal weak var measuresView: UIView!
     @IBOutlet internal weak var statusView: UIView!
     @IBOutlet internal weak var deadlineView: UIView!
-    @IBOutlet internal weak var everydayView: UIView!
-    @IBOutlet internal weak var lastdayView: UIView!
+    @IBOutlet internal weak var switchesView: UIView!
     @IBOutlet internal weak var registView: UIView!
 
     override internal func viewDidLoad() {
@@ -149,8 +146,7 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         measuresView.backgroundColor = UIColor.white
         statusView.backgroundColor = UIColor.white
         deadlineView.backgroundColor = UIColor.white
-        everydayView.backgroundColor = UIColor.white
-        lastdayView.backgroundColor = UIColor.white
+        switchesView.backgroundColor = UIColor.white
         registView.backgroundColor = UIColor.white
         wordingLabel.textColor = UIColor.black
         problemtitleLabel.textColor = UIColor.black
@@ -159,7 +155,6 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
         measuresLabel.textColor = UIColor.black
         statusPickerTitleLabel.textColor = UIColor.black
         deadlineTitleLabel.textColor = UIColor.black
-        everydayNotificationTitleLabel.textColor = UIColor.black
         lastdayNotificationTitleLabel.textColor = UIColor.black
         confirmButton.backgroundColor = AppColor.btnBgColor
         confirmButton.tintColor = .white

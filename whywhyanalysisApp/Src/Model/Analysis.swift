@@ -32,8 +32,6 @@ internal class Analysis: Object {
     @objc internal dynamic var status: String?
     // 対策最終日
     @objc internal dynamic var lastDate: Date?
-    // 対策最終日通知フラグ
-//    @objc internal dynamic var lastDateNotificationFlag = true
     // 対策最終日通知id
     @objc internal dynamic var lastDateNotificationId: String?
 

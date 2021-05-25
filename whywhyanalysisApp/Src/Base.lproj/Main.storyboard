@@ -1030,69 +1030,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw8-HT-slv" userLabel="SwitchesView">
                                         <rect key="frame" x="0.0" y="172.5" width="375" height="103"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oN-wm-JnR" userLabel="EverydayView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="毎日通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOa-KI-F7k">
-                                                        <rect key="frame" x="38" y="15.5" width="80" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Qcy-FP-19U"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="YXj-2A-Ojd"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVR-mr-MQx">
-                                                        <rect key="frame" x="226" y="10" width="51" height="31"/>
-                                                    </switch>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="OVR-mr-MQx" firstAttribute="centerY" secondItem="9oN-wm-JnR" secondAttribute="centerY" id="GeA-kW-gz8"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OVR-mr-MQx" secondAttribute="trailing" constant="100" id="J7v-x0-6Rm"/>
-                                                    <constraint firstItem="OVR-mr-MQx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SOa-KI-F7k" secondAttribute="trailing" constant="8" symbolic="YES" id="UHL-0R-zWg"/>
-                                                    <constraint firstItem="SOa-KI-F7k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9oN-wm-JnR" secondAttribute="leading" constant="20" symbolic="YES" id="VMC-et-UmN"/>
-                                                    <constraint firstItem="SOa-KI-F7k" firstAttribute="leading" secondItem="9oN-wm-JnR" secondAttribute="leading" constant="38" id="YfN-UK-s9d"/>
-                                                    <constraint firstItem="SOa-KI-F7k" firstAttribute="centerY" secondItem="9oN-wm-JnR" secondAttribute="centerY" id="dQP-Ky-8rE"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jc-dW-3tx" userLabel="LastdayView">
-                                                <rect key="frame" x="0.0" y="51.5" width="375" height="51.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最終日通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCl-Ta-Eea">
-                                                        <rect key="frame" x="33" y="14.5" width="87" height="22.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IS-V0-jDl">
-                                                        <rect key="frame" x="226" y="10.5" width="51" height="31"/>
-                                                    </switch>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="0IS-V0-jDl" secondAttribute="trailing" constant="100" id="48M-uX-6gi"/>
-                                                    <constraint firstItem="0IS-V0-jDl" firstAttribute="centerY" secondItem="1Jc-dW-3tx" secondAttribute="centerY" id="7D2-13-tBZ"/>
-                                                    <constraint firstItem="gCl-Ta-Eea" firstAttribute="centerY" secondItem="1Jc-dW-3tx" secondAttribute="centerY" id="CXX-Kt-ps7"/>
-                                                    <constraint firstItem="gCl-Ta-Eea" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Jc-dW-3tx" secondAttribute="leading" constant="20" symbolic="YES" id="GMW-6G-KmY"/>
-                                                    <constraint firstItem="gCl-Ta-Eea" firstAttribute="top" secondItem="1Jc-dW-3tx" secondAttribute="top" constant="14.5" id="HaK-3H-SEx"/>
-                                                    <constraint firstItem="0IS-V0-jDl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gCl-Ta-Eea" secondAttribute="trailing" constant="8" symbolic="YES" id="p1O-Ze-DSD"/>
-                                                    <constraint firstItem="gCl-Ta-Eea" firstAttribute="leading" secondItem="1Jc-dW-3tx" secondAttribute="leading" constant="33" id="wJ6-gJ-q0o"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最終日通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCl-Ta-Eea">
+                                                <rect key="frame" x="40" y="40" width="87" height="22.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IS-V0-jDl">
+                                                <rect key="frame" x="216" y="36" width="51" height="31"/>
+                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="1Jc-dW-3tx" firstAttribute="top" secondItem="9oN-wm-JnR" secondAttribute="bottom" id="8Wi-lV-tJU"/>
-                                            <constraint firstAttribute="trailing" secondItem="9oN-wm-JnR" secondAttribute="trailing" id="Ia6-x4-clc"/>
-                                            <constraint firstItem="9oN-wm-JnR" firstAttribute="height" secondItem="tw8-HT-slv" secondAttribute="height" multiplier="0.5" id="Uef-0H-GsR"/>
-                                            <constraint firstItem="9oN-wm-JnR" firstAttribute="top" secondItem="tw8-HT-slv" secondAttribute="top" id="Wde-Tr-CbS"/>
-                                            <constraint firstItem="9oN-wm-JnR" firstAttribute="leading" secondItem="tw8-HT-slv" secondAttribute="leading" id="WvC-uV-d8P"/>
-                                            <constraint firstItem="1Jc-dW-3tx" firstAttribute="leading" secondItem="tw8-HT-slv" secondAttribute="leading" id="feH-J0-2sM"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Jc-dW-3tx" secondAttribute="trailing" id="kV3-uA-jKO"/>
-                                            <constraint firstItem="1Jc-dW-3tx" firstAttribute="height" secondItem="tw8-HT-slv" secondAttribute="height" multiplier="0.5" id="nQq-9e-0qu"/>
-                                            <constraint firstAttribute="bottom" secondItem="1Jc-dW-3tx" secondAttribute="bottom" id="u3Y-L7-XGM"/>
+                                            <constraint firstItem="gCl-Ta-Eea" firstAttribute="leading" secondItem="tw8-HT-slv" secondAttribute="leading" constant="40" id="cFH-A3-Yt5"/>
+                                            <constraint firstItem="gCl-Ta-Eea" firstAttribute="centerY" secondItem="tw8-HT-slv" secondAttribute="centerY" id="kRK-1D-huI"/>
+                                            <constraint firstItem="gCl-Ta-Eea" firstAttribute="centerY" secondItem="0IS-V0-jDl" secondAttribute="centerY" id="nR6-kf-f3a"/>
+                                            <constraint firstItem="gCl-Ta-Eea" firstAttribute="top" secondItem="tw8-HT-slv" secondAttribute="top" constant="40" id="p1l-bt-HoQ"/>
+                                            <constraint firstItem="0IS-V0-jDl" firstAttribute="leading" secondItem="gCl-Ta-Eea" secondAttribute="trailing" constant="89" id="spg-XK-kmg"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56u-gS-c0d" userLabel="RegistView">
@@ -1156,12 +1110,8 @@
                         <outlet property="datePicker" destination="B7k-wt-AxU" id="JjE-8s-cjF"/>
                         <outlet property="deadlineTitleLabel" destination="KyQ-iK-Q5G" id="qCA-is-JDW"/>
                         <outlet property="deadlineView" destination="rWN-6T-3Mq" id="oCd-hq-d5r"/>
-                        <outlet property="everydayNotificationSwitch" destination="OVR-mr-MQx" id="dW9-pZ-jBs"/>
-                        <outlet property="everydayNotificationTitleLabel" destination="SOa-KI-F7k" id="3OY-WB-DEp"/>
-                        <outlet property="everydayView" destination="9oN-wm-JnR" id="lT5-eF-diV"/>
                         <outlet property="lastdayNotificationSwitch" destination="0IS-V0-jDl" id="bUW-L6-o3l"/>
                         <outlet property="lastdayNotificationTitleLabel" destination="gCl-Ta-Eea" id="yo6-CF-aCT"/>
-                        <outlet property="lastdayView" destination="1Jc-dW-3tx" id="tOO-y4-bKL"/>
                         <outlet property="measuresLabel" destination="Uax-Me-UxJ" id="1Qc-Wv-5vN"/>
                         <outlet property="measuresTitleLabel" destination="cv5-fT-NAR" id="eOd-eA-ZQy"/>
                         <outlet property="measuresView" destination="PyO-lJ-eJX" id="ktm-9m-Gj8"/>
@@ -1172,6 +1122,7 @@
                         <outlet property="statusPickerTitleLabel" destination="eRW-Ib-SZ0" id="tbL-II-mqd"/>
                         <outlet property="statusPickerView" destination="3HY-iP-ZG4" id="gP7-2w-GrQ"/>
                         <outlet property="statusView" destination="Ilm-qW-KNU" id="KUE-zL-dLI"/>
+                        <outlet property="switchesView" destination="tw8-HT-slv" id="ahm-jy-BOa"/>
                         <outlet property="wordingLabel" destination="Umt-pK-rzv" id="TQf-hF-BdH"/>
                         <outlet property="wordingView" destination="384-ap-W9u" id="rCp-rV-Lib"/>
                     </connections>
