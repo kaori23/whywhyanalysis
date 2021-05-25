@@ -9,7 +9,7 @@
 import UIKit
 internal class ShowAnalysisListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     internal var whywhyAnalysisList: [Analysis] = []
-    internal let cellHeigh: CGFloat = 130
+    internal let cellHeigh: CGFloat = 150
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet internal weak var titleLabel: UILabel!
     @IBOutlet internal weak var backgroundView: UIView!
@@ -24,17 +24,16 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
 
     override internal func viewDidLoad() {
         super.viewDidLoad()
+        doInitLayout()
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Realmからデータを全件取得
-        let data = DataStorage()
-        whywhyAnalysisList = data.loadAllWhyAnalyticsData()
         // tableViewにカスタムセルを登録
         tableView.register(UINib(nibName: "ShowAnalysisListCustumCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         tableView.tableFooterView = UIView()
+    }
 
-        // レイアウト設定
+    private func doInitLayout() {
         backgroundView.backgroundColor = AppColor.viewBgColor
         tableView.backgroundColor = UIColor.white
         titleLabel.textColor = UIColor.black
@@ -43,18 +42,6 @@ internal class ShowAnalysisListViewController: UIViewController, UITableViewData
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         titleLabel.layer.borderWidth = 1
     }
-
-    @IBAction private func addAnalysisClick(_ sender: Any) {
-        let nextViewController = R.storyboard.main.detailWhyWhyAnalysis()
-        if let nextVC = nextViewController {
-            nextVC.mode = .new
-            navigationController?.pushViewController(nextVC, animated: true)
-        } else {
-            // TODO: 後ほどエラー処理を実装
-            print("画面遷移失敗")
-        }
-    }
-
     // セルの編集を許可する
     internal func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true

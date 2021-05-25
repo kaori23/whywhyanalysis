@@ -67,24 +67,54 @@
                         <constraint firstAttribute="height" constant="0.69999999999999996" id="1G7-WP-oLg"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2M-ao-cqR" userLabel="Deadline Label">
+                    <rect key="frame" x="10" y="114" width="300" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="ZxR-XR-IDd"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="期日ラベル">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" metaFont="system" size="15"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie0-Jc-90c" userLabel="DeadlineLabelUnderline">
+                    <rect key="frame" x="10" y="132.5" width="300" height="0.5"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="blb-NG-qKz"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ie0-Jc-90c" secondAttribute="trailing" constant="10" id="0RB-TM-lSn"/>
                 <constraint firstItem="dTv-4E-ATx" firstAttribute="top" secondItem="Yc4-at-u87" secondAttribute="bottom" constant="10" id="BQh-99-FdK"/>
                 <constraint firstItem="dTv-4E-ATx" firstAttribute="leading" secondItem="Yc4-at-u87" secondAttribute="leading" id="Fkq-3q-g5L"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g4e-bf-3gP" secondAttribute="trailing" constant="10" id="HMY-7E-390"/>
+                <constraint firstItem="g2M-ao-cqR" firstAttribute="top" secondItem="g4e-bf-3gP" secondAttribute="bottom" constant="5" id="HZI-n2-8c1"/>
                 <constraint firstItem="zoQ-yX-hr8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="JbR-UA-Tst"/>
+                <constraint firstItem="Ie0-Jc-90c" firstAttribute="top" secondItem="g2M-ao-cqR" secondAttribute="bottom" constant="0.5" id="JqK-Kr-5Lg"/>
                 <constraint firstItem="g4e-bf-3gP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="NmB-NF-dzv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yc4-at-u87" secondAttribute="trailing" constant="10" id="RYb-0w-FZ9"/>
                 <constraint firstItem="Yc4-at-u87" firstAttribute="top" secondItem="zoQ-yX-hr8" secondAttribute="bottom" constant="10" id="Rnj-wy-SgB"/>
+                <constraint firstItem="g2M-ao-cqR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="UpK-dX-D0h"/>
                 <constraint firstItem="g4e-bf-3gP" firstAttribute="top" secondItem="dTv-4E-ATx" secondAttribute="bottom" constant="0.5" id="Wbj-DD-rhA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="g2M-ao-cqR" secondAttribute="trailing" constant="10" id="b4J-gy-cXa"/>
                 <constraint firstItem="Yc4-at-u87" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="hbF-iY-Xx6"/>
+                <constraint firstItem="Ie0-Jc-90c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="skY-md-DiO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zoQ-yX-hr8" secondAttribute="trailing" constant="50" id="vGJ-Vv-THi"/>
                 <constraint firstItem="Yc4-at-u87" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wBv-7P-YEq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="deadlineLabelUnderline" destination="Ie0-Jc-90c" id="I6a-Wg-VQJ"/>
                 <outlet property="measuresLabel" destination="Yc4-at-u87" id="WJq-kK-RBS"/>
                 <outlet property="problemLabel" destination="dTv-4E-ATx" id="LIe-Qx-yU4"/>
                 <outlet property="problemLabelUnderline" destination="g4e-bf-3gP" id="Ful-r6-vLS"/>
