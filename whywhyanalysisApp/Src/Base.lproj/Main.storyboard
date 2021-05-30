@@ -955,7 +955,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="進捗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRW-Ib-SZ0">
-                                                        <rect key="frame" x="60" y="33" width="52" height="20"/>
+                                                        <rect key="frame" x="20" y="33" width="50" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Jhs-UJ-sx7"/>
                                                         </constraints>
@@ -964,20 +964,20 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HY-iP-ZG4">
-                                                        <rect key="frame" x="137" y="10.5" width="223" height="65"/>
+                                                        <rect key="frame" x="80" y="10.5" width="280" height="65"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="223" id="4Aq-DY-3AP"/>
                                                             <constraint firstAttribute="height" constant="65" id="Fh3-Es-4f6"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="Y94-3h-FSk"/>
                                                         </constraints>
                                                     </pickerView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="eRW-Ib-SZ0" firstAttribute="leading" secondItem="Ilm-qW-KNU" secondAttribute="leading" constant="20" id="D8O-fy-2vK"/>
                                                     <constraint firstAttribute="trailing" secondItem="3HY-iP-ZG4" secondAttribute="trailing" constant="15" id="ICT-v1-cDZ"/>
                                                     <constraint firstItem="eRW-Ib-SZ0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ilm-qW-KNU" secondAttribute="leading" constant="20" symbolic="YES" id="JIw-jp-pPo"/>
-                                                    <constraint firstItem="eRW-Ib-SZ0" firstAttribute="leading" secondItem="Ilm-qW-KNU" secondAttribute="leading" constant="60" id="P7G-nX-pUV"/>
                                                     <constraint firstItem="eRW-Ib-SZ0" firstAttribute="centerY" secondItem="Ilm-qW-KNU" secondAttribute="centerY" id="VNj-LP-1wH"/>
-                                                    <constraint firstItem="3HY-iP-ZG4" firstAttribute="leading" secondItem="eRW-Ib-SZ0" secondAttribute="trailing" constant="25" id="kYI-aY-5H0"/>
+                                                    <constraint firstItem="3HY-iP-ZG4" firstAttribute="leading" secondItem="eRW-Ib-SZ0" secondAttribute="trailing" constant="10" id="Ytd-1i-JIo"/>
                                                     <constraint firstItem="3HY-iP-ZG4" firstAttribute="centerY" secondItem="Ilm-qW-KNU" secondAttribute="centerY" id="zBZ-ab-Bts"/>
                                                 </constraints>
                                             </view>
@@ -985,7 +985,7 @@
                                                 <rect key="frame" x="0.0" y="86" width="375" height="86.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyQ-iK-Q5G">
-                                                        <rect key="frame" x="60" y="33.5" width="52" height="20"/>
+                                                        <rect key="frame" x="20" y="33.5" width="50" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="e1a-6C-5p0"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="krE-Bg-QOx"/>
@@ -995,10 +995,9 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="top" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="B7k-wt-AxU">
-                                                        <rect key="frame" x="137" y="9.5" width="223" height="65"/>
+                                                        <rect key="frame" x="80" y="9.5" width="280" height="65"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="223" id="DJq-qD-7s0"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="UnQ-YK-vQc"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="ISH-Ea-at1"/>
                                                             <constraint firstAttribute="height" constant="65" id="tET-5a-o2Q"/>
                                                         </constraints>
                                                         <locale key="locale" localeIdentifier="ja_JP"/>
@@ -1006,12 +1005,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="KyQ-iK-Q5G" firstAttribute="leading" secondItem="rWN-6T-3Mq" secondAttribute="leading" constant="60" id="a4l-yT-MO3"/>
+                                                    <constraint firstItem="B7k-wt-AxU" firstAttribute="leading" secondItem="KyQ-iK-Q5G" secondAttribute="trailing" constant="10" id="dDV-JQ-mfQ"/>
                                                     <constraint firstItem="KyQ-iK-Q5G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rWN-6T-3Mq" secondAttribute="leading" constant="20" symbolic="YES" id="dIk-aM-6LY"/>
                                                     <constraint firstItem="B7k-wt-AxU" firstAttribute="centerY" secondItem="rWN-6T-3Mq" secondAttribute="centerY" constant="-1.25" id="kUf-D3-0Bc"/>
                                                     <constraint firstAttribute="trailing" secondItem="B7k-wt-AxU" secondAttribute="trailing" constant="15" id="lGD-Jh-KJs"/>
-                                                    <constraint firstItem="B7k-wt-AxU" firstAttribute="leading" secondItem="KyQ-iK-Q5G" secondAttribute="trailing" constant="25" id="rAA-so-W5r"/>
                                                     <constraint firstItem="KyQ-iK-Q5G" firstAttribute="centerY" secondItem="rWN-6T-3Mq" secondAttribute="centerY" id="wVC-kK-Orh"/>
+                                                    <constraint firstItem="KyQ-iK-Q5G" firstAttribute="leading" secondItem="rWN-6T-3Mq" secondAttribute="leading" constant="20" id="xPo-2j-eg9"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1031,18 +1030,18 @@
                                         <rect key="frame" x="0.0" y="172.5" width="375" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最終日通知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCl-Ta-Eea">
-                                                <rect key="frame" x="40" y="40" width="87" height="22.5"/>
+                                                <rect key="frame" x="20" y="40" width="87" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IS-V0-jDl">
-                                                <rect key="frame" x="216" y="36" width="51" height="31"/>
+                                                <rect key="frame" x="196" y="36" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="gCl-Ta-Eea" firstAttribute="leading" secondItem="tw8-HT-slv" secondAttribute="leading" constant="40" id="cFH-A3-Yt5"/>
+                                            <constraint firstItem="gCl-Ta-Eea" firstAttribute="leading" secondItem="tw8-HT-slv" secondAttribute="leading" constant="20" id="WJD-yq-hBi"/>
                                             <constraint firstItem="gCl-Ta-Eea" firstAttribute="centerY" secondItem="tw8-HT-slv" secondAttribute="centerY" id="kRK-1D-huI"/>
                                             <constraint firstItem="gCl-Ta-Eea" firstAttribute="centerY" secondItem="0IS-V0-jDl" secondAttribute="centerY" id="nR6-kf-f3a"/>
                                             <constraint firstItem="gCl-Ta-Eea" firstAttribute="top" secondItem="tw8-HT-slv" secondAttribute="top" constant="40" id="p1l-bt-HoQ"/>
