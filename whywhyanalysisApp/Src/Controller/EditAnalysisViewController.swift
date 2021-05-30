@@ -194,6 +194,7 @@ internal class EditAnalysisViewController: UIViewController {
                         if let lastDateNotificationId = analysis.lastDateNotificationId {
                             editWhywhyAnalysis.lastDateNotificationId = lastDateNotificationId
                         }
+                        nextVC.whywhyAnalysis?.whywhyAnalysisNo = analysis.whywhyAnalysisNo
                     }
                 }
                 return editWhywhyAnalysis

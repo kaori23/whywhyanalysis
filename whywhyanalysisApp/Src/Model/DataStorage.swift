@@ -55,11 +55,25 @@ internal class DataStorage {
         // Realmデータベースを取得
         do {
             let realm = try Realm()
+            analysisList = realm.objects(Analysis.self).filter("whywhyAnalysisNo == %@", analysis.whywhyAnalysisNo)
             try realm.write {
-                realm.add(analysis, update: .all)
+                if let whywhyAnalysis = analysisList?[0] {
+                    whywhyAnalysis.problem = analysis.problem
+                    whywhyAnalysis.measures = analysis.measures
+                    whywhyAnalysis.oneWhy = analysis.oneWhy
+                    whywhyAnalysis.twoWhy = analysis.twoWhy
+                    whywhyAnalysis.threeWhy = analysis.threeWhy
+                    whywhyAnalysis.fourWhy = analysis.fourWhy
+                    whywhyAnalysis.fiveWhy = analysis.fiveWhy
+                    whywhyAnalysis.status = analysis.status
+                    whywhyAnalysis.lastDate = analysis.lastDate
+                    whywhyAnalysis.lastDateNotificationId = analysis.lastDateNotificationId
+                } else {
+                    // TODO:後ほどエラー処理を実装
+                }
             }
         } catch {
-            // 後ほどエラー処理を実装
+            // TODO:後ほどエラー処理を実装
         }
     }
 
