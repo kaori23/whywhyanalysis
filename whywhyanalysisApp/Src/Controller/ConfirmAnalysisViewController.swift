@@ -16,7 +16,7 @@ internal class ConfirmAnalysisViewController: UIViewController, UIPickerViewDele
     internal var status = ""
     internal var statusNum = 0
     internal let dateFormatter = DateFormatter()
-    internal let calendar = Calendar(identifier: .gregorian)
+    internal let calendar = Calendar.current
     @IBOutlet internal weak var problemLabel: UILabel!
     @IBOutlet internal weak var measuresLabel: UILabel!
     @IBOutlet internal weak var statusPickerView: UIPickerView!
